@@ -49,9 +49,10 @@ public class Driver {
 			
 			Managment managment = new Managment();
 			
-			Parser parser = new Parser();
-			
+//			Parser parser = new Parser();
+			Parser.initializeParser();
 			Parser.parseIntialData(INITIAL_DATA_FILENAME, managment);
+			
 			
 		}
 		

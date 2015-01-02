@@ -4,11 +4,13 @@ import java.awt.geom.Point2D;
 
 public class Location {
 	
-	private Point2D.Double currentLocation;
+	private double xLocation;
+	private double yLocation;
 	
 	
-	public Location(Point2D.Double location){
-		this.currentLocation = location;
+	public Location(double xLocation, double yLocation){
+		this.xLocation = xLocation;
+		this.yLocation = yLocation;
 	}
 	
 	/**
@@ -16,9 +18,14 @@ public class Location {
 	 * @param other point in 2d Space
 	 * @return Distance from 'other' to 'this'
 	 */
-	public double calculateDistance(Point2D.Double other){
+	public double calculateDistance(Location other){
 		
-		return Math.sqrt((Math.pow((other.x - this.currentLocation.x), 2) + Math.pow((other.y - this.currentLocation.y), 2))); 
+		return Math.sqrt((Math.pow((other.xLocation - this.xLocation), 2) + Math.pow((other.yLocation - this.yLocation), 2))); 
+	}
+	
+	public String toString(){
+		String ans = this.xLocation + "," + this.yLocation;
+		return ans;
 	}
 
 }
