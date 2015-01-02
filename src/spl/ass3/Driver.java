@@ -40,7 +40,7 @@ public class Driver {
 			String CUSTOMER_GROUPS_FILENAME = 				args[3];
 			
 			
-			String cmdLineArguments = "\nPrinting command line arguments:\n";
+			String cmdLineArguments = "\nPrinting command line arguments...\n";
 			for (int i = 0 ; i < args.length ; i++){
 				cmdLineArguments = cmdLineArguments + args[i] + "\n";
 //				
