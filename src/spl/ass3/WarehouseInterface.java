@@ -1,9 +1,11 @@
 package spl.ass3;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Michael Fildstein Id:309161594
+ * The Interface WarehouseInterface.
  *
+ * @author Michael Fildstein Id:309161594
  */
 
 public interface WarehouseInterface {
@@ -28,25 +30,28 @@ public interface WarehouseInterface {
 	/**
 	 * Simulates the taking of a tool from the warehouse. In reality reduces the number of 'toolToGet'
 	 * by one.
-	 * @param toolToGet
+	 *
+	 * @param toolToGet the tool to get
+	 * @return the repair tool
 	 * @pre at least one tool exists in the collection
 	 * @post The number of current tools decreases by 1.
-	 * 
 	 */
 	public void getRepairTool(String toolToGet);
 
 	/**
 	 * Simulates the returning of a tool to the warehouse. In reality increases the number of 'repairToolToReturn' in the warehouse
 	 * by one.
-	 * @param repairToolToReturn
-	 * 
+	 *
+	 * @param repairToolToReturn the repair tool to return
 	 */
 	public void returnRepairTool(String repairToolToReturn);
 
 	/**
 	 * Simulates the taking of a RepairMaterial from the warehouse. In reality reduces the number of 'repairMaterial'
 	 * by one.
-	 * @param toolToGet
+	 *
+	 * @param repairMaterialToGet the repair material to get
+	 * @return the repair material
 	 * @pre at least one tool exists in the collection
 	 * @post The number of current tools decreases by 1.
 	 */
@@ -56,7 +61,8 @@ public interface WarehouseInterface {
 
 	/**
 	 * Returns the number of 'toolName' currently in the warehouse.
-	 * @param toolName
+	 *
+	 * @param toolName the tool name
 	 * @return number of 'toolName' currently in the warehouse.
 	 */
 
@@ -67,7 +73,8 @@ public interface WarehouseInterface {
 	
 	/**
 	 * Returns the number of 'materialName' currently in the warehouse.
-	 * @param materialName
+	 *
+	 * @param materialName the material name
 	 * @return number of 'materialName' currently in the warehouse.
 	 */
 
