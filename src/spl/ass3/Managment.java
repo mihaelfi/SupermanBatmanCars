@@ -7,12 +7,15 @@ public class Managment {
 	protected ArrayList<ClerkDetails> clerkDetailsCollection;
 	protected ArrayList<CustomerGroupDetails> customerGroupDetailsCollection;
 	protected Assets assets;
-	protected Warehouse warehouse;
+	public    Warehouse warehouse;
 	protected ArrayList<RepairToolInformation> repairToolInformationCollection;
 	protected ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
 	
 	
 	
+	Managment(){
+		this.warehouse = new Warehouse();
+	}
 	
 
 }

@@ -9,7 +9,7 @@ import java.util.logging.SimpleFormatter;
 
 public class Driver {
 	
-	private final static Logger LOGGER = Logger.getLogger(Driver.class.getName());
+	protected final static Logger LOGGER = Logger.getLogger(Driver.class.getName());
 	static private FileHandler fileTxt;
 	static private SimpleFormatter formatterTxt;
 
@@ -47,10 +47,11 @@ public class Driver {
 			}
 			LOGGER.info(cmdLineArguments);
 			
-			Warehouse warehouse = new Warehouse();
+			Managment managment = new Managment();
+			
 			Parser parser = new Parser();
 			
-			Parser.parseIntialData(INITIAL_DATA_FILENAME, warehouse);
+			Parser.parseIntialData(INITIAL_DATA_FILENAME, managment);
 			
 		}
 		
