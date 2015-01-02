@@ -47,6 +47,11 @@ public class Driver {
 			}
 			LOGGER.info(cmdLineArguments);
 			
+			Warehouse warehouse = new Warehouse();
+			Parser parser = new Parser();
+			
+			Parser.parseIntialData(INITIAL_DATA_FILENAME, warehouse);
+			
 		}
 		
 		
