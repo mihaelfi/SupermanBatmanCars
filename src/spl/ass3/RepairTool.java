@@ -59,6 +59,10 @@ public class RepairTool {
 		return toolName;
 	}
 	
+	public String toString(){
+		return "Tool Name = " + this.toolName + ", Tool Quantity is: " + this.numberOfToolInWarehouse+"\n";
+	}
+	
 	
 
 }

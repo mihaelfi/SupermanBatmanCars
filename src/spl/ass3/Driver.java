@@ -52,6 +52,7 @@ public class Driver {
 //			Parser parser = new Parser();
 			Parser.initializeParser();
 			Parser.parseIntialData(INITIAL_DATA_FILENAME, managment);
+			Parser.parseAssetContentsRepairDetails(ASSET_CONTENTS_REPAIR_DETAILS_FILENAME, managment);
 			
 			
 		}

@@ -8,19 +8,30 @@ public class Managment {
 	protected ArrayList<CustomerGroupDetails> customerGroupDetailsCollection;
 	protected Assets assets;
 	public    Warehouse warehouse;
-	protected ArrayList<RepairToolInformation> repairToolInformationCollection;
-	protected ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
+	public 	  ArrayList<RepairToolInformation> repairToolInformationCollection;
+	public 	  ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
 	
 	
 	
 	Managment(){
 		this.warehouse = new Warehouse();
-		clerkDetailsCollection = new ArrayList<ClerkDetails>();
+		this.clerkDetailsCollection = new ArrayList<ClerkDetails>();
+		this.repairMaterialInformationCollection = new ArrayList<RepairMaterialInformation>();
+		this.repairToolInformationCollection = new ArrayList<RepairToolInformation>();
+		
 	}
 	
 	public void addClerkDetails(ClerkDetails clerkDetailsToAdd){
 		this.clerkDetailsCollection.add(clerkDetailsToAdd);
 		Driver.LOGGER.info("Clerk Added.");
+	}
+	
+	public void addRepairToolInformation (RepairToolInformation repairToolInformationToAdd){
+		this.repairToolInformationCollection.add(repairToolInformationToAdd);
+	}
+	
+	public void addRepairMaterialInformation (RepairMaterialInformation repairMaterialInformationToAdd){
+		this.repairMaterialInformationCollection.add(repairMaterialInformationToAdd);
 	}
 	
 	

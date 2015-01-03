@@ -29,6 +29,11 @@ public class RepairMaterial {
 		return materialName;
 	}
 	
+	public String toString(){
+		return "Material Name = " + this.materialName + ", Tool Quantity is: " + this.numberOfMaterialInWarehouse+ "\n";
+	}
+	
+	
 	
 	
 
