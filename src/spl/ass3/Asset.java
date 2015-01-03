@@ -4,7 +4,7 @@ package spl.ass3;
 import java.util.ArrayList;
 
 
-public class Asset {
+public class Asset implements Comparable<Asset> {
 	
 	protected String name;
 	// one of the types provided in the xml.
@@ -35,6 +35,19 @@ public class Asset {
 		return "The Asset: " + this.name + "\nIs of type: " + this.type+".\nLocated in the location " + this.location+ 
 				".\nIt's Status is: " + this.status + "\nIt's cost Per night is: " + this.costPerNight + "\nit's size is : " + this.size + 
 				"\nIt's asset contents are :" + this.assetContents.toString();
+	}
+
+
+	@Override
+	public int compareTo(Asset o) {
+	  int ans = 0;
+	  if (this.size < o.size){
+		  ans = -1;
+	  }else if (this.size > o.size){
+		  ans = 1;
+	  }
+	  
+		return 0;
 	}
 	
 	

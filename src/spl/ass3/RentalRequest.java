@@ -9,7 +9,7 @@ public class RentalRequest {
 	protected int assetSize;
 	protected int durationOfStay;
 	protected Asset asset;
-	protected String requestStatus;
+	protected String requestStatus;  //Incomplete Fufulied Inprogress Complete
 	
 
 	
@@ -23,6 +23,8 @@ public class RentalRequest {
 		
 		
 	}
+	
+	
 
 
 
@@ -39,6 +41,70 @@ public class RentalRequest {
 				+ "\nassetSize=" + assetSize + "\ndurationOfStay="
 				+ durationOfStay + "\nasset=" + asset.toString() + "\nrequestStatus="
 				+ requestStatus;
+	}
+
+
+
+
+
+	public Asset getAsset() {
+		return asset;
+	}
+
+
+
+
+
+	public void setAsset(Asset asset) {
+		this.asset = asset;
+	}
+
+
+
+
+
+	public String getRequestStatus() {
+		return requestStatus;
+	}
+
+
+
+
+
+	public void setRequestStatus(String requestStatus) {
+		this.requestStatus = requestStatus;
+	}
+
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+
+	public String getAssetType() {
+		return assetType;
+	}
+
+
+
+
+
+	public int getAssetSize() {
+		return assetSize;
+	}
+
+
+
+
+
+	public int getDurationOfStay() {
+		return durationOfStay;
 	}
 	
 	

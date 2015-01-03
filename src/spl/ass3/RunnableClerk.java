@@ -1,19 +1,21 @@
 package spl.ass3;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class RunnableClerk implements Runnable {
 	
 	private ClerkDetails clerkDetails;
-	protected ArrayList<RentalRequest> rentalRequestCollection;
+	protected Queue<RentalRequest> rentalRequestCollection;
+	
 	protected int numberOfRentalRequests;
 	
 	
 	
-	public RunnableClerk(ClerkDetails clerkDetails , ArrayList<RentalRequest> rentalRequestCollection , int numberOfRentalRequests) {
+	public RunnableClerk(ClerkDetails clerkDetails , Queue<RentalRequest> rentalRequestCollection , int numberOfRentalRequests) {
 		this.clerkDetails = clerkDetails;
 		this.rentalRequestCollection = rentalRequestCollection;
-		this.numberOfRentalRequests = numberOfRentalRequests;
+		this.numberOfRentalRequests = this.rentalRequestCollection.size();
 	}
 	
 	public String toString(){
@@ -22,7 +24,15 @@ public class RunnableClerk implements Runnable {
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		
+		while(true){
+			
+			synchronized (this.rentalRequestCollection) {
+				
+			}
+			
+		}
+		
 		
 	}
 	
