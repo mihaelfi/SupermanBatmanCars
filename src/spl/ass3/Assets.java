@@ -42,13 +42,30 @@ public class Assets {
 		String reqestedAssetType = requestToFindAssetFor.getAssetType();
 		int    requestedAssetSize = requestToFindAssetFor.getAssetSize();
 		boolean assetFound = false;
-		
-		for (int i = 0 ; i < this.assetCollection.size() && !assetFound ; i ++){
+//		ArrayList<Asset> potentailAssets = new ArrayList<Asset>();
+		int i = 0;
+		while (!assetFound){
+			
 			if (this.assetCollection.get(i).size ==  requestedAssetSize && this.assetCollection.get(i).type == reqestedAssetType ){
-				ans = assetCollection.get(i);
-				assetFound = true;
+				synchronized (this.assetCollection.get(i)) {
+					if (this.assetCollection.get(i).getStatus() == "AVAILABLE" ){
+						ans = assetCollection.get(i);
+						assetFound = true;
+					}else{
+					  try {
+						wait(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					}
+					
+				}
 			}
+			i++;
 		}
+		
+			
 		
 		return ans;
 		

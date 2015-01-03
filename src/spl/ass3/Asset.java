@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class Asset implements Comparable<Asset> {
 	
+
+
 	protected String name;
 	// one of the types provided in the xml.
 	protected String type;
@@ -37,6 +39,47 @@ public class Asset implements Comparable<Asset> {
 				"\nIt's asset contents are :" + this.assetContents.toString();
 	}
 
+	
+	
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public Location getLocation() {
+		return location;
+	}
+
+
+	public ArrayList<AssetContent> getAssetContents() {
+		return assetContents;
+	}
+
+
+	public double getCostPerNight() {
+		return costPerNight;
+	}
+
+
+	public int getSize() {
+		return size;
+	}
+
 
 	@Override
 	public int compareTo(Asset o) {
@@ -47,7 +90,7 @@ public class Asset implements Comparable<Asset> {
 		  ans = 1;
 	  }
 	  
-		return 0;
+		return ans;
 	}
 	
 	
