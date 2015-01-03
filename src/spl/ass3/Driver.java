@@ -34,10 +34,10 @@ public class Driver {
 			System.out.println(args.length);
 		}else{
 
-			String INITIAL_DATA_FILENAME = 					args[0];
-			String ASSET_CONTENTS_REPAIR_DETAILS_FILENAME = args[1];
-			String ASSETS_FILENAME = 						args[2];
-			String CUSTOMER_GROUPS_FILENAME = 				args[3];
+			final String INITIAL_DATA_FILENAME = 					args[0];
+			final String ASSET_CONTENTS_REPAIR_DETAILS_FILENAME = args[1];
+			final String ASSETS_FILENAME = 						args[2];
+			final String CUSTOMER_GROUPS_FILENAME = 				args[3];
 			
 			
 			String cmdLineArguments = "\nPrinting command line arguments:\n";
@@ -53,6 +53,7 @@ public class Driver {
 			Parser.initializeParser();
 			Parser.parseIntialData(INITIAL_DATA_FILENAME, managment);
 			Parser.parseAssetContentsRepairDetails(ASSET_CONTENTS_REPAIR_DETAILS_FILENAME, managment);
+			Parser.parseAssets(ASSETS_FILENAME, managment);
 			
 			
 		}

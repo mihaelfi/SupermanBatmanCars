@@ -1,63 +1,43 @@
-Jan 03, 2015 4:18:08 AM spl.ass3.Driver main
-INFO: 
+2015-01-03 13:16:00 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
 CustomerGroups.xml
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Strting to Parse InitialData.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData 
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Parsing the tools ...
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 0 Tool name is Vacuum Cleaner And the quantity is: 3
+Strting to Parse InitialData.xml
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Vacuum Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 1 Tool name is Hammer And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 0 Tool name is Vacuum Cleaner And the quantity is: 3
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Hammer Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 2 Tool name is Jackhammer And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Vacuum Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 1 Tool name is Hammer And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Jackhammer Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 3 Tool name is Jacksaw And the quantity is: 4
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Hammer Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 2 Tool name is Jackhammer And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Jacksaw Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 4 Tool name is Drill And the quantity is: 7
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Jackhammer Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 3 Tool name is Jacksaw And the quantity is: 4
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Drill Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 5 Tool name is Screw Driver And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Jacksaw Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 4 Tool name is Drill And the quantity is: 7
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Screw Driver Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 6 Tool name is Adjustable Spanner And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Drill Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 5 Tool name is Screw Driver And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Adjustable Spanner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 7 Tool name is Knife And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Screw Driver Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 6 Tool name is Adjustable Spanner And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Knife Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 8 Tool name is Pliers And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Adjustable Spanner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 7 Tool name is Knife And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertToolFromParsing
-INFO: Added Pliers Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing warehouse tools content: 
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Knife Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 8 Tool name is Pliers And the quantity is: 5
+
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertToolFromParsing Added Pliers Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing warehouse tools content: 
 
  The number of Knife in the warehouse is: 5
  The number of Jacksaw in the warehouse is: 4
@@ -68,77 +48,48 @@ INFO: Printing warehouse tools content:
  The number of Pliers in the warehouse is: 5
  The number of Jackhammer in the warehouse is: 2
  The number of Hammer in the warehouse is: 5
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing tools.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Parsing the Materials ...
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 0 Tool name is Nails And the quantity is: 5000
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 0 Tool name is Nails And the quantity is: 5000
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Nails Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 1 Tool name is Carpet Cleaner And the quantity is: 5000
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Nails Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 1 Tool name is Carpet Cleaner And the quantity is: 5000
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Carpet Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 2 Tool name is Screws And the quantity is: 5000
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Carpet Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 2 Tool name is Screws And the quantity is: 5000
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Screws Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 3 Tool name is Kitchen Cleaner And the quantity is: 2000
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Screws Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 3 Tool name is Kitchen Cleaner And the quantity is: 2000
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Kitchen Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 4 Tool name is Glass Cleaner And the quantity is: 1500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Kitchen Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 4 Tool name is Glass Cleaner And the quantity is: 1500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Glass Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 5 Tool name is Disinfectant And the quantity is: 1500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Glass Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 5 Tool name is Disinfectant And the quantity is: 1500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Disinfectant Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 6 Tool name is Floor Cleaner And the quantity is: 1500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Disinfectant Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 6 Tool name is Floor Cleaner And the quantity is: 1500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Floor Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 7 Tool name is Trash Bag And the quantity is: 2500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Floor Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 7 Tool name is Trash Bag And the quantity is: 2500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Trash Bag Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 8 Tool name is Paper Towel And the quantity is: 1500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Trash Bag Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 8 Tool name is Paper Towel And the quantity is: 1500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Paper Towel Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 9 Tool name is Bathroom Cleaner And the quantity is: 150
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Paper Towel Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 9 Tool name is Bathroom Cleaner And the quantity is: 150
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Bathroom Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 10 Tool name is Laundry Cleaner And the quantity is: 2500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Bathroom Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 10 Tool name is Laundry Cleaner And the quantity is: 2500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Laundry Cleaner Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 11 Tool name is Cleaning Pads And the quantity is: 2500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Laundry Cleaner Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 11 Tool name is Cleaning Pads And the quantity is: 2500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Cleaning Pads Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: The 12 Tool name is Sand Cloth And the quantity is: 2500
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Cleaning Pads Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData The 12 Tool name is Sand Cloth And the quantity is: 2500
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Warehouse insertMaterialFromParsing
-INFO: Added Sand Cloth Tool to warehouse.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing warehouse material content: 
+2015-01-03 13:16:00 INFO spl.ass3.Warehouse insertMaterialFromParsing Added Sand Cloth Tool to warehouse.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing warehouse material content: 
 
  The number of Trash Bag in the warehouse is: 2500
  The number of Glass Cleaner in the warehouse is: 1500
@@ -153,174 +104,118 @@ INFO: Printing warehouse material content:
  The number of Paper Towel in the warehouse is: 1500
  The number of Nails in the warehouse is: 5000
  The number of Laundry Cleaner in the warehouse is: 2500
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing materials.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Starting to parse clerks:
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Creating clerk: Name: Ken Harush Location: 3.0,3.0
-Jan 03, 2015 4:18:08 AM spl.ass3.Managment addClerkDetails
-INFO: Clerk Added.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing clerk Details in warehouse ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Creating clerk: Name: Ken Harush Location: 3.0,3.0
+2015-01-03 13:16:00 INFO spl.ass3.Managment addClerkDetails Clerk Added.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing InitialData.xml
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Creating clerk: Name: Paula Bitton Location: 3.0,3.0
-Jan 03, 2015 4:18:08 AM spl.ass3.Managment addClerkDetails
-INFO: Clerk Added.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing clerk Details in warehouse ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing InitialData.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Creating clerk: Name: Paula Bitton Location: 3.0,3.0
+2015-01-03 13:16:00 INFO spl.ass3.Managment addClerkDetails Clerk Added.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing InitialData.xml
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Creating clerk: Name: Wolfgang Eisenkott Location: 3.0,3.0
-Jan 03, 2015 4:18:08 AM spl.ass3.Managment addClerkDetails
-INFO: Clerk Added.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing clerk Details in warehouse ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing InitialData.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Creating clerk: Name: Wolfgang Eisenkott Location: 3.0,3.0
+2015-01-03 13:16:00 INFO spl.ass3.Managment addClerkDetails Clerk Added.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 Name: Wolfgang Eisenkott Location: 3.0,3.0
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing InitialData.xml
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Creating clerk: Name: Paula Die Location: 3.0,3.0
-Jan 03, 2015 4:18:08 AM spl.ass3.Managment addClerkDetails
-INFO: Clerk Added.
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Printing clerk Details in warehouse ...
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing InitialData.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Creating clerk: Name: Paula Die Location: 3.0,3.0
+2015-01-03 13:16:00 INFO spl.ass3.Managment addClerkDetails Clerk Added.
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 Name: Wolfgang Eisenkott Location: 3.0,3.0
 Name: Paula Die Location: 3.0,3.0
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseIntialData
-INFO: Finished parsing InitialData.xml
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: Parsing AssetContentsRepairDetails.xml
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Tool name is Hammer And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseIntialData Finished parsing InitialData.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Tool name is Screw Driver And the quantity is: 2
+Parsing AssetContentsRepairDetails.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Tool name is Hammer And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Tool name is Pliers And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Tool name is Screw Driver And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Material name is Glass Cleaner And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Tool name is Pliers And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Material name is Trash Bag And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Material name is Glass Cleaner And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 0 Material name is Paper Towel And the quantity is: 20
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Material name is Trash Bag And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Tool name is Hammer And the quantity is: 3
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 0 Material name is Paper Towel And the quantity is: 20
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Tool name is Screw Driver And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Tool name is Hammer And the quantity is: 3
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Tool name is Pliers And the quantity is: 3
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Tool name is Screw Driver And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Tool name is Jacksaw And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Tool name is Pliers And the quantity is: 3
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Tool name is Drill And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Tool name is Jacksaw And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Material name is Disinfectant And the quantity is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Tool name is Drill And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Material name is Floor Cleaner And the quantity is: 15
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Material name is Disinfectant And the quantity is: 10
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Material name is Trash Bag And the quantity is: 25
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Material name is Floor Cleaner And the quantity is: 15
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 1 Material name is Paper Towel And the quantity is: 15
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Material name is Trash Bag And the quantity is: 25
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Tool name is Hammer And the quantity is: 3
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 1 Material name is Paper Towel And the quantity is: 15
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Tool name is Screw Driver And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Tool name is Hammer And the quantity is: 3
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Tool name is Pliers And the quantity is: 3
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Tool name is Screw Driver And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Tool name is Jacksaw And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Tool name is Pliers And the quantity is: 3
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Tool name is Drill And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Tool name is Jacksaw And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Material name is Disinfectant And the quantity is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Tool name is Drill And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Material name is Floor Cleaner And the quantity is: 15
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Material name is Disinfectant And the quantity is: 10
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Material name is Trash Bag And the quantity is: 25
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Material name is Floor Cleaner And the quantity is: 15
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 2 Material name is Paper Towel And the quantity is: 15
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Material name is Trash Bag And the quantity is: 25
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Tool name is Hammer And the quantity is: 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 2 Material name is Paper Towel And the quantity is: 15
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Tool name is Drill And the quantity is: 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Tool name is Hammer And the quantity is: 1
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Tool name is Screw Driver And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Tool name is Drill And the quantity is: 1
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Material name is Nails And the quantity is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Tool name is Screw Driver And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Material name is Screws And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Material name is Nails And the quantity is: 10
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 3 Material name is Sand Cloth And the quantity is: 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Material name is Screws And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 4 Tool name is Hammer And the quantity is: 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 3 Material name is Sand Cloth And the quantity is: 1
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 4 Tool name is Jacksaw And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 4 Tool name is Hammer And the quantity is: 1
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 4 Material name is Nails And the quantity is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 4 Tool name is Jacksaw And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 4 Material name is Screws And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 4 Material name is Nails And the quantity is: 10
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 5 Tool name is Hammer And the quantity is: 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 4 Material name is Screws And the quantity is: 5
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 5 Tool name is Screw Driver And the quantity is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 5 Tool name is Hammer And the quantity is: 1
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 5 Material name is Nails And the quantity is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 5 Tool name is Screw Driver And the quantity is: 2
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: The 5 Material name is Screws And the quantity is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 5 Material name is Nails And the quantity is: 10
 
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: [Repair Material Information for Asset Content: TV
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails The 5 Material name is Screws And the quantity is: 5
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails [Repair Material Information for Asset Content: TV
 Material Name = Glass Cleaner, Tool Quantity is: 2
 Material Name = Trash Bag, Tool Quantity is: 2
 Material Name = Paper Towel, Tool Quantity is: 20
@@ -345,8 +240,7 @@ Material Name = Screws, Tool Quantity is: 5
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
 ]
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: [Repair Tool Information for Asset Content: TV
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails [Repair Tool Information for Asset Content: TV
 Tool Name = Hammer, Tool Quantity is: 2
 Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Pliers, Tool Quantity is: 2
@@ -373,5 +267,304 @@ Tool Name = Jacksaw, Tool Quantity is: 2
 Tool Name = Hammer, Tool Quantity is: 1
 Tool Name = Screw Driver, Tool Quantity is: 2
 ]
-Jan 03, 2015 4:18:08 AM spl.ass3.Parser parseAssetContentsRepairDetails
-INFO: Finished parsing AssetContentsRepairDetails.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets 
+
+Parsing Assets.xml
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 1
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Apartment
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 4
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 4.0,2.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 100
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
+ for Asset Asset 1 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
+ for Asset Asset 1 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
+ for Asset Asset 1 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
+ for Asset Asset 1 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+ for Asset Asset 1 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 1
+Is of type: Apartment.
+Located in the location 4.0,2.0.
+It's Status is: 0
+It's cost Per night is: 100.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Loft
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 2.0,4.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 30
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+ for Asset Asset 2 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
+ for Asset Asset 2 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+ for Asset Asset 2 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 2
+Is of type: Loft.
+Located in the location 2.0,4.0.
+It's Status is: 0
+It's cost Per night is: 30.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 3
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Apartment
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 2
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 5.0,1.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 25
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 1.0
+ for Asset Asset 3 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 2.0
+ for Asset Asset 3 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 3
+Is of type: Apartment.
+Located in the location 5.0,1.0.
+It's Status is: 0
+It's cost Per night is: 25.0
+it's size is : 2
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 2.0
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 4
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Hut
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 4
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 0.0,5.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 50
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+ for Asset Asset 4 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+ for Asset Asset 4 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+ for Asset Asset 4 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+ for Asset Asset 4 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+ for Asset Asset 4 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 4
+Is of type: Hut.
+Located in the location 0.0,5.0.
+It's Status is: 0
+It's cost Per night is: 50.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 5
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Cottage
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 2.0,6.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 120
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+ for Asset Asset 5 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
+ for Asset Asset 5 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
+ for Asset Asset 5 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
+ for Asset Asset 5 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+ for Asset Asset 5 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 5
+Is of type: Cottage.
+Located in the location 2.0,6.0.
+It's Status is: 0
+It's cost Per night is: 120.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Name is: Asset 6
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Type is: Villa
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Size is: 10
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Location is: 0.0,1.0
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Cost Per Night is: 110
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+ for Asset Asset 6 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+ for Asset Asset 6 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+ for Asset Asset 6 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+ for Asset Asset 6 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Asset Content Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+ for Asset Asset 6 was created.
+
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Final Asset is: The Asset: Asset 6
+Is of type: Villa.
+Located in the location 0.0,1.0.
+It's Status is: 0
+It's cost Per night is: 110.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets The Assetes we are going to put in managment are: [The Asset: Asset 1
+Is of type: Apartment.
+Located in the location 4.0,2.0.
+It's Status is: 0
+It's cost Per night is: 100.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+], The Asset: Asset 2
+Is of type: Loft.
+Located in the location 2.0,4.0.
+It's Status is: 0
+It's cost Per night is: 30.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+], The Asset: Asset 3
+Is of type: Apartment.
+Located in the location 5.0,1.0.
+It's Status is: 0
+It's cost Per night is: 25.0
+it's size is : 2
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 2.0
+], The Asset: Asset 4
+Is of type: Hut.
+Located in the location 0.0,5.0.
+It's Status is: 0
+It's cost Per night is: 50.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+], The Asset: Asset 5
+Is of type: Cottage.
+Located in the location 2.0,6.0.
+It's Status is: 0
+It's cost Per night is: 120.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+], The Asset: Asset 6
+Is of type: Villa.
+Located in the location 0.0,1.0.
+It's Status is: 0
+It's cost Per night is: 110.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+]]
+2015-01-03 13:16:00 INFO spl.ass3.Parser parseAssets Lets check that the Assets got into managment ok...
+ [The Asset: Asset 1
+Is of type: Apartment.
+Located in the location 4.0,2.0.
+It's Status is: 0
+It's cost Per night is: 100.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+], The Asset: Asset 2
+Is of type: Loft.
+Located in the location 2.0,4.0.
+It's Status is: 0
+It's cost Per night is: 30.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+], The Asset: Asset 3
+Is of type: Apartment.
+Located in the location 5.0,1.0.
+It's Status is: 0
+It's cost Per night is: 25.0
+it's size is : 2
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 2.0
+], The Asset: Asset 4
+Is of type: Hut.
+Located in the location 0.0,5.0.
+It's Status is: 0
+It's cost Per night is: 50.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+], The Asset: Asset 5
+Is of type: Cottage.
+Located in the location 2.0,6.0.
+It's Status is: 0
+It's cost Per night is: 120.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+], The Asset: Asset 6
+Is of type: Villa.
+Located in the location 0.0,1.0.
+It's Status is: 0
+It's cost Per night is: 110.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+]]

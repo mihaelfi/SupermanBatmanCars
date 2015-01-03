@@ -34,6 +34,10 @@ public class Managment {
 		this.repairMaterialInformationCollection.add(repairMaterialInformationToAdd);
 	}
 	
+	public void addAssets(Assets assetsToAdd){
+		this.assets = assetsToAdd;
+	}
+	
 	
 	public String warhouseClerkDetailsToString(){
 		String ans = "Printing clerk Details in warehouse ...\n";
@@ -42,6 +46,12 @@ public class Managment {
 		}
 		return ans;
 	}
+	
+	public String assetsToString(){
+		return this.assets.toString();
+	}
+	
+	
 	
 
 }
