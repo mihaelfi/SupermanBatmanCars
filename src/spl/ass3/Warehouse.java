@@ -33,7 +33,6 @@ public class Warehouse implements WarehouseInterface {
 	@Override
 	public void insertToolFromParsing(RepairTool toolToInsert) {
 		this.repairTools.put(toolToInsert.getToolName(), toolToInsert);
-		Driver.LOGGER.info("Added " + toolToInsert.getToolName() + " Tool to warehouse.");
 	}
 	
 	/* (non-Javadoc)
@@ -42,7 +41,6 @@ public class Warehouse implements WarehouseInterface {
 	@Override
 	public void insertMaterialFromParsing(RepairMaterial materialToInsert) {
 		this.repairMaterials.put(materialToInsert.getMaterialName(), materialToInsert);
-		Driver.LOGGER.info("Added " + materialToInsert.getMaterialName() + " Tool to warehouse.");
 		
 	}
 	
@@ -109,6 +107,12 @@ public class Warehouse implements WarehouseInterface {
 			Map.Entry pairs = (Map.Entry)it.next();
 			ans = ans + "\n The number of " + pairs.getKey() + " in the warehouse is: " + ((RepairMaterial)pairs.getValue()).getNumberOfMaterialInWarehouse();
 		}
+		return ans;
+	}
+	
+	public String toString(){
+		String ans = "The contents of the Warehouse are:\n";
+		ans = ans + this.warehouseToolstoString() + this.warehouseMaterialsstoString();
 		return ans;
 	}
 	

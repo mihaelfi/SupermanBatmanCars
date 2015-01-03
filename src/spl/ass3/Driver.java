@@ -54,7 +54,22 @@ public class Driver {
 			Parser.parseIntialData(INITIAL_DATA_FILENAME, managment);
 			Parser.parseAssetContentsRepairDetails(ASSET_CONTENTS_REPAIR_DETAILS_FILENAME, managment);
 			Parser.parseAssets(ASSETS_FILENAME, managment);
+			Parser.parseCustomerGroups(CUSTOMER_GROUPS_FILENAME, managment);
 			
+			LOGGER.info("Finish Parsing All Files! \n\n\n\n");
+			
+			LOGGER.info("Testing the parsing...");
+			LOGGER.info("Printing Clerk Details:\n" + managment.clerkDetailsToString());
+			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.info("Printing Customer Groups Details:\n" + managment.customerGroupDetailsToString());
+			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.info("Printing Assets Details:\n" + managment.assetsToString());
+			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.info("Printing Warehouse content:\n" + managment.warehouseToString());
+			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.info("Printing Repair Tool Information:\n" + managment.repairToolInformationToString());
+			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.info("Printing Repair Material Information:\n" + managment.repairMaterialInformationToString());
 			
 		}
 		

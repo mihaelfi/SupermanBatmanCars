@@ -13,13 +13,13 @@ public class Asset {
 	// List of Content of the asset
 	protected ArrayList<AssetContent> assetContents;
 	// One of 3 different options, 1 = available, 2= booked , 3 = occupied , 4 = unavailable.
-	protected int status;
+	protected String status;
 	protected double costPerNight;
 	protected int size;
 	
 	
 	
-	public Asset(String name, String type, Location location,ArrayList<AssetContent> assetContents, int status,double costPerNight, int size) {
+	public Asset(String name, String type, Location location,ArrayList<AssetContent> assetContents, String status,double costPerNight, int size) {
 		this.name = name;
 		this.type = type;
 		this.location = location;

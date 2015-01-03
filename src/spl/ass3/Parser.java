@@ -61,7 +61,7 @@ public class Parser {
 				String toolNameString = toolName.item(0).getTextContent();
 				NodeList toolQuantity = tools.getElementsByTagName("Quantity");
 				String toolQuantityString = toolQuantity.item(0).getTextContent();
-				Driver.LOGGER.info("The " + i + " Tool name is " + toolNameString + " And the quantity is: " + toolQuantityString + "\n");
+				Driver.LOGGER.fine("The " + i + " Tool name is " + toolNameString + " And the quantity is: " + toolQuantityString + "\n");
 				
 				int toolQuantityInt = Integer.parseInt(toolQuantityString);
 				
@@ -73,7 +73,7 @@ public class Parser {
 				
 			}
 			
-			Driver.LOGGER.info(managment.warehouse.warehouseToolstoString());
+			Driver.LOGGER.fine(managment.warehouse.warehouseToolstoString());
 			
 			Driver.LOGGER.info("Finished parsing tools.");
 			
@@ -86,7 +86,7 @@ public class Parser {
 				String materialNameString = materialName.item(0).getTextContent();
 				NodeList materialQuantity = materials.getElementsByTagName("Quantity");
 				String materialQuantityString = materialQuantity.item(0).getTextContent();
-				Driver.LOGGER.info("The " + i + " Tool name is " + materialNameString + " And the quantity is: " + materialQuantityString + "\n");
+				Driver.LOGGER.fine("The " + i + " Tool name is " + materialNameString + " And the quantity is: " + materialQuantityString + "\n");
 				
 				int materialQuantityInt = Integer.parseInt(materialQuantityString);
 				
@@ -98,7 +98,7 @@ public class Parser {
 				
 			}
 			
-			Driver.LOGGER.info(managment.warehouse.warehouseMaterialsstoString());
+			Driver.LOGGER.fine(managment.warehouse.warehouseMaterialsstoString());
 			Driver.LOGGER.info("Finished parsing materials.");
 			
 			Driver.LOGGER.info("Starting to parse clerks:");
@@ -119,13 +119,13 @@ public class Parser {
 	            
 //	            RunnableClerk runnableClerk = new RunnableClerk(clerkDetails,  new ArrayList<RentalRequest>() , -1);
 	            
-	            Driver.LOGGER.info("Creating clerk: " + clerkDetails.toString());
+	            Driver.LOGGER.fine("Creating clerk: " + clerkDetails.toString());
 	            
 	            managment.addClerkDetails(clerkDetails);
 	            
-	            Driver.LOGGER.info(managment.warhouseClerkDetailsToString());
+	            Driver.LOGGER.fine(managment.clerkDetailsToString());
 	            
-	            Driver.LOGGER.info("Finished parsing " + intitialDataFilename);
+	            Driver.LOGGER.fine("Finished parsing " + intitialDataFilename);
 				
 			}
 			
@@ -162,7 +162,7 @@ public class Parser {
 					String toolNameString = toolName.item(0).getTextContent();
 					NodeList toolQuantity = tools.getElementsByTagName("Quantity");
 					String toolQuantityString = toolQuantity.item(0).getTextContent();
-					Driver.LOGGER.info("The " + i + " Tool name is " + toolNameString + " And the quantity is: " + toolQuantityString + "\n");
+					Driver.LOGGER.fine("The " + i + " Tool name is " + toolNameString + " And the quantity is: " + toolQuantityString + "\n");
 					
 					int toolQuantityInt = Integer.parseInt(toolQuantityString);
 					
@@ -179,7 +179,7 @@ public class Parser {
 					String materialNameString = materialName.item(0).getTextContent();
 					NodeList materialQuantity = materials.getElementsByTagName("Quantity");
 					String materialQuantityString = materialQuantity.item(0).getTextContent();
-					Driver.LOGGER.info("The " + i + " Material name is " + materialNameString + " And the quantity is: " + materialQuantityString + "\n");
+					Driver.LOGGER.fine("The " + i + " Material name is " + materialNameString + " And the quantity is: " + materialQuantityString + "\n");
 					
 					int materialQuantityInt = Integer.parseInt(materialQuantityString);
 					
@@ -193,8 +193,8 @@ public class Parser {
 				managment.addRepairMaterialInformation(repairMaterialInformation);
 			}
 			
-				Driver.LOGGER.info(managment.repairMaterialInformationCollection.toString());
-				Driver.LOGGER.info(managment.repairToolInformationCollection.toString());
+				Driver.LOGGER.fine(managment.repairMaterialInformationCollection.toString());
+				Driver.LOGGER.fine(managment.repairToolInformationCollection.toString());
 	            Driver.LOGGER.info("Finished parsing " + assetContentsRepairDetailsFilename);
 			
 		} catch (SAXException e) {
@@ -219,17 +219,17 @@ public class Parser {
 				Element asset = (Element) assetList.item(i);
 				NodeList assetName = asset.getElementsByTagName("Name");
 				String assetNameString = assetName.item(0).getTextContent();
-				Driver.LOGGER.info("Asset Name is: " + assetNameString);
+				Driver.LOGGER.fine("Asset Name is: " + assetNameString);
 				
 				NodeList assetType = asset.getElementsByTagName("Type");
 				String assetTypeString = assetType.item(0).getTextContent();
 				
-				Driver.LOGGER.info("Asset Type is: " + assetTypeString);
+				Driver.LOGGER.fine("Asset Type is: " + assetTypeString);
 				
 				NodeList assetSize = asset.getElementsByTagName("Size");
 				int assetSizeInt = Integer.parseInt(assetSize.item(0).getTextContent());
 				
-				Driver.LOGGER.info("Asset Size is: " + assetSizeInt);
+				Driver.LOGGER.fine("Asset Size is: " + assetSizeInt);
 				
 				
 				NodeList assetLocation = asset.getElementsByTagName("Location");
@@ -240,46 +240,46 @@ public class Parser {
 	            
 	            Location assetLoactionObject = new Location(assetLocationX, assetLocationY);
 	            
-	            Driver.LOGGER.info("Asset Location is: " + assetLoactionObject.toString());
+	            Driver.LOGGER.fine("Asset Location is: " + assetLoactionObject.toString());
 	            
 	            NodeList assetCostPerNight = asset.getElementsByTagName("CostPerNight");
 				int assetCostPerNightInt = Integer.parseInt(assetCostPerNight.item(0).getTextContent());
 				
-				Driver.LOGGER.info("Asset Cost Per Night is: " + assetCostPerNightInt);
+				Driver.LOGGER.fine("Asset Cost Per Night is: " + assetCostPerNightInt);
 				
 				
-			NodeList assetContents = asset.getElementsByTagName("AssetContent");
-			for (int j = 0 ; j < assetContents.getLength() ; j++){
-				
-				
-				
-				Element assetContent = (Element) assetContents.item(j);
-				NodeList assetContentName = assetContent.getElementsByTagName("Name");
-				String assetContentNameString = assetContentName.item(0).getTextContent();
-				
-				NodeList assetContentRepairMultiplier = assetContent.getElementsByTagName("RepairMultiplier");
-				double assetContentRepairMultiplierInt = Double.parseDouble(assetContentRepairMultiplier.item(0).getTextContent());
-				
-				AssetContent tempAssetContent = new AssetContent(assetContentNameString, 100, assetContentRepairMultiplierInt);
-				Driver.LOGGER.info("Asset Content "+ tempAssetContent.toString() + " for Asset " + assetNameString + " was created.\n");
-				assetContentArrayList.add(tempAssetContent);
+				NodeList assetContents = asset.getElementsByTagName("AssetContent");
+					for (int j = 0 ; j < assetContents.getLength() ; j++){
+					
+					
+					
+					Element assetContent = (Element) assetContents.item(j);
+					NodeList assetContentName = assetContent.getElementsByTagName("Name");
+					String assetContentNameString = assetContentName.item(0).getTextContent();
+					
+					NodeList assetContentRepairMultiplier = assetContent.getElementsByTagName("RepairMultiplier");
+					double assetContentRepairMultiplierInt = Double.parseDouble(assetContentRepairMultiplier.item(0).getTextContent());
+					
+					AssetContent tempAssetContent = new AssetContent(assetContentNameString, 100, assetContentRepairMultiplierInt);
+					Driver.LOGGER.fine("Asset Content "+ tempAssetContent.toString() + " for Asset " + assetNameString + " was created.\n");
+					assetContentArrayList.add(tempAssetContent);
 				
 				
 				
 			}
 			
-			Asset tempAsset = new Asset(assetNameString, assetTypeString, assetLoactionObject, new ArrayList<AssetContent>(assetContentArrayList) , 0,assetCostPerNightInt , assetSizeInt);
+			Asset tempAsset = new Asset(assetNameString, assetTypeString, assetLoactionObject, new ArrayList<AssetContent>(assetContentArrayList) ,"AVAILABLE",assetCostPerNightInt , assetSizeInt);
 			
-			Driver.LOGGER.info("The Final Asset is: " + tempAsset.toString());
+			Driver.LOGGER.fine("The Final Asset is: " + tempAsset.toString());
 			
 			assetsToPutInManagment.addAsset(tempAsset);
 			assetContentArrayList.clear();
 				
 			}
 			
-			Driver.LOGGER.info("The Assetes we are going to put in managment are: " + assetsToPutInManagment.toString());
+			Driver.LOGGER.fine("The Assetes we are going to put in managment are: " + assetsToPutInManagment.toString());
 			managment.addAssets(assetsToPutInManagment);
-			Driver.LOGGER.info("Lets check that the Assets got into managment ok...\n " + managment.assetsToString());
+			Driver.LOGGER.fine("Lets check that the Assets got into managment ok...\n " + managment.assetsToString());
 				
 			
 		} catch (SAXException e) {
@@ -291,5 +291,101 @@ public class Parser {
 		}
 		
 	}
+	
+
+public static void parseCustomerGroups (String CUSTOMER_GROUPS_FILENAME, Managment managment){
+		
+		Driver.LOGGER.info("\n\nParsing " + CUSTOMER_GROUPS_FILENAME);
+		ArrayList<RentalRequest> rentalRequestCollection = new ArrayList<RentalRequest>() ;
+		ArrayList<Customer> customerCollection = new ArrayList<Customer>();
+		String customerGroupDetailGroupManagerNameString;
+		
+		try {
+			Document doc = builder.parse(CUSTOMER_GROUPS_FILENAME);
+			Element DocElements = (Element) doc.getDocumentElement();
+			NodeList customerGroupDetailsList = DocElements.getElementsByTagName("CustomerGroupDetails");
+			for (int i = 0 ; i < customerGroupDetailsList.getLength(); i++){
+				Element customerGroupDetail = (Element) customerGroupDetailsList.item(i);
+				NodeList customerGroupDetailGroupManagerName = customerGroupDetail.getElementsByTagName("GroupManagerName");
+				customerGroupDetailGroupManagerNameString = customerGroupDetailGroupManagerName.item(0).getTextContent();
+				Driver.LOGGER.fine("Customer Group Manager Name is: " + customerGroupDetailGroupManagerNameString);
+				
+				NodeList customerList = customerGroupDetail.getElementsByTagName("Customer");
+				NodeList rentalRequestsList = customerGroupDetail.getElementsByTagName("Request");
+				for (int j = 0 ; j < customerList.getLength() ; j++ ){
+					Element customer = (Element) customerList.item(j);
+					NodeList customerName = customer.getElementsByTagName("Name");
+					String customerNameString = customerName.item(0).getTextContent();
+					Driver.LOGGER.fine("Customer Name is: " + customerNameString);
+					
+					NodeList customerVandalism = customer.getElementsByTagName("Vandalism");
+					String customerVandalismString = customerVandalism.item(0).getTextContent();
+					Driver.LOGGER.fine("Customer Vandalism type is: " + customerVandalismString);
+					
+					NodeList customerMinimumDamage = customer.getElementsByTagName("MinimumDamage");
+					int customerMinimumDamageInt = Integer.parseInt(customerMinimumDamage.item(0).getTextContent());
+					Driver.LOGGER.fine("Customer MinimumDamage is: " + customerMinimumDamageInt);
+					
+					NodeList customerMaximumDamage = customer.getElementsByTagName("MaximumDamage");
+					int customerMaximumDamageInt = Integer.parseInt(customerMaximumDamage.item(0).getTextContent());
+					Driver.LOGGER.fine("Customer Maximum Damage is: " + customerMaximumDamageInt);
+					
+					Customer tempCustomer = new Customer(customerNameString, customerVandalismString, customerMinimumDamageInt, customerMaximumDamageInt);
+					Driver.LOGGER.fine("The Customer created is:\n" + tempCustomer.toString());
+					
+					
+					customerCollection.add(tempCustomer);
+				}
+				
+//				NodeList clerkLocationList = clerks.getElementsByTagName("Location");
+//	            Element clerkLocationElement = (Element) clerkLocationList.item(0);
+//	            int x = Integer.parseInt(clerkLocationElement.getAttribute("x"));
+//	            int y = Integer.parseInt(clerkLocationElement.getAttribute("y"));
+//	            
+				
+				for (int j = 0 ; j < rentalRequestsList.getLength() ; j++){
+					Element rentalRequest = (Element) rentalRequestsList.item(j);
+					
+					int id = Integer.parseInt(rentalRequest.getAttribute("id"));
+					
+					NodeList rentalRequestType = rentalRequest.getElementsByTagName("Type");
+					String rentalRequestTypeString = rentalRequestType.item(0).getTextContent();
+					Driver.LOGGER.fine("Rental request type is: " + rentalRequestTypeString);
+					
+					NodeList rentalRequestSize = rentalRequest.getElementsByTagName("Size");
+					int rentalRequestSizeInt = Integer.parseInt(rentalRequestSize.item(0).getTextContent());
+					Driver.LOGGER.fine("Rental request size of asset is: " + rentalRequestSize);
+					
+					NodeList rentalRequestDuration = rentalRequest.getElementsByTagName("Duration");
+					int rentalRequestDurationInt = Integer.parseInt(rentalRequestDuration.item(0).getTextContent());
+					Driver.LOGGER.fine("Rental request duration is: " + rentalRequestDuration);
+					
+					
+					RentalRequest tempRentalRequest = new RentalRequest(id, rentalRequestTypeString, rentalRequestSizeInt, rentalRequestDurationInt, "INCOMPLETE");
+					
+					Driver.LOGGER.fine("Rental request created is: " + tempRentalRequest.toString());
+					
+					rentalRequestCollection.add(tempRentalRequest);
+				}
+				
+				CustomerGroupDetails customerGroupDetailsToManagment = new CustomerGroupDetails(new ArrayList<RentalRequest>(rentalRequestCollection),new ArrayList<Customer> (customerCollection), customerGroupDetailGroupManagerNameString);
+				Driver.LOGGER.fine("The Customer Group Details are: " + customerGroupDetailsToManagment.toString());
+				managment.addCustomerGroupDetailsToCollection(customerGroupDetailsToManagment);
+			}
+			
+			
+			
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+	
 
 }

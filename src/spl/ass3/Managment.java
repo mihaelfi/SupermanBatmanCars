@@ -18,12 +18,12 @@ public class Managment {
 		this.clerkDetailsCollection = new ArrayList<ClerkDetails>();
 		this.repairMaterialInformationCollection = new ArrayList<RepairMaterialInformation>();
 		this.repairToolInformationCollection = new ArrayList<RepairToolInformation>();
+		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		
 	}
 	
 	public void addClerkDetails(ClerkDetails clerkDetailsToAdd){
 		this.clerkDetailsCollection.add(clerkDetailsToAdd);
-		Driver.LOGGER.info("Clerk Added.");
 	}
 	
 	public void addRepairToolInformation (RepairToolInformation repairToolInformationToAdd){
@@ -38,8 +38,12 @@ public class Managment {
 		this.assets = assetsToAdd;
 	}
 	
+	public void addCustomerGroupDetailsToCollection(CustomerGroupDetails customerGroupDetailsToAdd){
+		this.customerGroupDetailsCollection.add(customerGroupDetailsToAdd);
+	}
 	
-	public String warhouseClerkDetailsToString(){
+	
+	public String clerkDetailsToString(){
 		String ans = "Printing clerk Details in warehouse ...\n";
 		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i++){
 			ans = ans + this.clerkDetailsCollection.get(i).toString() + "\n";
@@ -49,6 +53,22 @@ public class Managment {
 	
 	public String assetsToString(){
 		return this.assets.toString();
+	}
+	
+	public String customerGroupDetailsToString(){
+		return this.customerGroupDetailsCollection.toString();
+	}
+	
+	public String warehouseToString(){
+		return this.warehouse.toString();
+	}
+	
+	public String repairToolInformationToString(){
+		return this.repairToolInformationCollection.toString();
+	}
+	
+	public String repairMaterialInformationToString(){
+		return this.repairMaterialInformationCollection.toString();
 	}
 	
 	
