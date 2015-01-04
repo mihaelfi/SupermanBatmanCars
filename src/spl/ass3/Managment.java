@@ -10,6 +10,7 @@ public class Managment {
 	public    Warehouse warehouse;
 	public 	  ArrayList<RepairToolInformation> repairToolInformationCollection;
 	public 	  ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
+	protected ArrayList<RentalRequest> rentalRequestCollection;
 	
 	
 	
@@ -70,6 +71,9 @@ public class Managment {
 	public String repairMaterialInformationToString(){
 		return this.repairMaterialInformationCollection.toString();
 	}
+	
+	
+	
 	
 	
 	

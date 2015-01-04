@@ -1,8 +1,276 @@
-Jan 02, 2015 7:48:50 PM spl.ass3.Driver main
-INFO: 
+2015-01-04 18:34:09 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
-CustomerGroups.xml
+CustomersGroups.xml
 
+2015-01-04 18:34:09 INFO spl.ass3.Parser parseIntialData 
+
+Strting to Parse InitialData.xml
+
+2015-01-04 18:34:09 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
+
+Parsing AssetContentsRepairDetails.xml
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseAssets 
+
+Parsing Assets.xml
+2015-01-04 18:34:10 INFO spl.ass3.Parser parseCustomerGroups 
+
+Parsing CustomersGroups.xml
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Finish Parsing All Files! 
+
+
+
+
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Testing the parsing...
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Clerk Details:
+Printing clerk Details in warehouse ...
+Name: Ken Harush Location: 3.0,3.0
+Name: Paula Bitton Location: 3.0,3.0
+Name: Wolfgang Eisenkott Location: 3.0,3.0
+Name: Paula Die Location: 3.0,3.0
+
+2015-01-04 18:34:10 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Customer Groups Details:
+[CustomerGroupDetails Details: 
+rentalRequestCollection=[RentalRequest id is =1
+assetType=Apartment
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE, RentalRequest id is =3
+assetType=Cottage
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =4
+assetType=Villa
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE]
+customerCollection=[Customer name=Andrei
+vandalismType=Arbitrary
+minimumDamage=0
+maximumDamage=3, Customer name=Ran
+vandalismType=Fixed
+minimumDamage=1
+maximumDamage=5, Customer name=Majeed
+vandalismType=None
+minimumDamage=0
+maximumDamage=0, Customer name=Boaz
+vandalismType=Arbitrary
+minimumDamage=2
+maximumDamage=4]
+groupManagerName=Andrei, CustomerGroupDetails Details: 
+rentalRequestCollection=[RentalRequest id is =1
+assetType=Apartment
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE, RentalRequest id is =3
+assetType=Cottage
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =4
+assetType=Villa
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =5
+assetType=Hut
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE, RentalRequest id is =6
+assetType=Apartment
+assetSize=4
+durationOfStay=10
+requestStatus=INCOMPLETE, RentalRequest id is =7
+assetType=Apartment
+assetSize=4
+durationOfStay=6
+requestStatus=INCOMPLETE]
+customerCollection=[Customer name=Andrei
+vandalismType=Arbitrary
+minimumDamage=0
+maximumDamage=3, Customer name=Ran
+vandalismType=Fixed
+minimumDamage=1
+maximumDamage=5, Customer name=Majeed
+vandalismType=None
+minimumDamage=0
+maximumDamage=0, Customer name=Boaz
+vandalismType=Arbitrary
+minimumDamage=2
+maximumDamage=4, Customer name=Meni
+vandalismType=Fixed
+minimumDamage=1
+maximumDamage=3, Customer name=Tal
+vandalismType=Fixed
+minimumDamage=4
+maximumDamage=6, Customer name=Matan
+vandalismType=None
+minimumDamage=2
+maximumDamage=8, Customer name=Adiel
+vandalismType=Arbitrary
+minimumDamage=1
+maximumDamage=6]
+groupManagerName=Meni]
+2015-01-04 18:34:10 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Assets Details:
+[The Asset: Asset 1
+Is of type: Apartment.
+Located in the location 4.0,2.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 100.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+], The Asset: Asset 2
+Is of type: Loft.
+Located in the location 2.0,4.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 30.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+], The Asset: Asset 3
+Is of type: Apartment.
+Located in the location 5.0,1.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 25.0
+it's size is : 2
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 2.0
+], The Asset: Asset 4
+Is of type: Hut.
+Located in the location 0.0,5.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 50.0
+it's size is : 4
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+], The Asset: Asset 5
+Is of type: Cottage.
+Located in the location 2.0,6.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 120.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+], The Asset: Asset 6
+Is of type: Villa.
+Located in the location 0.0,1.0.
+It's Status is: AVAILABLE
+It's cost Per night is: 110.0
+it's size is : 10
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+]]
+2015-01-04 18:34:10 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Warehouse content:
+The contents of the Warehouse are:
+Printing warehouse tools content: 
+
+ The number of Knife in the warehouse is: 5
+ The number of Jacksaw in the warehouse is: 4
+ The number of Adjustable Spanner in the warehouse is: 5
+ The number of Drill in the warehouse is: 7
+ The number of Vacuum Cleaner in the warehouse is: 3
+ The number of Screw Driver in the warehouse is: 5
+ The number of Pliers in the warehouse is: 5
+ The number of Jackhammer in the warehouse is: 2
+ The number of Hammer in the warehouse is: 5Printing warehouse material content: 
+
+ The number of Trash Bag in the warehouse is: 2500
+ The number of Glass Cleaner in the warehouse is: 1500
+ The number of Carpet Cleaner in the warehouse is: 5000
+ The number of Disinfectant in the warehouse is: 1500
+ The number of Cleaning Pads in the warehouse is: 2500
+ The number of Floor Cleaner in the warehouse is: 1500
+ The number of Kitchen Cleaner in the warehouse is: 2000
+ The number of Screws in the warehouse is: 5000
+ The number of Sand Cloth in the warehouse is: 2500
+ The number of Bathroom Cleaner in the warehouse is: 150
+ The number of Paper Towel in the warehouse is: 1500
+ The number of Nails in the warehouse is: 5000
+ The number of Laundry Cleaner in the warehouse is: 2500
+2015-01-04 18:34:10 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Repair Tool Information:
+[Repair Tool Information for Asset Content: TV
+Tool Name = Hammer, Tool Quantity is: 2
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 2
+, Repair Tool Information for Asset Content: Bed
+Tool Name = Hammer, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 3
+Tool Name = Jacksaw, Tool Quantity is: 2
+Tool Name = Drill, Tool Quantity is: 5
+, Repair Tool Information for Asset Content: Desk
+Tool Name = Hammer, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 3
+Tool Name = Jacksaw, Tool Quantity is: 2
+Tool Name = Drill, Tool Quantity is: 5
+, Repair Tool Information for Asset Content: Stove
+Tool Name = Hammer, Tool Quantity is: 1
+Tool Name = Drill, Tool Quantity is: 1
+Tool Name = Screw Driver, Tool Quantity is: 2
+, Repair Tool Information for Asset Content: Computer
+Tool Name = Hammer, Tool Quantity is: 1
+Tool Name = Jacksaw, Tool Quantity is: 2
+, Repair Tool Information for Asset Content: Fridge
+Tool Name = Hammer, Tool Quantity is: 1
+Tool Name = Screw Driver, Tool Quantity is: 2
+]
+2015-01-04 18:34:10 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-04 18:34:10 INFO spl.ass3.Driver main Printing Repair Material Information:
+[Repair Material Information for Asset Content: TV
+Material Name = Glass Cleaner, Tool Quantity is: 2
+Material Name = Trash Bag, Tool Quantity is: 2
+Material Name = Paper Towel, Tool Quantity is: 20
+, Repair Material Information for Asset Content: Bed
+Material Name = Disinfectant, Tool Quantity is: 10
+Material Name = Floor Cleaner, Tool Quantity is: 15
+Material Name = Trash Bag, Tool Quantity is: 25
+Material Name = Paper Towel, Tool Quantity is: 15
+, Repair Material Information for Asset Content: Desk
+Material Name = Disinfectant, Tool Quantity is: 10
+Material Name = Floor Cleaner, Tool Quantity is: 15
+Material Name = Trash Bag, Tool Quantity is: 25
+Material Name = Paper Towel, Tool Quantity is: 15
+, Repair Material Information for Asset Content: Stove
+Material Name = Nails, Tool Quantity is: 10
+Material Name = Screws, Tool Quantity is: 5
+Material Name = Sand Cloth, Tool Quantity is: 1
+, Repair Material Information for Asset Content: Computer
+Material Name = Nails, Tool Quantity is: 10
+Material Name = Screws, Tool Quantity is: 5
+, Repair Material Information for Asset Content: Fridge
+Material Name = Nails, Tool Quantity is: 10
+Material Name = Screws, Tool Quantity is: 5
+]
