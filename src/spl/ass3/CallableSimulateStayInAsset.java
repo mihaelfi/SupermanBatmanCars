@@ -22,8 +22,12 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 
 	@Override
 	public Double call() throws Exception {
+		
+		this.currentlyHandeledRentalRequest.getAsset().setStatusOccupied();
+		
 		Driver.LOGGER.info("The Customer " + this.stayingCustomer.getName() + "Is starting it's say in:" + this.currentlyHandeledRentalRequest.getAsset().getName() );
 		Double damageAmount = (double) 0;
+		
 		
 		if (this.stayingCustomer.getVandalismType() == "ARBITRARY"){
 			double diffrentce = this.stayingCustomer.getMaximumDamage() - this.stayingCustomer.getMinimumDamage();
