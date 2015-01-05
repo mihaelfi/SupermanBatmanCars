@@ -33,6 +33,16 @@ public class RepairToolInformation {
 		return ans;
 		
 	}
+
+	public String getNameOfItemToBeRepaired() {
+		return nameOfItemToBeRepaired;
+	}
+
+	public ArrayList<RepairTool> getToolsNeededForRepair() {
+		return toolsNeededForRepair;
+	}
+	
+	
 	
 	
 }

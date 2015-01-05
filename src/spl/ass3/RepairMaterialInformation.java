@@ -33,6 +33,16 @@ public class RepairMaterialInformation {
 		return ans;
 		
 	}
+
+	public String getNameOfItemToBeRepaired() {
+		return nameOfItemToBeRepaired;
+	}
+
+	public ArrayList<RepairMaterial> getMaterialsNeededForRepair() {
+		return materialsNeededForRepair;
+	}
+	
+	
 	
 	
 }

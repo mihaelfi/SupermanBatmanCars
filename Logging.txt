@@ -1,44 +1,44 @@
-2015-01-05 22:31:57 INFO spl.ass3.Driver main 
+2015-01-05 22:57:53 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
 CustomersGroups.xml
 
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData 
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData 
 
 Strting to Parse InitialData.xml
 
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
 
 Parsing AssetContentsRepairDetails.xml
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseAssets 
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseAssets 
 
 Parsing Assets.xml
-2015-01-05 22:31:57 INFO spl.ass3.Parser parseCustomerGroups 
+2015-01-05 22:57:53 INFO spl.ass3.Parser parseCustomerGroups 
 
 Parsing CustomersGroups.xml
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Finish Parsing All Files! 
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Finish Parsing All Files! 
 
 
 
 
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Testing the parsing...
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Clerk Details:
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Testing the parsing...
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Clerk Details:
 Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 Name: Wolfgang Eisenkott Location: 3.0,3.0
 Name: Paula Die Location: 3.0,3.0
 
-2015-01-05 22:31:57 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Customer Groups Details:
+2015-01-05 22:57:53 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Customer Groups Details:
 [CustomerGroupDetails Details: 
 rentalRequestCollection=[RentalRequest id is =1
 assetType=Apartment
@@ -126,8 +126,8 @@ vandalismType=Arbitrary
 minimumDamage=1
 maximumDamage=6]
 groupManagerName=Meni]
-2015-01-05 22:31:57 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Assets Details:
+2015-01-05 22:57:53 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Assets Details:
 [The Asset: Asset 1
 Is of type: Apartment.
 Located in the location 4.0,2.0.
@@ -190,8 +190,8 @@ It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost mult
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
 , Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
 ]]
-2015-01-05 22:31:57 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Warehouse content:
+2015-01-05 22:57:53 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Warehouse content:
 The contents of the Warehouse are:
 Printing warehouse tools content: 
 
@@ -218,59 +218,59 @@ Printing warehouse tools content:
  The number of Paper Towel in the warehouse is: 1500
  The number of Nails in the warehouse is: 5000
  The number of Laundry Cleaner in the warehouse is: 2500
-2015-01-05 22:31:57 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Repair Tool Information:
-[Repair Tool Information for Asset Content: TV
-Tool Name = Hammer, Tool Quantity is: 2
-Tool Name = Screw Driver, Tool Quantity is: 2
-Tool Name = Pliers, Tool Quantity is: 2
-, Repair Tool Information for Asset Content: Bed
-Tool Name = Hammer, Tool Quantity is: 3
-Tool Name = Screw Driver, Tool Quantity is: 2
-Tool Name = Pliers, Tool Quantity is: 3
-Tool Name = Jacksaw, Tool Quantity is: 2
-Tool Name = Drill, Tool Quantity is: 5
-, Repair Tool Information for Asset Content: Desk
-Tool Name = Hammer, Tool Quantity is: 3
-Tool Name = Screw Driver, Tool Quantity is: 2
-Tool Name = Pliers, Tool Quantity is: 3
-Tool Name = Jacksaw, Tool Quantity is: 2
-Tool Name = Drill, Tool Quantity is: 5
-, Repair Tool Information for Asset Content: Stove
+2015-01-05 22:57:53 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Repair Tool Information:
+{Stove=Repair Tool Information for Asset Content: Stove
 Tool Name = Hammer, Tool Quantity is: 1
 Tool Name = Drill, Tool Quantity is: 1
 Tool Name = Screw Driver, Tool Quantity is: 2
-, Repair Tool Information for Asset Content: Computer
-Tool Name = Hammer, Tool Quantity is: 1
+, Desk=Repair Tool Information for Asset Content: Desk
+Tool Name = Hammer, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 3
 Tool Name = Jacksaw, Tool Quantity is: 2
-, Repair Tool Information for Asset Content: Fridge
+Tool Name = Drill, Tool Quantity is: 5
+, Fridge=Repair Tool Information for Asset Content: Fridge
 Tool Name = Hammer, Tool Quantity is: 1
 Tool Name = Screw Driver, Tool Quantity is: 2
-]
-2015-01-05 22:31:57 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-05 22:31:57 INFO spl.ass3.Driver main Printing Repair Material Information:
-[Repair Material Information for Asset Content: TV
-Material Name = Glass Cleaner, Tool Quantity is: 2
-Material Name = Trash Bag, Tool Quantity is: 2
-Material Name = Paper Towel, Tool Quantity is: 20
-, Repair Material Information for Asset Content: Bed
-Material Name = Disinfectant, Tool Quantity is: 10
-Material Name = Floor Cleaner, Tool Quantity is: 15
-Material Name = Trash Bag, Tool Quantity is: 25
-Material Name = Paper Towel, Tool Quantity is: 15
-, Repair Material Information for Asset Content: Desk
-Material Name = Disinfectant, Tool Quantity is: 10
-Material Name = Floor Cleaner, Tool Quantity is: 15
-Material Name = Trash Bag, Tool Quantity is: 25
-Material Name = Paper Towel, Tool Quantity is: 15
-, Repair Material Information for Asset Content: Stove
+, Computer=Repair Tool Information for Asset Content: Computer
+Tool Name = Hammer, Tool Quantity is: 1
+Tool Name = Jacksaw, Tool Quantity is: 2
+, Bed=Repair Tool Information for Asset Content: Bed
+Tool Name = Hammer, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 3
+Tool Name = Jacksaw, Tool Quantity is: 2
+Tool Name = Drill, Tool Quantity is: 5
+, TV=Repair Tool Information for Asset Content: TV
+Tool Name = Hammer, Tool Quantity is: 2
+Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Pliers, Tool Quantity is: 2
+}
+2015-01-05 22:57:53 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-05 22:57:53 INFO spl.ass3.Driver main Printing Repair Material Information:
+{Stove=Repair Material Information for Asset Content: Stove
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
 Material Name = Sand Cloth, Tool Quantity is: 1
-, Repair Material Information for Asset Content: Computer
+, Desk=Repair Material Information for Asset Content: Desk
+Material Name = Disinfectant, Tool Quantity is: 10
+Material Name = Floor Cleaner, Tool Quantity is: 15
+Material Name = Trash Bag, Tool Quantity is: 25
+Material Name = Paper Towel, Tool Quantity is: 15
+, Fridge=Repair Material Information for Asset Content: Fridge
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
-, Repair Material Information for Asset Content: Fridge
+, Computer=Repair Material Information for Asset Content: Computer
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
-]
+, Bed=Repair Material Information for Asset Content: Bed
+Material Name = Disinfectant, Tool Quantity is: 10
+Material Name = Floor Cleaner, Tool Quantity is: 15
+Material Name = Trash Bag, Tool Quantity is: 25
+Material Name = Paper Towel, Tool Quantity is: 15
+, TV=Repair Material Information for Asset Content: TV
+Material Name = Glass Cleaner, Tool Quantity is: 2
+Material Name = Trash Bag, Tool Quantity is: 2
+Material Name = Paper Towel, Tool Quantity is: 20
+}

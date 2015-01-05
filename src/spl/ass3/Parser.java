@@ -67,13 +67,13 @@ public class Parser {
 				
 				RepairTool toolToInsert = new RepairTool(toolNameString, toolQuantityInt);
 				
-				managment.warehouse.insertToolFromParsing(toolToInsert);
+				managment.getWarehouse().insertToolFromParsing(toolToInsert);
 				
 				
 				
 			}
 			
-			Driver.LOGGER.fine(managment.warehouse.warehouseToolstoString());
+			Driver.LOGGER.fine(managment.getWarehouse().warehouseToolstoString());
 			
 			Driver.LOGGER.info("Finished parsing tools.");
 			
@@ -92,13 +92,13 @@ public class Parser {
 				
 				RepairMaterial materialToInsert = new RepairMaterial(materialNameString, materialQuantityInt);
 				
-				managment.warehouse.insertMaterialFromParsing(materialToInsert);
+				managment.getWarehouse().insertMaterialFromParsing(materialToInsert);
 				
 				
 				
 			}
 			
-			Driver.LOGGER.fine(managment.warehouse.warehouseMaterialsstoString());
+			Driver.LOGGER.fine(managment.getWarehouse().warehouseMaterialsstoString());
 			Driver.LOGGER.info("Finished parsing materials.");
 			
 			Driver.LOGGER.info("Starting to parse clerks:");
@@ -193,8 +193,8 @@ public class Parser {
 				managment.addRepairMaterialInformation(repairMaterialInformation);
 			}
 			
-				Driver.LOGGER.fine(managment.repairMaterialInformationCollection.toString());
-				Driver.LOGGER.fine(managment.repairToolInformationCollection.toString());
+				Driver.LOGGER.fine(managment.getRepairMaterialInformationCollection().toString());
+				Driver.LOGGER.fine(managment.getRepairToolInformationCollection().toString());
 	            Driver.LOGGER.info("Finished parsing " + assetContentsRepairDetailsFilename);
 			
 		} catch (SAXException e) {

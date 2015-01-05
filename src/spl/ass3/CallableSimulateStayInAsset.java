@@ -4,9 +4,9 @@ import java.util.concurrent.Callable;
 
 public class CallableSimulateStayInAsset implements Callable<Double>{
 	
-	protected RentalRequest currentlyHandeledRentalRequest;
-	protected Customer stayingCustomer;
-	protected final double DEFUALT_DAMAGE = 0.5;
+	private RentalRequest currentlyHandeledRentalRequest;
+	private Customer stayingCustomer;
+	private final double DEFUALT_DAMAGE = 0.5;
 	
 	
 	
