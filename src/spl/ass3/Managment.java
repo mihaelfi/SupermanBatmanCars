@@ -1,6 +1,8 @@
 package spl.ass3;
 
 import java.util.ArrayList;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 public class Managment {
 	
@@ -10,7 +12,9 @@ public class Managment {
 	public    Warehouse warehouse;
 	public 	  ArrayList<RepairToolInformation> repairToolInformationCollection;
 	public 	  ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
-	protected ArrayList<RentalRequest> rentalRequestCollection;
+	protected BlockingQueue<RentalRequest> rentalRequestCollection;
+	
+	
 	
 	
 	
@@ -20,6 +24,7 @@ public class Managment {
 		this.repairMaterialInformationCollection = new ArrayList<RepairMaterialInformation>();
 		this.repairToolInformationCollection = new ArrayList<RepairToolInformation>();
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
+		this.rentalRequestCollection = new ArrayBlockingQueue<>(10, true);
 		
 	}
 	
