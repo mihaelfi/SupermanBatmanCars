@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class RepairToolInformation {
 	
 	/** The name. */
-	protected String nameOfItemToBeRepaired;
-	protected ArrayList<RepairTool> toolsNeededForRepair;
+	private String nameOfItemToBeRepaired;
+	private ArrayList<RepairTool> toolsNeededForRepair;
 	
 	
 	public RepairToolInformation(String assetContentToRepair) {

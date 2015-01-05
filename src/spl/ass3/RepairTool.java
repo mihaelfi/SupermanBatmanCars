@@ -15,7 +15,7 @@ public class RepairTool {
 	private String toolName;
 	
 	/** The number of tool in warehouse. */
-	private int    numberOfToolInWarehouse;
+	private int    numberOfTools;
 	
 	
 	
@@ -27,7 +27,7 @@ public class RepairTool {
 	 */
 	public RepairTool(String toolName, int numberOfToolInWareHouse) {
 		this.toolName = toolName;
-		this.numberOfToolInWarehouse = numberOfToolInWareHouse;
+		this.numberOfTools = numberOfToolInWareHouse;
 	}
 	
 	
@@ -37,8 +37,8 @@ public class RepairTool {
 	 *
 	 * @return the number of tools in ware house
 	 */
-	public int getNumberOfToolsInWareHouse() {
-		return numberOfToolInWarehouse;
+	public int getNumberOfTools() {
+		return numberOfTools;
 	}
 	
 	/**
@@ -46,8 +46,8 @@ public class RepairTool {
 	 *
 	 * @param numberOfToolsInWareHouse the new number of tools in ware house
 	 */
-	public void setNumberOfToolsInWareHouse(int numberOfToolsInWareHouse) {
-		this.numberOfToolInWarehouse = numberOfToolsInWareHouse;
+	public void setNumberOfTools(int numberOfToolsInWareHouse) {
+		this.numberOfTools = numberOfToolsInWareHouse;
 	}
 	
 	/**
@@ -60,8 +60,17 @@ public class RepairTool {
 	}
 	
 	public String toString(){
-		return "Tool Name = " + this.toolName + ", Tool Quantity is: " + this.numberOfToolInWarehouse+"\n";
+		return "Tool Name = " + this.toolName + ", Tool Quantity is: " + this.numberOfTools+"\n";
 	}
+	
+	public void takeTools(RepairTool toolToTake){
+		this.numberOfTools = this.numberOfTools - toolToTake.getNumberOfTools();
+	}
+	
+	public void returnTools(RepairTool toolToReturn){
+		this.numberOfTools = this.numberOfTools + toolToReturn.getNumberOfTools();
+	}
+	
 	
 	
 

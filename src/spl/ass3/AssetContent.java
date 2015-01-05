@@ -3,9 +3,11 @@ package spl.ass3;
 
 public class AssetContent {
 	
-	protected String name;
-	protected double health;
-	protected double repairCostMultiplier;
+	private String name;
+	private double health;
+	private double repairCostMultiplier;
+	private double repairCostTime = -1;
+	private final double MAX_HEALTH = 100;
 	
 	
 	AssetContent (String name, double health , double repairCostMultiplier){
@@ -42,6 +44,14 @@ public class AssetContent {
 
 	public void setRepairCostMultiplier(double repairCostMultiplier) {
 		this.repairCostMultiplier = repairCostMultiplier;
+	}
+	
+	public void calculateRepairCostTime(){
+		this.repairCostTime = (MAX_HEALTH - this.health)*this.repairCostMultiplier; 
+	}
+	
+	public double getRepairCostTime(){
+		return this.repairCostTime;
 	}
 	
 	

@@ -19,10 +19,10 @@ public class RepairMaterial {
 	}
 	
 	
-	public int getNumberOfMaterialInWarehouse() {
+	public int getNumberOfMaterials() {
 		return numberOfMaterialInWarehouse;
 	}
-	public void setNumberOfMaterialInWarehouse(int numberOfMaterialInWarehouse) {
+	public void setNumberOfMaterials(int numberOfMaterialInWarehouse) {
 		this.numberOfMaterialInWarehouse = numberOfMaterialInWarehouse;
 	}
 	public String getMaterialName() {
@@ -32,6 +32,12 @@ public class RepairMaterial {
 	public String toString(){
 		return "Material Name = " + this.materialName + ", Tool Quantity is: " + this.numberOfMaterialInWarehouse+ "\n";
 	}
+	
+	public void takeMaterial(RepairMaterial repairMaterailToTake){
+		this.numberOfMaterialInWarehouse = this.numberOfMaterialInWarehouse - repairMaterailToTake.getNumberOfMaterials();
+	}
+	
+
 	
 	
 	
