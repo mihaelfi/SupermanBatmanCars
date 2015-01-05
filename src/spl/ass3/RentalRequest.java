@@ -4,12 +4,17 @@ public class RentalRequest {
 
 	
 
-	protected int id;
-	protected String assetType;
-	protected int assetSize;
-	protected int durationOfStay;
-	protected Asset asset;
-	protected String requestStatus;  //Incomplete Fufulied Inprogress Complete
+	private int id;
+	private String assetType;
+	private int assetSize;
+	private int durationOfStay;
+	private Asset asset;
+	private String requestStatus;  //Incomplete Fufulied Inprogress Complete
+	private final String STATUS_INCOMPLETE = "INCOMPLETE";
+	private final String STATUS_FUFULIED = "FUFULIED";
+	private final String STATUS_INPROGRESS = "INPROGRESS";
+	private final String STATUS_COMPLETE = "COMPLETE";
+	
 	
 
 	
@@ -71,12 +76,26 @@ public class RentalRequest {
 
 
 
-	public void setRequestStatus(String requestStatus) {
-		this.requestStatus = requestStatus;
+//	public void setRequestStatus(String requestStatus) {
+//		this.requestStatus = requestStatus;
+//	}
+
+
+	public void setRequestStatusIncomplete(){
+		this.requestStatus = this.STATUS_INCOMPLETE;
 	}
-
-
-
+	
+	public void setRequestStatusFufulied(){
+		this.requestStatus = this.STATUS_FUFULIED;
+	}
+	
+	public void setRequestStatusInProgress(){
+		this.requestStatus = this.STATUS_INPROGRESS;
+	}
+	
+	public void setRequestStatusComplete(){
+		this.requestStatus = this.STATUS_COMPLETE;
+	}
 
 
 	public int getId() {

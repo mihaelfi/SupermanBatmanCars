@@ -13,6 +13,7 @@ public class Managment {
 	public 	  ArrayList<RepairToolInformation> repairToolInformationCollection;
 	public 	  ArrayList<RepairMaterialInformation> repairMaterialInformationCollection;
 	protected BlockingQueue<RentalRequest> rentalRequestCollection;
+	protected ArrayList<DamageReport> damageReportCollection;
 	
 	
 	
@@ -25,6 +26,7 @@ public class Managment {
 		this.repairToolInformationCollection = new ArrayList<RepairToolInformation>();
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
+		this.damageReportCollection = new ArrayList<DamageReport>();
 		
 	}
 	
@@ -84,6 +86,10 @@ public class Managment {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void addDamageReport(DamageReport damageReportToAdd){
+		this.damageReportCollection.add(damageReportToAdd);
 	}
 	
 	

@@ -45,7 +45,7 @@ public class RunnableClerk implements Runnable {
 			Asset avaliableAsset  = this.assets.findAvailableAset(this.currentlyHandeledRequest);
 			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "found available asset: \n" + avaliableAsset.toString());
 			synchronized (avaliableAsset) {
-				avaliableAsset.setStatus("BOOKED");
+				avaliableAsset.setStatusBooked();
 				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
 			}
 			
@@ -70,7 +70,7 @@ public class RunnableClerk implements Runnable {
 				
 				this.currentlyHandeledRequest.setAsset(avaliableAsset);
 				
-				this.currentlyHandeledRequest.setRequestStatus("FULFILLED");
+				this.currentlyHandeledRequest.setRequestStatusFufulied();
 				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "set request status to fulfilled.");
 				// This will notify the Customer Manager that the request has been found.
 				this.currentlyHandeledRequest.notifyAll();

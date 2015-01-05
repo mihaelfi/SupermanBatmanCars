@@ -18,6 +18,11 @@ public class Asset implements Comparable<Asset> {
 	protected String status;
 	protected double costPerNight;
 	protected int size;
+	private final String STATUS_AVAILABLE 			=   "AVAILABLE";
+	private final String STATUS_BOOKED 				=   "BOOKED";
+	private final String STATUS_OCCUPIED 			=   "OCCUPIED";
+	private final String STATUS_UNAVAILABLE 		=   "UNAVAILABLE";
+	
 	
 	
 	
@@ -46,9 +51,27 @@ public class Asset implements Comparable<Asset> {
 	}
 
 
-	public void setStatus(String status) {
-		this.status = status;
+//	public void setStatus(String status) {
+//		this.status = status;
+//	}
+	
+	public void setStatusAvailable(){
+		this.status = this.STATUS_AVAILABLE;
 	}
+	
+	public void setStatusBooked(){
+		this.status = this.STATUS_BOOKED;
+	}
+	
+	public void setStatusOccupied(){
+		this.status = this.STATUS_OCCUPIED;
+	}
+	
+	public void setStatusUnavailable(){
+		this.status = this.STATUS_UNAVAILABLE;
+	}
+	
+	
 
 
 	public String getName() {

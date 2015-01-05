@@ -1,6 +1,14 @@
 package spl.ass3;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletionService;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class RunnableCustomerGroupManager implements Runnable{
 	
@@ -8,6 +16,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 	protected ArrayList<RentalRequest> rentalRequestCollection;
 	protected Managment managment;
 	protected RentalRequest currentlyHandeledRentalRequest;
+	protected Double damagePrecetnage = (double) 0;
 	
 
 
@@ -16,7 +25,44 @@ public class RunnableCustomerGroupManager implements Runnable{
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
 		this.managment = managment;
 	}
-
+	
+	
+	private Double solve2(Executor e, Collection<CallableSimulateStayInAsset> simulatedStay) throws InterruptedException, ExecutionException{
+		Double superAns = (double) 0;
+		Double returnAns = (double) 0;
+		CompletionService<Double> ans = new ExecutorCompletionService<Double>(e);
+		for(CallableSimulateStayInAsset s: simulatedStay){
+			ans.submit(s);
+		}
+		int n = simulatedStay.size();
+		for (int i= 0 ; i < n ; ++i){
+			returnAns =returnAns + ans.take().get();
+			
+		}
+		if (returnAns != null){
+			superAns =returnAns;
+		} else{
+			superAns = (double) 0;
+		}
+			
+		return superAns;
+	}
+	
+//	private  void solve(Executor e,
+//        Collection<Callable<Result>> solvers)
+// throws InterruptedException, ExecutionException {
+// CompletionService<Result> ecs
+//     = new ExecutorCompletionService<Result>(e);
+// for (Callable<Result> s : solvers)
+//     ecs.submit(s);
+// int n = solvers.size();
+// for (int i = 0; i < n; ++i) {
+//     Result r = ecs.take().get();
+//     if (r != null)
+//         use(r);
+// }
+//}
+//
 
 
 
@@ -47,11 +93,33 @@ public class RunnableCustomerGroupManager implements Runnable{
 				
 			}
 			
-			// TODO Continue do Customer Manager Work cycle.
+			ExecutorService executor = Executors.newCachedThreadPool();
+			CompletionService<Double> completionService = new ExecutorCompletionService<Double>(executor);
+			
+			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); i++){
+				Callable<Double> simulateStayInAsset = new CallableSimulateStayInAsset(currentlyHandeledRentalRequest, this.customerGroupDetails.getCustomerCollection().get(i));
+				completionService.submit(simulateStayInAsset);
+				
+			}
+			
+			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); ++i){
+				try {
+					this.damagePrecetnage = this.damagePrecetnage + completionService.take().get();
+					Driver.LOGGER.info("Generated Damage By Staying in Asset is now: " + this.damagePrecetnage);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 			
 			
 			
-			
+			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
+			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
+			this.managment.addDamageReport(damageReport);
 		}
 		
 	}
