@@ -24,7 +24,7 @@ public class Managment {
 		this.repairMaterialInformationCollection = new ArrayList<RepairMaterialInformation>();
 		this.repairToolInformationCollection = new ArrayList<RepairToolInformation>();
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
-		this.rentalRequestCollection = new ArrayBlockingQueue<>(10, true);
+		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		
 	}
 	
@@ -75,6 +75,15 @@ public class Managment {
 	
 	public String repairMaterialInformationToString(){
 		return this.repairMaterialInformationCollection.toString();
+	}
+	
+	public void addRentalRequestToBlockingQueue (RentalRequest retnalRequestToAdd){
+		try {
+			this.rentalRequestCollection.put(retnalRequestToAdd);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

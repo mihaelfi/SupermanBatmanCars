@@ -35,6 +35,20 @@ public class CustomerGroupDetails {
 				+ rentalRequestCollection.toString() + "\ncustomerCollection="
 				+ customerCollection.toString() + "\ngroupManagerName=" + groupManagerName;
 	}
+
+	public ArrayList<RentalRequest> getRentalRequestCollection() {
+		return rentalRequestCollection;
+	}
+
+	public ArrayList<Customer> getCustomerCollection() {
+		return customerCollection;
+	}
+
+	public String getGroupManagerName() {
+		return groupManagerName;
+	}
+	
+	
 	
 	
 	

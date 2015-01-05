@@ -25,6 +25,28 @@ public class Customer {
 				+ "\nminimumDamage=" + minimumDamage + "\nmaximumDamage="
 				+ maximumDamage ;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getVandalismType() {
+		return vandalismType;
+	}
+
+
+	public int getMinimumDamage() {
+		return minimumDamage;
+	}
+
+
+	public int getMaximumDamage() {
+		return maximumDamage;
+	}
+	
+	
 	
 	
 	
