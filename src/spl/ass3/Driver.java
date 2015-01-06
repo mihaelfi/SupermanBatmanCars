@@ -25,7 +25,7 @@ public class Driver {
 		
 		// Create an instance of SimpleDateFormat used for formatting 
 		// the string representation of date (month/day/year)
-		DateFormat df = new SimpleDateFormat("HH-mm-ss");
+		DateFormat df = new SimpleDateFormat("DD-MM-yyyy HH-mm-ss");
 
 		// Get the date today using Calendar object.
 		Date today = Calendar.getInstance().getTime();        
@@ -93,11 +93,12 @@ public class Driver {
 //			Location loc = new Location(3.0, 3.0);
 //			System.out.println((loc.calculateDistance(new Location(4.0,2.0)))*2000);
 			
-//			managment.startClerks();
-//			managment.startGroupManager();
+			managment.startClerks();
+			managment.startGroupManager();
+			
 //			
 //			
-//			managment.newShiftForClearks();
+			managment.newShiftForClearks();
 //			
 			
 //			System.out.println(managment.getNumberOfMaintencePerons());

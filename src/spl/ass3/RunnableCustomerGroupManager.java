@@ -54,7 +54,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 					
 					// guraded block
 					while (!(this.currentlyHandeledRentalRequest.getRequestStatus().equals("FUFULIED"))){
-						Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " ID: " + this.currentlyHandeledRentalRequest.getId() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is not yet fufulied ... waiting ...");
+						
 						this.currentlyHandeledRentalRequest.wait(1000);
 					}
 					Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " ID: " + this.currentlyHandeledRentalRequest.getId() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is FUFULIED!!!, we can continue !!");
