@@ -188,7 +188,7 @@ public class Parser {
 					repairMaterialInformation.addRepairMaterialInformation(materialToInsert);
 					
 				}
-				
+				repairToolInformation.sortRepairTools();
 				managment.addRepairToolInformation(repairToolInformation);
 				managment.addRepairMaterialInformation(repairMaterialInformation);
 			}

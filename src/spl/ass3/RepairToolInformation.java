@@ -1,6 +1,9 @@
 package spl.ass3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -40,6 +43,10 @@ public class RepairToolInformation {
 
 	public ArrayList<RepairTool> getToolsNeededForRepair() {
 		return toolsNeededForRepair;
+	}
+	
+	public void sortRepairTools(){
+		Collections.sort(this.toolsNeededForRepair);
 	}
 	
 	

@@ -9,7 +9,7 @@ package spl.ass3;
  * @author Michael Fildstein Id:309161594
  *
  */
-public class RepairTool {
+public class RepairTool implements Comparable<RepairTool> {
 	
 	/** The tool name. */
 	private String toolName;
@@ -69,6 +69,19 @@ public class RepairTool {
 	
 	public void returnTools(RepairTool toolToReturn){
 		this.numberOfTools = this.numberOfTools + toolToReturn.getNumberOfTools();
+	}
+
+
+
+	@Override
+	public int compareTo(RepairTool o) {
+		int ans = 0;
+		if (this.toolName.hashCode() > o.toolName.hashCode()){
+			ans = 1;
+		}else if(this.toolName.hashCode() < o.toolName.hashCode()){
+			ans = -1;
+		}
+		return ans;
 	}
 	
 	
