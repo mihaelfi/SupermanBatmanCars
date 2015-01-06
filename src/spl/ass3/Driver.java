@@ -93,12 +93,14 @@ public class Driver {
 //			Location loc = new Location(3.0, 3.0);
 //			System.out.println((loc.calculateDistance(new Location(4.0,2.0)))*2000);
 			
-			managment.startClerks();
-			managment.startGroupManager();
+//			managment.startClerks();
+//			managment.startGroupManager();
 //			
 //			
 //			managment.newShiftForClearks();
 //			
+			
+//			System.out.println(managment.getNumberOfMaintencePerons());
 			
 		}
 		

@@ -23,6 +23,7 @@ public class Managment {
 	private 	BlockingQueue<RentalRequest> rentalRequestCollection;
 	private 	ArrayList<DamageReport> damageReportCollection;
 	private     CyclicBarrier clerksFinishedShift;
+	private     int NUMBER_OF_MAINTENANCE_PERSONS;
 	
 	
 	
@@ -42,6 +43,13 @@ public class Managment {
 	}
 	
 	
+public void setNumberOfMaintencePersons(int numOfMaintencePersons){
+	this.NUMBER_OF_MAINTENANCE_PERSONS = numOfMaintencePersons;
+}
+
+public int getNumberOfMaintencePerons(){
+	return this.NUMBER_OF_MAINTENANCE_PERSONS;
+}
 	
 private AtomicInteger totalNumberOfRentalRequests(){
 		

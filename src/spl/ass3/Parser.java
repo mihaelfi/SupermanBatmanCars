@@ -54,6 +54,12 @@ public class Parser {
 			Driver.LOGGER.info("\n\nStrting to Parse " + intitialDataFilename + "\n");
 			Driver.LOGGER.info("Parsing the tools ...");
 			Element DocElements = (Element) doc.getDocumentElement();
+			NodeList numberOfMaintenancePersons = DocElements.getElementsByTagName("NumberOfMaintenancePersons");
+			int numOfMaintencePersons = Integer.parseInt(numberOfMaintenancePersons.item(0).getTextContent());
+//			Element numberOfMaintenencePersons = (Element) numberOfMaintenancePersons.item(0);
+			managment.setNumberOfMaintencePersons(numOfMaintencePersons);
+			
+//			System.out.println("Number of maintence persons is:" + numOfMaintencePersons);
 			NodeList toolsList = DocElements.getElementsByTagName("Tool");
 			for (int i = 0 ; i < toolsList.getLength(); i++){
 				Element tools = (Element) toolsList.item(i);
