@@ -9,6 +9,7 @@ public class RunnableMaintenanceRequest implements Runnable  {
 	private HashMap<String,RepairMaterialInformation> repairMaterialInformationCollection;
 	private Asset asset;
 	private Warehouse warehouse;
+	private final int UNHEALTHY_ASSET_HEALTH = 65;
 	
 	
 	public RunnableMaintenanceRequest(
@@ -35,11 +36,15 @@ public class RunnableMaintenanceRequest implements Runnable  {
 	@Override
 	public void run() {
 		
-		while(true){
+		
+		int numberOfFixedAssetContents = 0;
+		ArrayList<AssetContent> assetContents = this.asset.getAssetContents();
+		
+		while(numberOfFixedAssetContents != assetContents.size()){
 			
-			ArrayList<AssetContent> assetContents = this.asset.getAssetContents();
 			
-			for (int i = 0 ; i < assetContents.size() ; i++){
+			
+			for (int i = 0 ; i < assetContents.size() && assetContents.get(i).getHealth() < UNHEALTHY_ASSET_HEALTH ; i++){
 				
 				RepairToolInformation toolToRepair = repairToolInformationCollection.get(assetContents.get(i).getName());
 				RepairMaterialInformation materialToRepair = repairMaterialInformationCollection.get(assetContents.get(i).getName());
@@ -59,6 +64,31 @@ public class RunnableMaintenanceRequest implements Runnable  {
 					if (succsesfullyTakenTools == 1){
 						repairToolsTaken.add(repairToolsNeeded.get(i));
 						Driver.LOGGER.info("Repair Tool " + repairToolsNeeded.get(j).toString() + " was taken");
+						
+						// Taking materials after we are sure that we have taken all the tools
+						for (int m = 0 ; m < repairMaterialNeeded.size() ; m++){
+							warehouse.takeRepairMaterial(repairMaterialNeeded.get(m));
+							
+						}
+						
+						// Fixing AssetContent
+						assetContents.get(i).calculateRepairCostTime();
+						long sleepTime = (long)assetContents.get(i).getRepairCostTime();
+						try {
+							Thread.sleep(sleepTime);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						// Returnting Tools
+						returnTools(repairToolsTaken);
+						
+						// Set asset as fixed
+						assetContents.get(i).setHealth(100.0);
+						
+						numberOfFixedAssetContents++;
+						
+						
 					}else{
 						canTakeAllTools = false;
 						returnTools(repairToolsTaken);
@@ -68,26 +98,9 @@ public class RunnableMaintenanceRequest implements Runnable  {
 					
 				}
 				
-				// Taking materials after we are sure that we have taken all the tools
-				for (int j = 0 ; j < repairMaterialNeeded.size() ; j++){
-					warehouse.takeRepairMaterial(repairMaterialNeeded.get(j));
-					
-				}
 				
-				// Fixing AssetContent
-				assetContents.get(i).calculateRepairCostTime();
-				long sleepTime = (long)assetContents.get(i).getRepairCostTime();
-				try {
-					Thread.sleep(sleepTime);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				// Returnting Tools
-				returnTools(repairToolsTaken);
 				
-				// Set asset as fixed
-				assetContents.get(i).setHealth(100.0);
+				
 				
 				
 				
