@@ -2,6 +2,7 @@ package spl.ass3;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Asset implements Comparable<Asset> {
@@ -114,6 +115,10 @@ public class Asset implements Comparable<Asset> {
 	  }
 	  
 		return ans;
+	}
+	
+	public void sortAssetContents(){
+		Collections.sort(this.assetContents);
 	}
 	
 	

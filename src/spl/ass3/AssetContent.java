@@ -1,7 +1,7 @@
 package spl.ass3;
 
 
-public class AssetContent {
+public class AssetContent implements Comparable<AssetContent> {
 	
 	private String name;
 	private double health;
@@ -53,6 +53,28 @@ public class AssetContent {
 	public double getRepairCostTime(){
 		return this.repairCostTime;
 	}
+
+	@Override
+	public int compareTo(AssetContent o) {
+		
+		int ans = 0;
+		if (this.name.hashCode() > o.name.hashCode()){
+			ans = 1;
+		}else if(this.name.hashCode() < o.name.hashCode()){
+			ans = -1;
+		}
+		return ans;
+	}
+	
+//	public int compareTo(RepairTool o) {
+//		int ans = 0;
+//		if (this.toolName.hashCode() > o.toolName.hashCode()){
+//			ans = 1;
+//		}else if(this.toolName.hashCode() < o.toolName.hashCode()){
+//			ans = -1;
+//		}
+//		return ans;
+//	}
 	
 	
 

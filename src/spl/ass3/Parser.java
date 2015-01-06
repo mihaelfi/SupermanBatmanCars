@@ -271,7 +271,7 @@ public class Parser {
 			Asset tempAsset = new Asset(assetNameString, assetTypeString, assetLoactionObject, new ArrayList<AssetContent>(assetContentArrayList) ,"AVAILABLE",assetCostPerNightInt , assetSizeInt);
 			
 			Driver.LOGGER.fine("The Final Asset is: " + tempAsset.toString());
-			
+			tempAsset.sortAssetContents();
 			assetsToPutInManagment.addAsset(tempAsset);
 			assetContentArrayList.clear();
 				

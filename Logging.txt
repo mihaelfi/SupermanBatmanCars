@@ -1,44 +1,44 @@
-2015-01-06 00:39:39 INFO spl.ass3.Driver main 
+2015-01-06 02:30:41 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
 CustomersGroups.xml
 
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData 
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData 
 
 Strting to Parse InitialData.xml
 
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
 
 Parsing AssetContentsRepairDetails.xml
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseAssets 
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseAssets 
 
 Parsing Assets.xml
-2015-01-06 00:39:39 INFO spl.ass3.Parser parseCustomerGroups 
+2015-01-06 02:30:41 INFO spl.ass3.Parser parseCustomerGroups 
 
 Parsing CustomersGroups.xml
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Finish Parsing All Files! 
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Finish Parsing All Files! 
 
 
 
 
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Testing the parsing...
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Clerk Details:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Testing the parsing...
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Clerk Details:
 Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 Name: Wolfgang Eisenkott Location: 3.0,3.0
 Name: Paula Die Location: 3.0,3.0
 
-2015-01-06 00:39:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Customer Groups Details:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Customer Groups Details:
 [CustomerGroupDetails Details: 
 rentalRequestCollection=[RentalRequest id is =1
 assetType=Apartment
@@ -126,8 +126,8 @@ vandalismType=Arbitrary
 minimumDamage=1
 maximumDamage=6]
 groupManagerName=Meni]
-2015-01-06 00:39:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Assets Details:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Assets Details:
 [The Asset: Asset 1
 Is of type: Apartment.
 Located in the location 4.0,2.0.
@@ -136,9 +136,9 @@ It's cost Per night is: 100.0
 it's size is : 4
 It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
 , Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
 ], The Asset: Asset 2
 Is of type: Loft.
 Located in the location 2.0,4.0.
@@ -146,8 +146,8 @@ It's Status is: AVAILABLE
 It's cost Per night is: 30.0
 it's size is : 5
 It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
 ], The Asset: Asset 3
 Is of type: Apartment.
 Located in the location 5.0,1.0.
@@ -164,9 +164,9 @@ It's cost Per night is: 50.0
 it's size is : 4
 It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
 , Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 ], The Asset: Asset 5
 Is of type: Cottage.
 Located in the location 2.0,6.0.
@@ -175,23 +175,23 @@ It's cost Per night is: 120.0
 it's size is : 10
 It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
 , Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
 ], The Asset: Asset 6
 Is of type: Villa.
 Located in the location 0.0,1.0.
 It's Status is: AVAILABLE
 It's cost Per night is: 110.0
 it's size is : 10
-It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+It's asset contents are :[Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+, Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
-, Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 ]]
-2015-01-06 00:39:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Warehouse content:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Warehouse content:
 The contents of the Warehouse are:
 Printing warehouse tools content: 
 
@@ -218,16 +218,16 @@ Printing warehouse tools content:
  The number of Paper Towel in the warehouse is: 1500
  The number of Nails in the warehouse is: 5000
  The number of Laundry Cleaner in the warehouse is: 2500
-2015-01-06 00:39:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Repair Tool Information:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Repair Tool Information:
 {Stove=Repair Tool Information for Asset Content: Stove
 Tool Name = Hammer, Tool Quantity is: 1
-Tool Name = Drill, Tool Quantity is: 1
 Tool Name = Screw Driver, Tool Quantity is: 2
+Tool Name = Drill, Tool Quantity is: 1
 , Desk=Repair Tool Information for Asset Content: Desk
 Tool Name = Hammer, Tool Quantity is: 3
-Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Pliers, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Jacksaw, Tool Quantity is: 2
 Tool Name = Drill, Tool Quantity is: 5
 , Fridge=Repair Tool Information for Asset Content: Fridge
@@ -238,17 +238,17 @@ Tool Name = Hammer, Tool Quantity is: 1
 Tool Name = Jacksaw, Tool Quantity is: 2
 , Bed=Repair Tool Information for Asset Content: Bed
 Tool Name = Hammer, Tool Quantity is: 3
-Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Pliers, Tool Quantity is: 3
+Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Jacksaw, Tool Quantity is: 2
 Tool Name = Drill, Tool Quantity is: 5
 , TV=Repair Tool Information for Asset Content: TV
 Tool Name = Hammer, Tool Quantity is: 2
-Tool Name = Screw Driver, Tool Quantity is: 2
 Tool Name = Pliers, Tool Quantity is: 2
+Tool Name = Screw Driver, Tool Quantity is: 2
 }
-2015-01-06 00:39:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 00:39:39 INFO spl.ass3.Driver main Printing Repair Material Information:
+2015-01-06 02:30:41 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 02:30:41 INFO spl.ass3.Driver main Printing Repair Material Information:
 {Stove=Repair Material Information for Asset Content: Stove
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
