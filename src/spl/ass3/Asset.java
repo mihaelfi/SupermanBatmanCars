@@ -9,16 +9,16 @@ public class Asset implements Comparable<Asset> {
 	
 
 
-	protected String name;
+	private String name;
 	// one of the types provided in the xml.
-	protected String type;
-	protected Location location;
+	private String type;
+	private Location location;
 	// List of Content of the asset
-	protected ArrayList<AssetContent> assetContents;
+	private ArrayList<AssetContent> assetContents;
 	// One of 3 different options, 1 = available, 2= booked , 3 = occupied , 4 = unavailable.
-	protected String status;
-	protected double costPerNight;
-	protected int size;
+	private String status;
+	private double costPerNight;
+	private int size;
 	private final String STATUS_AVAILABLE 			=   "AVAILABLE";
 	private final String STATUS_BOOKED 				=   "BOOKED";
 	private final String STATUS_OCCUPIED 			=   "OCCUPIED";

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Managment {
 	
@@ -28,6 +32,51 @@ public class Managment {
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		this.damageReportCollection = new ArrayList<DamageReport>();
+		
+	}
+	
+	
+	
+private AtomicInteger totalNumberOfRentalRequests(){
+		
+		int numberOfRentalRequests = 0;
+		
+		for ( int i = 0 ; i < customerGroupDetailsCollection.size() ; i++){
+			
+			for ( int j = 0 ; j < this.customerGroupDetailsCollection.get(i).getRentalRequestCollection().size(); j++){
+				numberOfRentalRequests++;
+			}
+		}
+		
+		AtomicInteger ans = new AtomicInteger(numberOfRentalRequests);
+		
+		return ans;
+}
+
+	
+	public void startClerks(){
+		Driver.LOGGER.info("Totall Number of rental requests = " + totalNumberOfRentalRequests());
+		
+		AtomicInteger numberOfRentalRequests = totalNumberOfRentalRequests();
+		
+//		this.rentalRequestCollection.add(this.customerGroupDetailsCollection.get(0).getRentalRequestCollection().get(0));
+		
+		ExecutorService executor = Executors.newFixedThreadPool(this.clerkDetailsCollection.size());
+		
+		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i ++){
+			
+			executor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets));
+			
+		}
+		
+		
+		executor.shutdown();
+		
+		
+//		executor.awaitTermination(200, TimeUnit)
+		
+		
+		
 		
 	}
 	

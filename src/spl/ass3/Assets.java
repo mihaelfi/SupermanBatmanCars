@@ -5,8 +5,8 @@ import java.util.Collections;
 
 public class Assets {
 	
-	protected ArrayList<Asset> assetCollection;
-	protected ArrayList<Asset> listOfDamagedAssets;
+	private ArrayList<Asset> assetCollection;
+	private ArrayList<Asset> listOfDamagedAssets;
 	
 	
 	public Assets(){
@@ -44,16 +44,35 @@ public class Assets {
 		boolean assetFound = false;
 //		ArrayList<Asset> potentailAssets = new ArrayList<Asset>();
 		int i = 0;
+		Driver.LOGGER.info("Trying to find asset for the request : " + requestToFindAssetFor.getAssetType());
 		while (!assetFound){
-			
-			if (this.assetCollection.get(i).size ==  requestedAssetSize && this.assetCollection.get(i).type == reqestedAssetType ){
+			if (i == this.assetCollection.size()){
+				i = 0 ;
+			}
+//			String assetType = this.assetCollection.get(i).getType();
+//			String requestType = reqestedAssetType;
+//			boolean typeMatch = (assetType.equals(requestType));
+//			int assetSize = this.assetCollection.get(i).getSize();
+//			int requestSize =requestedAssetSize; 
+//			Driver.LOGGER.info("The asset type is " + assetType + " and the request type is " + requestType);
+//			Driver.LOGGER.info("The asset size is " + assetSize + " and the request type is " + requestSize);
+//			boolean sizeMatch = (this.assetCollection.get(i).getSize() ==(requestedAssetSize));
+//			Driver.LOGGER.info("The size matches:" +sizeMatch + "\nThe Type matches:" + typeMatch);
+//			Driver.LOGGER.info("inside of while loop");
+//			Driver.LOGGER.info("checking if " + this.assetCollection.get(i).getSize() +" size equals " + requestedAssetSize);
+//			Driver.LOGGER.info("checking if " + this.assetCollection.get(i).getType() +" type equals " + reqestedAssetType);
+			// && 
+			if ((this.assetCollection.get(i).getSize() ==  requestedAssetSize) && this.assetCollection.get(i).getType().equals(reqestedAssetType) ){
+				Driver.LOGGER.info("Trying to see if Asset " + this.assetCollection.get(i).getName() + " is acceptable.");
 				synchronized (this.assetCollection.get(i)) {
 					if (this.assetCollection.get(i).getStatus() == "AVAILABLE" ){
 						ans = assetCollection.get(i);
 						assetFound = true;
+						Driver.LOGGER.info("Asset was indeed acceptable");
 					}else{
 					  try {
 						wait(2000);
+						Driver.LOGGER.info("Asset wasn't found..  waiting 2 seconds and trying again");
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -71,6 +71,9 @@ public class Driver {
 			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			LOGGER.info("Printing Repair Material Information:\n" + managment.repairMaterialInformationToString());
 			
+			
+			managment.startClerks();
+			
 		}
 		
 		

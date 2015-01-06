@@ -66,15 +66,7 @@ public class AssetContent implements Comparable<AssetContent> {
 		return ans;
 	}
 	
-//	public int compareTo(RepairTool o) {
-//		int ans = 0;
-//		if (this.toolName.hashCode() > o.toolName.hashCode()){
-//			ans = 1;
-//		}else if(this.toolName.hashCode() < o.toolName.hashCode()){
-//			ans = -1;
-//		}
-//		return ans;
-//	}
+
 	
 	
 

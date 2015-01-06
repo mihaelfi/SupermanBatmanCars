@@ -11,9 +11,9 @@ import java.util.ArrayList;
  */
 public class CustomerGroupDetails {
 	
-	protected ArrayList<RentalRequest> rentalRequestCollection;
-	protected ArrayList<Customer> customerCollection;
-	protected String groupManagerName;
+	private ArrayList<RentalRequest> rentalRequestCollection;
+	private ArrayList<Customer> customerCollection;
+	private String groupManagerName;
 	
 	public CustomerGroupDetails(ArrayList<RentalRequest> rentalRequestCollection,ArrayList<Customer> customerCollection, String groupManagerName) {
 		this.rentalRequestCollection = rentalRequestCollection;
@@ -47,6 +47,21 @@ public class CustomerGroupDetails {
 	public String getGroupManagerName() {
 		return groupManagerName;
 	}
+
+	public void setRentalRequestCollection(
+			ArrayList<RentalRequest> rentalRequestCollection) {
+		this.rentalRequestCollection = rentalRequestCollection;
+	}
+
+	public void setCustomerCollection(ArrayList<Customer> customerCollection) {
+		this.customerCollection = customerCollection;
+	}
+
+	public void setGroupManagerName(String groupManagerName) {
+		this.groupManagerName = groupManagerName;
+	}
+	
+	
 	
 	
 	
