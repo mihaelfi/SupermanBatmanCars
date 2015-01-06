@@ -32,11 +32,14 @@ public class RunnableClerk implements Runnable {
 	public void run() {
 		
 		while(true){
+			
 			if (this.numberOfRentalRequestsYetHandeled.get() == 0){
 				this.rentalRequestCollection.add(POISON_PILL);
 			}
 			
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "Has started his shift.");
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has started his shift.");
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Totall sleep time is: " + this.totalSleepTime);
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has " + this.numberOfRentalRequestsYetHandeled +" much unhandeld requests.");
 			
 			try {
 				this.currentlyHandeledRequest = this.rentalRequestCollection.take();
@@ -44,19 +47,19 @@ public class RunnableClerk implements Runnable {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + " Has succesfully pulled a request form the queue");
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has succesfully pulled a request form the queue");
 			if (this.currentlyHandeledRequest.getAssetType().equals("POISON_PILL")){
 				this.rentalRequestCollection.add(this.currentlyHandeledRequest);
-				Driver.LOGGER.info("Clerk " + this.clerkDetails.getName() + " Has finished his work! Forever! and Ever! He will be missed !");
+				Driver.LOGGER.info("Clerk *" + this.clerkDetails.getName() + "* Has finished his work! Forever! and Ever! He will be missed !");
 				break;
 			}
 
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + " Took the rental request " + this.currentlyHandeledRequest.toString());
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Took the rental request " + this.currentlyHandeledRequest.toString());
 
 				
 			
 			Asset avaliableAsset  = this.assets.findAvailableAset(this.currentlyHandeledRequest);
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "found available asset: \n" + avaliableAsset.toString());
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* found available asset: \n" + avaliableAsset.toString());
 //			synchronized (avaliableAsset) {
 //				avaliableAsset.setStatusBooked();
 //				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
@@ -67,7 +70,7 @@ public class RunnableClerk implements Runnable {
 			double distanceToAsset = this.clerkDetails.location.calculateDistance(avaliableAsset.getLocation());
 			long sleepTime = (long) (distanceToAsset*2000);
 			totalSleepTime = totalSleepTime + sleepTime;
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "is going to the asset..." + "walking time is: " + sleepTime);
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* is going to the asset..." + "walking time is: " + sleepTime);
 			
 			try {
 				Thread.sleep(sleepTime);
@@ -83,22 +86,22 @@ public class RunnableClerk implements Runnable {
 				
 				
 				this.currentlyHandeledRequest.setAsset(avaliableAsset);
-				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "stores the asset" + avaliableAsset.getName() + "in the rental request.");
+				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* stores the asset" + avaliableAsset.getName() + "in the rental request.");
 				this.currentlyHandeledRequest.setRequestStatusFufulied();
-				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "set request status to fulfilled.");
+				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* set request status to fulfilled.");
 				// This will notify the Customer Manager that the request has been found.
-				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
+				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
 				this.currentlyHandeledRequest.notifyAll();
 			}
 			
 			this.numberOfRentalRequestsYetHandeled.decrementAndGet();
 			
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + " checks if the shift should be over.\n" );
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* checks if the shift should be over.\n" );
 			
 			if (this.totalSleepTime > 8000){
 				synchronized (this.clerkDetails) {
 					try {
-						Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );
+						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );
 						this.totalSleepTime = 0;
 						this.clerkDetails.wait();
 						
@@ -108,7 +111,8 @@ public class RunnableClerk implements Runnable {
 					}
 				}
 			}
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "shift isn't over... Starting New shift" );
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* shift isn't over..."+"His total sleep time is :" + this.totalSleepTime +" Starting New shift" );
+			
 		}
 		
 		

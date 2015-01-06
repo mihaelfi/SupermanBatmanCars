@@ -47,10 +47,18 @@ public class RunnableCustomerGroupManager implements Runnable{
 				Driver.LOGGER.info("\nNumber of Rentel Request for this group Has reached 0 , the Customer Group manager" +  this.customerGroupDetails.getGroupManagerName() +"Should exit now.");
 			}
 			
+			
 			synchronized (this.currentlyHandeledRentalRequest) {
 				try {
 					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + " is now waiting for someone to find an asset for his RentalRequest ");
-					this.currentlyHandeledRentalRequest.wait();
+					
+					// guraded block
+					while (!(this.currentlyHandeledRentalRequest.getRequestStatus().equals("FUFULIED"))){
+						Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is not yet fufulied ... waiting ...");
+						this.currentlyHandeledRentalRequest.wait(1000);
+					}
+					Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is FUFULIED!!!, we can continue !!");
+					
 					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + "got wakeup call on request id " + this.currentlyHandeledRentalRequest.getId());
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -67,6 +75,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 				completionService.submit(simulateStayInAsset);
 				
 			}
+			this.damagePrecetnage = 0.0;
 			
 			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); ++i){
 				try {
@@ -84,12 +93,14 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
-			Driver.LOGGER.info("The group manager " + this.customerGroupDetails.getGroupManagerName() +"is realeasing the asset " + this.currentlyHandeledRentalRequest.getId() + "and marking it as available.");
+			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getId() + "and marking it as available.");
 			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
 			
 			this.managment.addDamageReport(damageReport);
 			Driver.LOGGER.info("The group manager is sending the damage report to managment");
 		}
+		
+		Driver.LOGGER.info("The Runabble Custom Group Manager *" + this.customerGroupDetails.getGroupManagerName() +"* has exited ...");
 		
 	}
 	

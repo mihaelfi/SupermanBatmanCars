@@ -29,11 +29,13 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		Double damageAmount = (double) 0;
 		
 		
-		if (this.stayingCustomer.getVandalismType().equals("ARBITRARY")){
+		if (this.stayingCustomer.getVandalismType().equals("Arbitrary")){
 			double diffrentce = this.stayingCustomer.getMaximumDamage() - this.stayingCustomer.getMinimumDamage();
 			damageAmount = diffrentce*Math.random();
-		}else if (this.stayingCustomer.getVandalismType().equals("FIXED")){
+			Driver.LOGGER.info("The damage amount is: " + damageAmount + "and damge type is: ARBITRARY");
+		}else if (this.stayingCustomer.getVandalismType().equals("Fixed")){
 			damageAmount = ((double)this.stayingCustomer.getMaximumDamage() + (double)this.stayingCustomer.getMinimumDamage()) / 2;
+			Driver.LOGGER.info("The damage amount is: " + damageAmount + "and damge type is: Fixed");
 		}else{
 			damageAmount = DEFUALT_DAMAGE;
 		}
@@ -42,10 +44,13 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		
 		
 		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i ++){
-			double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
-			double newHealth = currentHealth - damageAmount;
-			this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
-			Driver.LOGGER.info("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
+			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
+				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
+				double newHealth = currentHealth - damageAmount;
+				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
+				Driver.LOGGER.info("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
+			}
+			
 		}
 		
 		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*2400;
