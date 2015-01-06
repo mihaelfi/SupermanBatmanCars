@@ -48,7 +48,7 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
 				double newHealth = currentHealth - damageAmount;
 				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
-				Driver.LOGGER.info("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
+				Driver.LOGGER.fine("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
 			}
 			
 		}

@@ -1,7 +1,5 @@
 package spl.ass3;
 
-import java.util.ArrayList;
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -86,12 +84,12 @@ public class RunnableClerk implements Runnable {
 				
 				
 				this.currentlyHandeledRequest.setAsset(avaliableAsset);
-				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* stores the asset" + avaliableAsset.getName() + "in the rental request.");
+				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* stores the asset" + avaliableAsset.getName() +" Of the Type " + avaliableAsset.getType() +  " in the rental request.");
 				this.currentlyHandeledRequest.setRequestStatusFufulied();
 				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* set request status to fulfilled.");
 				// This will notify the Customer Manager that the request has been found.
 				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
-				this.currentlyHandeledRequest.notifyAll();
+//				this.currentlyHandeledRequest.notifyAll();
 			}
 			
 			this.numberOfRentalRequestsYetHandeled.decrementAndGet();

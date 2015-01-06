@@ -54,12 +54,12 @@ public class RunnableCustomerGroupManager implements Runnable{
 					
 					// guraded block
 					while (!(this.currentlyHandeledRentalRequest.getRequestStatus().equals("FUFULIED"))){
-						Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is not yet fufulied ... waiting ...");
+						Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " ID: " + this.currentlyHandeledRentalRequest.getId() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is not yet fufulied ... waiting ...");
 						this.currentlyHandeledRentalRequest.wait(1000);
 					}
-					Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is FUFULIED!!!, we can continue !!");
+					Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " ID: " + this.currentlyHandeledRentalRequest.getId() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is FUFULIED!!!, we can continue !!");
 					
-					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + "got wakeup call on request id " + this.currentlyHandeledRentalRequest.getId());
+					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + "got wakeup call on request t " + this.currentlyHandeledRentalRequest.getId());
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -93,7 +93,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
-			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getId() + "and marking it as available.");
+			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getAssetType()+ " Asset ID: " + this.currentlyHandeledRentalRequest.getId() + " and marking it as available.");
 			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
 			
 			this.managment.addDamageReport(damageReport);

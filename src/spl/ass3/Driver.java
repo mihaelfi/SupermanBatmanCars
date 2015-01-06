@@ -58,18 +58,18 @@ public class Driver {
 			
 			LOGGER.info("Finish Parsing All Files! \n\n\n\n");
 			
-			LOGGER.info("Testing the parsing...");
-			LOGGER.info("Printing Clerk Details:\n" + managment.clerkDetailsToString());
-			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			LOGGER.info("Printing Customer Groups Details:\n" + managment.customerGroupDetailsToString());
-			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			LOGGER.info("Printing Assets Details:\n" + managment.assetsToString());
-			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			LOGGER.info("Printing Warehouse content:\n" + managment.warehouseToString());
-			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			LOGGER.info("Printing Repair Tool Information:\n" + managment.repairToolInformationToString());
-			LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			LOGGER.info("Printing Repair Material Information:\n" + managment.repairMaterialInformationToString());
+			LOGGER.fine("Testing the parsing...");
+			LOGGER.fine("Printing Clerk Details:\n" + managment.clerkDetailsToString());
+			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.fine("Printing Customer Groups Details:\n" + managment.customerGroupDetailsToString());
+			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.fine("Printing Assets Details:\n" + managment.assetsToString());
+			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.fine("Printing Warehouse content:\n" + managment.warehouseToString());
+			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.fine("Printing Repair Tool Information:\n" + managment.repairToolInformationToString());
+			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			LOGGER.fine("Printing Repair Material Information:\n" + managment.repairMaterialInformationToString());
 			
 			
 			managment.startClerks();

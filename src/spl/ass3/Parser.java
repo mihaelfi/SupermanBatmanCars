@@ -320,7 +320,7 @@ public static void parseCustomerGroups (String CUSTOMER_GROUPS_FILENAME, Managme
 					
 					NodeList customerVandalism = customer.getElementsByTagName("Vandalism");
 					String customerVandalismString = customerVandalism.item(0).getTextContent();
-					Driver.LOGGER.info("Customer Vandalism type is: " + customerVandalismString);
+					Driver.LOGGER.fine("Customer Vandalism type is: " + customerVandalismString);
 					
 					NodeList customerMinimumDamage = customer.getElementsByTagName("MinimumDamage");
 					int customerMinimumDamageInt = Integer.parseInt(customerMinimumDamage.item(0).getTextContent());
@@ -370,7 +370,7 @@ public static void parseCustomerGroups (String CUSTOMER_GROUPS_FILENAME, Managme
 				
 				CustomerGroupDetails customerGroupDetailsToManagment = new CustomerGroupDetails(new ArrayList<RentalRequest>(rentalRequestCollection),new ArrayList<Customer> (customerCollection), customerGroupDetailGroupManagerNameString);
 				rentalRequestCollection.clear();
-				Driver.LOGGER.info("\nThe Customer Group Details are: " + customerGroupDetailsToManagment.toString());
+				Driver.LOGGER.fine("\nThe Customer Group Details are: " + customerGroupDetailsToManagment.toString());
 				managment.addCustomerGroupDetailsToCollection(customerGroupDetailsToManagment);
 			}
 			
