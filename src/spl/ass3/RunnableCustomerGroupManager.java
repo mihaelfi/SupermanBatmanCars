@@ -32,7 +32,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 	public void run() {
 		
 		while (this.rentalRequestCollection.size() > 0){
-			Driver.LOGGER.info("The rental request collection size is: " +  this.rentalRequestCollection.size());
+			Driver.LOGGER.fine("The rental request collection size is: " +  this.rentalRequestCollection.size());
 			synchronized (this.rentalRequestCollection.get(0)) {
 				this.currentlyHandeledRentalRequest = this.rentalRequestCollection.get(0);
 				this.managment.addRentalRequestToBlockingQueue(this.currentlyHandeledRentalRequest);
@@ -42,7 +42,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			}
 			
 			if (this.rentalRequestCollection.size() > 0){
-				Driver.LOGGER.info("\nNow The first Rental Request is:" + this.rentalRequestCollection.get(0).toString());
+				Driver.LOGGER.fine("\nNow The first Rental Request is:" + this.rentalRequestCollection.get(0).toString());
 			}else{
 				Driver.LOGGER.info("\nNumber of Rentel Request for this group Has reached 0 , the Customer Group manager" +  this.customerGroupDetails.getGroupManagerName() +"Should exit now.");
 			}
@@ -80,7 +80,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); ++i){
 				try {
 					this.damagePrecetnage = this.damagePrecetnage + completionService.take().get();
-					Driver.LOGGER.info("Generated Damage By Staying in Asset is now: " + this.damagePrecetnage);
+					Driver.LOGGER.fine("Generated Damage By Staying in Asset is now: " + this.damagePrecetnage);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

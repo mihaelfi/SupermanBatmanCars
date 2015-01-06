@@ -1,6 +1,8 @@
 package spl.ass3;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class RunnableClerk implements Runnable {
@@ -12,14 +14,17 @@ public class RunnableClerk implements Runnable {
 	private long totalSleepTime;
 	private AtomicInteger numberOfRentalRequestsYetHandeled;
 	private final RentalRequest POISON_PILL = new RentalRequest(-666, "POISON_PILL", 666, 666, "INCOMPLETE");
+	private CyclicBarrier clerksFinishedShift;
 	
 	
-	public RunnableClerk(ClerkDetails clerkDetails , BlockingQueue<RentalRequest> rentalRequestCollection , AtomicInteger numberOfRentalRequestsYetHandeled , Assets assets) {
+	public RunnableClerk(ClerkDetails clerkDetails , BlockingQueue<RentalRequest> rentalRequestCollection ,
+			AtomicInteger numberOfRentalRequestsYetHandeled , Assets assets, CyclicBarrier clerksFinishedShift) {
 		this.clerkDetails = clerkDetails;
 		this.rentalRequestCollection = rentalRequestCollection;
 		this.numberOfRentalRequestsYetHandeled  = numberOfRentalRequestsYetHandeled;
 		this.assets = assets;
 		this.totalSleepTime = 0;
+		this.clerksFinishedShift = clerksFinishedShift;
 	}
 	
 	public String toString(){
@@ -37,7 +42,7 @@ public class RunnableClerk implements Runnable {
 			
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has started his shift.");
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Totall sleep time is: " + this.totalSleepTime);
-			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has " + this.numberOfRentalRequestsYetHandeled +" much unhandeld requests.");
+//			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has " + this.numberOfRentalRequestsYetHandeled +" much unhandeld requests.");
 			
 			try {
 				this.currentlyHandeledRequest = this.rentalRequestCollection.take();
@@ -90,9 +95,11 @@ public class RunnableClerk implements Runnable {
 				// This will notify the Customer Manager that the request has been found.
 				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
 //				this.currentlyHandeledRequest.notifyAll();
+				
 			}
 			
 			this.numberOfRentalRequestsYetHandeled.decrementAndGet();
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has " + this.numberOfRentalRequestsYetHandeled +" much unhandeld requests.");
 			
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* checks if the shift should be over.\n" );
 			
@@ -101,9 +108,15 @@ public class RunnableClerk implements Runnable {
 					try {
 						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );
 						this.totalSleepTime = 0;
-						this.clerkDetails.wait();
+						Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
+						this.clerksFinishedShift.await();
+//						this.clerkDetails.wait();
+						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Waking up for new shift! \n*************************************************************\n*******************************************************" );
 						
 					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (BrokenBarrierException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -19,6 +22,7 @@ public class Managment {
 	private     HashMap  <String, RepairMaterialInformation> repairMaterialInformationCollection;
 	private 	BlockingQueue<RentalRequest> rentalRequestCollection;
 	private 	ArrayList<DamageReport> damageReportCollection;
+	private     CyclicBarrier clerksFinishedShift;
 	
 	
 	
@@ -32,6 +36,8 @@ public class Managment {
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		this.damageReportCollection = new ArrayList<DamageReport>();
+		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
+		
 		
 	}
 	
@@ -65,7 +71,7 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i ++){
 			
-			clerkExecutor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets));
+			clerkExecutor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets , this.clerksFinishedShift));
 			
 		}
 		
@@ -79,6 +85,26 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 		
 	}
+	
+	public void newShiftForClearks(){
+		try {
+			Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
+			this.clerksFinishedShift.await();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (BrokenBarrierException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		this.clerksFinishedShift.reset();
+//		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i++){
+//			this.clerkDetailsCollection.get(i).notify();
+//		}
+	}
+	
+	
 	
 	public void startGroupManager(){
 		

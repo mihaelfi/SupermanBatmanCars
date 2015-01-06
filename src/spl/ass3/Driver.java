@@ -1,5 +1,9 @@
 package spl.ass3;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;
@@ -18,8 +22,22 @@ public class Driver {
 
 
 	public static void main(String[] args) throws SecurityException, IOException {
+		
+		// Create an instance of SimpleDateFormat used for formatting 
+		// the string representation of date (month/day/year)
+		DateFormat df = new SimpleDateFormat("HH-mm-ss");
+
+		// Get the date today using Calendar object.
+		Date today = Calendar.getInstance().getTime();        
+		// Using DateFormat format method we can create a string 
+		// representation of a date with the defined format.
+		String reportDate = df.format(today);
+
+		// Print what date is today!
+		System.out.println("Report Date: " + reportDate);
+		
 		LOGGER.setLevel(Level.INFO);
-		fileTxt = new FileHandler("Logging.txt");
+		fileTxt = new FileHandler("Logging "+reportDate+".txt");
 		
 		 formatterTxt = new SimpleFormatter();
 		 fileTxt.setFormatter(formatterTxt);
@@ -71,9 +89,16 @@ public class Driver {
 			LOGGER.fine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			LOGGER.fine("Printing Repair Material Information:\n" + managment.repairMaterialInformationToString());
 			
+//			
+//			Location loc = new Location(3.0, 3.0);
+//			System.out.println((loc.calculateDistance(new Location(4.0,2.0)))*2000);
 			
 			managment.startClerks();
 			managment.startGroupManager();
+//			
+//			
+//			managment.newShiftForClearks();
+//			
 			
 		}
 		
