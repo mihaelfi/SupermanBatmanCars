@@ -61,20 +61,37 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 //		this.rentalRequestCollection.add(this.customerGroupDetailsCollection.get(0).getRentalRequestCollection().get(0));
 		
-		ExecutorService executor = Executors.newFixedThreadPool(this.clerkDetailsCollection.size());
+		ExecutorService clerkExecutor = Executors.newFixedThreadPool(this.clerkDetailsCollection.size());
 		
 		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i ++){
 			
-			executor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets));
+			clerkExecutor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets));
 			
 		}
 		
 		
-		executor.shutdown();
+		clerkExecutor.shutdown();
 		
 		
 //		executor.awaitTermination(200, TimeUnit)
 		
+		
+		
+		
+	}
+	
+	public void startGroupManager(){
+		
+		ExecutorService groupManagerExecutor = Executors.newFixedThreadPool(this.customerGroupDetailsCollection.size());
+		
+		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
+			
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this));
+			
+		}
+		
+		
+		groupManagerExecutor.shutdown();
 		
 		
 		

@@ -1,44 +1,44 @@
-2015-01-06 05:20:04 INFO spl.ass3.Driver main 
+2015-01-06 06:18:39 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
 CustomersGroups.xml
 
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData 
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData 
 
 Strting to Parse InitialData.xml
 
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
 
 Parsing AssetContentsRepairDetails.xml
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseAssets 
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseAssets 
 
 Parsing Assets.xml
-2015-01-06 05:20:04 INFO spl.ass3.Parser parseCustomerGroups 
+2015-01-06 06:18:39 INFO spl.ass3.Parser parseCustomerGroups 
 
 Parsing CustomersGroups.xml
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Finish Parsing All Files! 
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Finish Parsing All Files! 
 
 
 
 
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Testing the parsing...
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Clerk Details:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Testing the parsing...
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Clerk Details:
 Printing clerk Details in warehouse ...
 Name: Ken Harush Location: 3.0,3.0
 Name: Paula Bitton Location: 3.0,3.0
 Name: Wolfgang Eisenkott Location: 3.0,3.0
 Name: Paula Die Location: 3.0,3.0
 
-2015-01-06 05:20:04 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Customer Groups Details:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Customer Groups Details:
 [CustomerGroupDetails Details: 
 rentalRequestCollection=[RentalRequest id is =1
 assetType=Apartment
@@ -126,8 +126,8 @@ vandalismType=Arbitrary
 minimumDamage=1
 maximumDamage=6]
 groupManagerName=Meni]
-2015-01-06 05:20:04 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Assets Details:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Assets Details:
 [The Asset: Asset 1
 Is of type: Apartment.
 Located in the location 4.0,2.0.
@@ -190,8 +190,8 @@ It's asset contents are :[Asset Content Computer is at Health: 100.0. Repair cos
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
 , Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 ]]
-2015-01-06 05:20:04 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Warehouse content:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Warehouse content:
 The contents of the Warehouse are:
 Printing warehouse tools content: 
 
@@ -218,8 +218,8 @@ Printing warehouse tools content:
  The number of Paper Towel in the warehouse is: 1500
  The number of Nails in the warehouse is: 5000
  The number of Laundry Cleaner in the warehouse is: 2500
-2015-01-06 05:20:04 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Repair Tool Information:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Repair Tool Information:
 {Stove=Repair Tool Information for Asset Content: Stove
 Tool Name = Hammer, Tool Quantity is: 1
 Tool Name = Screw Driver, Tool Quantity is: 2
@@ -247,8 +247,8 @@ Tool Name = Hammer, Tool Quantity is: 2
 Tool Name = Pliers, Tool Quantity is: 2
 Tool Name = Screw Driver, Tool Quantity is: 2
 }
-2015-01-06 05:20:04 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2015-01-06 05:20:04 INFO spl.ass3.Driver main Printing Repair Material Information:
+2015-01-06 06:18:39 INFO spl.ass3.Driver main +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-01-06 06:18:39 INFO spl.ass3.Driver main Printing Repair Material Information:
 {Stove=Repair Material Information for Asset Content: Stove
 Material Name = Nails, Tool Quantity is: 10
 Material Name = Screws, Tool Quantity is: 5
@@ -274,34 +274,56 @@ Material Name = Glass Cleaner, Tool Quantity is: 2
 Material Name = Trash Bag, Tool Quantity is: 2
 Material Name = Paper Towel, Tool Quantity is: 20
 }
-2015-01-06 05:20:04 INFO spl.ass3.Managment startClerks Totall Number of rental requests = 11
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken HarushHas started his shift.
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Paula DieHas started his shift.
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Wolfgang EisenkottHas started his shift.
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Paula BittonHas started his shift.
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken Harush Has succesfully pulled a request form the queue
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken Harush Took the rental request RentalRequest id is =1
+2015-01-06 06:18:39 INFO spl.ass3.Managment startClerks Totall Number of rental requests = 11
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula BittonHas started his shift.
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula DieHas started his shift.
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Wolfgang EisenkottHas started his shift.
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Ken HarushHas started his shift.
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run The rental request collection size is: 4
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run The rental request collection size is: 7
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula Bitton Has succesfully pulled a request form the queue
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
+ Submitted the Rental RequestRentalRequest id is =1
 assetType=Apartment
 assetSize=4
 durationOfStay=5
 requestStatus=INCOMPLETE
-2015-01-06 05:20:04 INFO spl.ass3.Assets findAvailableAset Trying to find asset for the request : Apartment
-2015-01-06 05:20:04 INFO spl.ass3.Assets findAvailableAset Trying to see if Asset Asset 1 is acceptable.
-2015-01-06 05:20:04 INFO spl.ass3.Assets findAvailableAset Asset was indeed acceptable
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken Harushfound available asset: 
-The Asset: Asset 1
-Is of type: Apartment.
-Located in the location 4.0,2.0.
-It's Status is: AVAILABLE
-It's cost Per night is: 100.0
-it's size is : 4
-It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
-, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
-, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
-, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
-]
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken Harushmarked asset as booked: 
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula Bitton Took the rental request RentalRequest id is =1
+assetType=Apartment
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run 
+Now The first Rental Request is:RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:39 INFO spl.ass3.Assets findAvailableAset Trying to find asset for the request : Apartment
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Wolfgang Eisenkott Has succesfully pulled a request form the queue
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Meni
+ Submitted the Rental RequestRentalRequest id is =1
+assetType=Apartment
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Wolfgang Eisenkott Took the rental request RentalRequest id is =1
+assetType=Apartment
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE
+2015-01-06 06:18:39 INFO spl.ass3.Assets findAvailableAset Trying to see if Asset Asset 1 is acceptable.
+2015-01-06 06:18:39 INFO spl.ass3.Assets findAvailableAset Trying to find asset for the request : Apartment
+2015-01-06 06:18:39 INFO spl.ass3.Assets findAvailableAset Asset was indeed acceptable
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run 
+Now The first Rental Request is:RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonfound available asset: 
 The Asset: Asset 1
 Is of type: Apartment.
 Located in the location 4.0,2.0.
@@ -314,17 +336,186 @@ It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost mult
 , Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
 , Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
 ]
-2015-01-06 05:20:04 INFO spl.ass3.RunnableClerk run The clerk Ken Harushis going to the asset...walking time is: 2828
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Ken Harushstores the asset in the rental request.
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Ken Harushset request status to fulfilled.
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Ken Harushchecks if the shift should be over.
+2015-01-06 06:18:39 INFO spl.ass3.Assets findAvailableAset Trying to see if Asset Asset 1 is acceptable.
+2015-01-06 06:18:39 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Meni is now waiting for someone to find an asset for his RentalRequest 
+2015-01-06 06:18:39 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonis going to the asset...walking time is: 2828
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonstores the assetAsset 1in the rental request.
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonset request status to fulfilled.
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonis notifying all the Managers waiting on request Id: 1
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula Bitton checks if the shift should be over.
 
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Ken HarushHas started his shift.
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Paula Die Has succesfully pulled a request form the queue
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run Clerk Paula Die Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Wolfgang Eisenkott Has succesfully pulled a request form the queue
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run Clerk Wolfgang Eisenkott Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Paula Bitton Has succesfully pulled a request form the queue
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run Clerk Paula Bitton Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run The clerk Ken Harush Has succesfully pulled a request form the queue
-2015-01-06 05:20:07 INFO spl.ass3.RunnableClerk run Clerk Ken Harush Has finished his work! Forever! and Ever! He will be missed !
+2015-01-06 06:18:42 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Menigot wakeup call on request id 1
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula Bittonshift isn't over... Starting New shift
+2015-01-06 06:18:42 INFO spl.ass3.RunnableClerk run The clerk Paula BittonHas started his shift.
+2015-01-06 06:18:42 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Andreigot wakeup call on request id 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AdielIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MatanIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer TalIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MeniIs starting it's say in:Asset 1
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Matan* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 97.0 And now its 96.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Adiel* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 97.5 And now its 97.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 96.0 And now its 95.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 98.0 And now its 97.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 98.5 And now its 98.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 99.0 And now its 98.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 99.5 And now its 99.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 100.0 And now its 99.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 96.5 And now its 96.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 97.0 And now its 96.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 97.5 And now its 97.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 98.0 And now its 97.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 98.5 And now its 98.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 99.0 And now its 98.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 99.5 And now its 99.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 100.0 And now its 99.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 96.5 And now its 96.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Meni* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Tal* acumulated damage is: 0.5%
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 96.0 And now its 95.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 96.5 And now its 96.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 96.0 And now its 95.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 97.0 And now its 96.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 97.5 And now its 97.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 98.0 And now its 97.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 98.5 And now its 98.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 99.0 And now its 98.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 99.5 And now its 99.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 100.0 And now its 99.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 95.5 And now its 95.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 96.0 And now its 95.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 95.5 And now its 95.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 96.5 And now its 96.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 97.0 And now its 96.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 97.5 And now its 97.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 98.0 And now its 97.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 98.5 And now its 98.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 99.0 And now its 98.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 99.5 And now its 99.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 100.0 And now its 99.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 95.0 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The TV Health was 94.5 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 96.0 And now its 95.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 96.5 And now its 96.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 97.0 And now its 96.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 97.5 And now its 97.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 98.0 And now its 97.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 98.5 And now its 98.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 99.0 And now its 98.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 99.5 And now its 99.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 95.5 And now its 95.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 100.0 And now its 99.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Adiel is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Matan is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 94.5 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Bed Health was 95.0 And now its 94.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 95.0 And now its 94.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 95.5 And now its 95.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 95.5 And now its 95.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 95.0 And now its 94.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Desk Health was 94.5 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 95.0 And now its 94.5
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Meni is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Stove Health was 94.5 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The Fridge Health was 94.5 And now its 94.0
+2015-01-06 06:18:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Tal is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 0.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 0.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 1.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 1.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 1.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 1.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 2.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 2.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 2.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 3.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager Andreiis realeasing the asset 1and marking it as available.
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 3.5
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run Generated Damage By Staying in Asset is now: 4.0
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager Meniis realeasing the asset 1and marking it as available.
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The rental request collection size is: 3
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The rental request collection size is: 6
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
+ Submitted the Rental RequestRentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.RunnableClerk run The clerk Paula Die Has succesfully pulled a request form the queue
+2015-01-06 06:18:54 INFO spl.ass3.RunnableClerk run The clerk Ken Harush Has succesfully pulled a request form the queue
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Meni
+ Submitted the Rental RequestRentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run 
+Now The first Rental Request is:RentalRequest id is =3
+assetType=Cottage
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.RunnableClerk run The clerk Ken Harush Took the rental request RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.RunnableClerk run The clerk Paula Die Took the rental request RentalRequest id is =2
+assetType=Loft
+assetSize=4
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.Assets findAvailableAset Trying to find asset for the request : Loft
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run 
+Now The first Rental Request is:RentalRequest id is =3
+assetType=Cottage
+assetSize=4
+durationOfStay=5
+requestStatus=INCOMPLETE
+2015-01-06 06:18:54 INFO spl.ass3.Assets findAvailableAset Trying to find asset for the request : Loft
+2015-01-06 06:18:54 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Meni is now waiting for someone to find an asset for his RentalRequest 

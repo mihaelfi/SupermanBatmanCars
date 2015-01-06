@@ -57,10 +57,10 @@ public class RunnableClerk implements Runnable {
 			
 			Asset avaliableAsset  = this.assets.findAvailableAset(this.currentlyHandeledRequest);
 			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "found available asset: \n" + avaliableAsset.toString());
-			synchronized (avaliableAsset) {
-				avaliableAsset.setStatusBooked();
-				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
-			}
+//			synchronized (avaliableAsset) {
+//				avaliableAsset.setStatusBooked();
+//				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
+//			}
 			
 			//This simulates the walking to the asset process
 			
@@ -77,26 +77,28 @@ public class RunnableClerk implements Runnable {
 			}
 			// storing the asset in the Rental request object
 			
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "stores the asset in the rental request.");
+			
 			
 			synchronized (this.currentlyHandeledRequest) {
 				
-				this.currentlyHandeledRequest.setAsset(avaliableAsset);
 				
+				this.currentlyHandeledRequest.setAsset(avaliableAsset);
+				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "stores the asset" + avaliableAsset.getName() + "in the rental request.");
 				this.currentlyHandeledRequest.setRequestStatusFufulied();
 				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "set request status to fulfilled.");
 				// This will notify the Customer Manager that the request has been found.
+				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
 				this.currentlyHandeledRequest.notifyAll();
 			}
 			
 			this.numberOfRentalRequestsYetHandeled.decrementAndGet();
 			
-			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "checks if the shift should be over.\n" );
+			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + " checks if the shift should be over.\n" );
 			
 			if (this.totalSleepTime > 8000){
 				synchronized (this.clerkDetails) {
 					try {
-						Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "Has ended his shift. waiting for next shift" );
+						Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );
 						this.totalSleepTime = 0;
 						this.clerkDetails.wait();
 						
@@ -106,6 +108,7 @@ public class RunnableClerk implements Runnable {
 					}
 				}
 			}
+			Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "shift isn't over... Starting New shift" );
 		}
 		
 		

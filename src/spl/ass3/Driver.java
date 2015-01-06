@@ -73,6 +73,7 @@ public class Driver {
 			
 			
 			managment.startClerks();
+			managment.startGroupManager();
 			
 		}
 		

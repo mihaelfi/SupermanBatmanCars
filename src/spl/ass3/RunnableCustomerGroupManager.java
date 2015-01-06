@@ -27,55 +27,20 @@ public class RunnableCustomerGroupManager implements Runnable{
 	}
 	
 	
-	private Double solve2(Executor e, Collection<CallableSimulateStayInAsset> simulatedStay) throws InterruptedException, ExecutionException{
-		Double superAns = (double) 0;
-		Double returnAns = (double) 0;
-		CompletionService<Double> ans = new ExecutorCompletionService<Double>(e);
-		for(CallableSimulateStayInAsset s: simulatedStay){
-			ans.submit(s);
-		}
-		int n = simulatedStay.size();
-		for (int i= 0 ; i < n ; ++i){
-			returnAns =returnAns + ans.take().get();
-			
-		}
-		if (returnAns != null){
-			superAns =returnAns;
-		} else{
-			superAns = (double) 0;
-		}
-			
-		return superAns;
-	}
-	
-//	private  void solve(Executor e,
-//        Collection<Callable<Result>> solvers)
-// throws InterruptedException, ExecutionException {
-// CompletionService<Result> ecs
-//     = new ExecutorCompletionService<Result>(e);
-// for (Callable<Result> s : solvers)
-//     ecs.submit(s);
-// int n = solvers.size();
-// for (int i = 0; i < n; ++i) {
-//     Result r = ecs.take().get();
-//     if (r != null)
-//         use(r);
-// }
-//}
-//
-
-
 
 	@Override
 	public void run() {
 		
 		while (this.rentalRequestCollection.size() > 0){
+			Driver.LOGGER.info("The rental request collection size is: " +  this.rentalRequestCollection.size());
+			synchronized (this.rentalRequestCollection.get(0)) {
+				this.currentlyHandeledRentalRequest = this.rentalRequestCollection.get(0);
+				this.managment.addRentalRequestToBlockingQueue(this.currentlyHandeledRentalRequest);
+				Driver.LOGGER.info("The Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() +
+						"\n Submitted the Rental Request" + this.currentlyHandeledRentalRequest.toString());
+				this.rentalRequestCollection.remove(0);
+			}
 			
-			this.currentlyHandeledRentalRequest = this.rentalRequestCollection.get(0);
-			this.managment.addRentalRequestToBlockingQueue(this.currentlyHandeledRentalRequest);
-			Driver.LOGGER.info("The Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() +
-					"\n Submitted the Rental Request" + this.currentlyHandeledRentalRequest.toString());
-			this.rentalRequestCollection.remove(0);
 			if (this.rentalRequestCollection.size() > 0){
 				Driver.LOGGER.info("\nNow The first Rental Request is:" + this.rentalRequestCollection.get(0).toString());
 			}else{
@@ -86,6 +51,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 				try {
 					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + " is now waiting for someone to find an asset for his RentalRequest ");
 					this.currentlyHandeledRentalRequest.wait();
+					Driver.LOGGER.info("\nThe Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() + "got wakeup call on request id " + this.currentlyHandeledRentalRequest.getId());
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -118,8 +84,11 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
+			Driver.LOGGER.info("The group manager " + this.customerGroupDetails.getGroupManagerName() +"is realeasing the asset " + this.currentlyHandeledRentalRequest.getId() + "and marking it as available.");
 			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
+			
 			this.managment.addDamageReport(damageReport);
+			Driver.LOGGER.info("The group manager is sending the damage report to managment");
 		}
 		
 	}

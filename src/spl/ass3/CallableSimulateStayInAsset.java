@@ -29,16 +29,16 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		Double damageAmount = (double) 0;
 		
 		
-		if (this.stayingCustomer.getVandalismType() == "ARBITRARY"){
+		if (this.stayingCustomer.getVandalismType().equals("ARBITRARY")){
 			double diffrentce = this.stayingCustomer.getMaximumDamage() - this.stayingCustomer.getMinimumDamage();
 			damageAmount = diffrentce*Math.random();
-		}else if (this.stayingCustomer.getVandalismType() == "FIXED"){
+		}else if (this.stayingCustomer.getVandalismType().equals("FIXED")){
 			damageAmount = ((double)this.stayingCustomer.getMaximumDamage() + (double)this.stayingCustomer.getMinimumDamage()) / 2;
 		}else{
 			damageAmount = DEFUALT_DAMAGE;
 		}
 		
-		Driver.LOGGER.info("The Customer acumulated damage is: " + damageAmount+"%");
+		Driver.LOGGER.info("The Customer *"+ this.stayingCustomer.getName() +  "* acumulated damage is: " + damageAmount+"%");
 		
 		
 		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i ++){
@@ -48,7 +48,9 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 			Driver.LOGGER.info("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
 		}
 		
-		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*24000;
+		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*2400;
+		Driver.LOGGER.info("The customer " + this.stayingCustomer.getName() + " is starting to simulate his stay in the asset."
+				+"\n And is going to stay in the asset for " + this.currentlyHandeledRentalRequest.getDurationOfStay() + " days");
 		Thread.sleep(sleepTime);
 		return damageAmount;
 		

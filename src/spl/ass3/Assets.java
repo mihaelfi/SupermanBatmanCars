@@ -68,6 +68,7 @@ public class Assets {
 					if (this.assetCollection.get(i).getStatus() == "AVAILABLE" ){
 						ans = assetCollection.get(i);
 						assetFound = true;
+						this.assetCollection.get(i).setStatusBooked();
 						Driver.LOGGER.info("Asset was indeed acceptable");
 					}else{
 					  try {
