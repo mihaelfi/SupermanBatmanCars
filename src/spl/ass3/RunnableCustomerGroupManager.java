@@ -17,13 +17,15 @@ public class RunnableCustomerGroupManager implements Runnable{
 	protected Managment managment;
 	protected RentalRequest currentlyHandeledRentalRequest;
 	protected Double damagePrecetnage = (double) 0;
+	private Assets assets;
 	
 
 
-	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment) {
+	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets) {
 		this.customerGroupDetails = customerGroupDetails;
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
 		this.managment = managment;
+		this.assets = assets;
 	}
 	
 	
@@ -93,7 +95,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
-			
+			this.currentlyHandeledRentalRequest.getAsset().notifyAll();
 			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getAssetType()+ " Asset ID: " + this.currentlyHandeledRentalRequest.getId() + " and marking it as available.");
 			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
 			

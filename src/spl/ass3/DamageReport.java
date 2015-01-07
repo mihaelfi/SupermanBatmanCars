@@ -11,6 +11,32 @@ public class DamageReport {
 		this.asset = asset;
 		this.damagePrecentage = damagePrecentage;
 	}
+
+
+
+	public Asset getAsset() {
+		return asset;
+	}
+
+
+
+	public void setAsset(Asset asset) {
+		this.asset = asset;
+	}
+
+
+
+	public double getDamagePrecentage() {
+		return damagePrecentage;
+	}
+
+
+
+	public void setDamagePrecentage(double damagePrecentage) {
+		this.damagePrecentage = damagePrecentage;
+	}
+	
+	
 	
 	
 	

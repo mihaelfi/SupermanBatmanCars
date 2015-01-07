@@ -32,6 +32,20 @@ public class Assets {
 		Collections.sort(this.assetCollection); 
 	}
 	
+	
+	
+	public ArrayList<Asset> getAssetCollection() {
+		return assetCollection;
+	}
+
+	public void setAssetCollection(ArrayList<Asset> assetCollection) {
+		this.assetCollection = assetCollection;
+	}
+
+	public void setListOfDamagedAssets(ArrayList<Asset> listOfDamagedAssets) {
+		this.listOfDamagedAssets = listOfDamagedAssets;
+	}
+
 	/**
 	 * This method returns an Asset that fits the size and type requirements of the request
 	 * @param requestToFindAssetFor
@@ -55,7 +69,9 @@ public class Assets {
 //			int    assetSizeToTest = this.assetCollection.get(i).getSize();
 			if (i == this.assetCollection.size()){
 				try {
-					wait();
+					Driver.LOGGER.info("Didn't find available Asset, Waiting for change in Asset status and trying agian");
+					wait(2000);
+					Driver.LOGGER.info("Got Notify from CustomerGroupManager");
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -67,7 +83,7 @@ public class Assets {
 //			synchronized (assetToTest) {
 				
 				
-				Driver.LOGGER.info("Value of i is : " + i);
+				Driver.LOGGER.fine("Value of i is : " + i);
 				if ( (reqestedAssetType.equals(assetToTest.getType())) && requstedAssetSize <= assetToTest.getSize() ){
 					
 					Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the request id: *"+requestToFindAssetFor.getId()+"* . Now will check if it's available..." );
@@ -88,7 +104,7 @@ public class Assets {
 					
 					
 				}else{
-					Driver.LOGGER.info("The Asset :" + assetToTest.getName() + "of type: " + assetToTest.getType() + "is **NOT** fitting the request id: *"+requestToFindAssetFor.getId()+"*");
+					Driver.LOGGER.fine("The Asset :" + assetToTest.getName() + "of type: " + assetToTest.getType() + "is **NOT** fitting the request id: *"+requestToFindAssetFor.getId()+"*");
 				}
 			i++;
 			}
@@ -101,46 +117,5 @@ public class Assets {
 		
 		return ans;
 	}
-//		Asset ans = null;
-//		String reqestedAssetType = requestToFindAssetFor.getAssetType();
-//		int    requestedAssetSize = requestToFindAssetFor.getAssetSize();
-//		boolean assetFound = false;
-//		int i = 0;
-//		
-//		Driver.LOGGER.info("Trying to find asset for the request : " + requestToFindAssetFor.getAssetType());
-//		
-//		while (!assetFound){
-//			if (i == this.assetCollection.size()){
-//				i = 0 ;
-//			}
-//
-//			if ((this.assetCollection.get(i).getSize() ==  requestedAssetSize) && this.assetCollection.get(i).getType().equals(reqestedAssetType) ){
-//				Driver.LOGGER.info("Trying to see if Asset " + this.assetCollection.get(i).getType() + "Where asset name is : *"+ this.assetCollection.get(i).getName() +"* is acceptable.");
-//				synchronized (this.assetCollection.get(i)) {
-//					if (this.assetCollection.get(i).getStatus() == "AVAILABLE" ){
-//						ans = assetCollection.get(i);
-//						assetFound = true;
-//						this.assetCollection.get(i).setStatusBooked();
-//						Driver.LOGGER.info("Asset was indeed acceptable");
-//					}else{
-//					  try {
-//						wait(2000);
-//						Driver.LOGGER.info("Asset wasn't found..  waiting 2 seconds and trying again");
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					}
-//					
-//				}
-//			}
-//			i++;
-//		}
-//		
-//			
-//		
-//		return ans;
-//		
-//	}
 
 }

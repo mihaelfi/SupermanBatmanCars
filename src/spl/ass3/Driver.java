@@ -98,7 +98,7 @@ public class Driver {
 			
 //			
 //			
-//			managment.newShiftForClearks();
+			managment.newShiftForClearks();
 //			
 			
 //			System.out.println(managment.getNumberOfMaintencePerons());

@@ -2,6 +2,7 @@ package spl.ass3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.BlockingQueue;
 
 public class RunnableMaintenanceRequest implements Runnable  {
 	
@@ -10,17 +11,18 @@ public class RunnableMaintenanceRequest implements Runnable  {
 	private Asset asset;
 	private Warehouse warehouse;
 	private final int UNHEALTHY_ASSET_HEALTH = 65;
-	
+	private BlockingQueue<Asset> assetsForRepair;
 	
 	public RunnableMaintenanceRequest(
 			HashMap<String, RepairToolInformation> repairToolInformationCollection,
 			HashMap<String, RepairMaterialInformation> repairMaterialInformationCollection,
-			Asset asset, Warehouse warehouse) {
+			Asset asset, Warehouse warehouse , BlockingQueue<Asset> assetsForRepair) {
 
 		this.repairToolInformationCollection = repairToolInformationCollection;
 		this.repairMaterialInformationCollection = repairMaterialInformationCollection;
 		this.asset = asset;
 		this.warehouse = warehouse;
+		this.assetsForRepair = assetsForRepair;
 	}
 
 
@@ -38,13 +40,21 @@ public class RunnableMaintenanceRequest implements Runnable  {
 		
 		
 		int numberOfFixedAssetContents = 0;
+		try {
+			this.asset = assetsForRepair.take();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
 		ArrayList<AssetContent> assetContents = this.asset.getAssetContents();
 		
 		while(numberOfFixedAssetContents != assetContents.size()){
+			Driver.LOGGER.warning("\t NEED FIX ::" + asset.getName() + "   FIX:  " + numberOfFixedAssetContents + "    FROM: " + assetContents.size());
 			
 			
-			
-			for (int i = 0 ; i < assetContents.size() && assetContents.get(i).getHealth() < UNHEALTHY_ASSET_HEALTH ; i++){
+			for (int i = 0 ; i < assetContents.size() && (assetContents.get(i).getHealth() < UNHEALTHY_ASSET_HEALTH) ; i++){
 				
 				RepairToolInformation toolToRepair = repairToolInformationCollection.get(assetContents.get(i).getName());
 				RepairMaterialInformation materialToRepair = repairMaterialInformationCollection.get(assetContents.get(i).getName());
@@ -99,13 +109,9 @@ public class RunnableMaintenanceRequest implements Runnable  {
 				}
 				
 				
+			
 				
-				
-				
-				
-				
-				
-				
+						
 				
 			}
 			

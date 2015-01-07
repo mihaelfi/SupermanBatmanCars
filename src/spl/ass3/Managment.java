@@ -24,6 +24,7 @@ public class Managment {
 	private 	ArrayList<DamageReport> damageReportCollection;
 	private     CyclicBarrier clerksFinishedShift;
 	private     int NUMBER_OF_MAINTENANCE_PERSONS;
+	private 	BlockingQueue<Asset> assetsForRepair;
 	
 	
 	
@@ -37,11 +38,24 @@ public class Managment {
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		this.damageReportCollection = new ArrayList<DamageReport>();
-		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
+//		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
 		
 		
 	}
 	
+public void putDamagedAssetsInRepairQueue(){
+	for (int i = 0 ; i < this.damageReportCollection.size() ; i++){
+		if (100.0 - this.damageReportCollection.get(i).getDamagePrecentage() < 65.0 ){
+			try {
+				this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
+				this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}
 	
 public void setNumberOfMaintencePersons(int numOfMaintencePersons){
 	this.NUMBER_OF_MAINTENANCE_PERSONS = numOfMaintencePersons;
@@ -50,6 +64,8 @@ public void setNumberOfMaintencePersons(int numOfMaintencePersons){
 public int getNumberOfMaintencePerons(){
 	return this.NUMBER_OF_MAINTENANCE_PERSONS;
 }
+
+
 	
 private AtomicInteger totalNumberOfRentalRequests(){
 		
@@ -97,7 +113,9 @@ private AtomicInteger totalNumberOfRentalRequests(){
 	public void newShiftForClearks(){
 		try {
 			Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
+			Driver.LOGGER.info("Waiting for clerks to finish their shift");
 			this.clerksFinishedShift.await();
+			Driver.LOGGER.info("Clerks shift finished");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,7 +138,7 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this,assets));
 			
 		}
 		
@@ -133,6 +151,7 @@ private AtomicInteger totalNumberOfRentalRequests(){
 	
 	public void addClerkDetails(ClerkDetails clerkDetailsToAdd){
 		this.clerkDetailsCollection.add(clerkDetailsToAdd);
+		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
 	}
 	
 	public void addRepairToolInformation (RepairToolInformation repairToolInformationToAdd){
