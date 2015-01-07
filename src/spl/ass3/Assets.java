@@ -70,7 +70,7 @@ public class Assets {
 			if (i == this.assetCollection.size()){
 				try {
 					Driver.LOGGER.info("Didn't find available Asset, Waiting for change in Asset status and trying agian");
-					wait();
+					wait(30000);
 					Driver.LOGGER.info("Got Notify from CustomerGroupManager");
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

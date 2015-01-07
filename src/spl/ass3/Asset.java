@@ -23,6 +23,7 @@ public class Asset implements Comparable<Asset> {
 	private final String STATUS_BOOKED 				=   "BOOKED";
 	private final String STATUS_OCCUPIED 			=   "OCCUPIED";
 	private final String STATUS_UNAVAILABLE 		=   "UNAVAILABLE";
+	private boolean isBroken = false;
 	
 	
 	
@@ -120,6 +121,23 @@ public class Asset implements Comparable<Asset> {
 	public void sortAssetContents(){
 		Collections.sort(this.assetContents);
 	}
+
+
+	public void setRepaired() {
+		this.isBroken = false;
+	}
+
+
+	public void setBroken() {
+		this.isBroken = true;
+	}
+	
+	
+	public boolean isBroken(){
+		return this.isBroken;
+	}
+	
+	
 	
 	
 

@@ -61,9 +61,9 @@ public class Warehouse  {
 				ans = -1;
 			}
 			
-			Driver.LOGGER.info("Current Status of: " + toolInWarehouse.toString());
-			Driver.LOGGER.info("Returned " + toolToGet.toString() +" Materials from warehouse.");
-			Driver.LOGGER.info("Current Status of: " + toolInWarehouse.toString());
+			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
+			Driver.LOGGER.fine("Returned " + toolToGet.toString() +" Materials from warehouse.");
+			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
 			
 			
 		}
@@ -80,9 +80,9 @@ public class Warehouse  {
 		synchronized (toolInWarehouse) {
 			toolInWarehouse.returnTools(repairToolToReturn);
 			
-			Driver.LOGGER.info("Current Status of: " + toolInWarehouse.toString());
-			Driver.LOGGER.info("Returned " + repairToolToReturn.toString() +" Materials from warehouse.");
-			Driver.LOGGER.info("Current Status of: " + toolInWarehouse.toString());
+			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
+			Driver.LOGGER.fine("Returned " + repairToolToReturn.toString() +" Materials from warehouse.");
+			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
 			
 		}
 		
@@ -97,9 +97,9 @@ public class Warehouse  {
 		RepairMaterial materialInWarehouse = this.repairMaterials.get(materialName);
 		synchronized (materialInWarehouse) {
 			materialInWarehouse.takeMaterial(repairMaterialToTake);
-			Driver.LOGGER.info("Current Status of: " + materialInWarehouse.toString());
-			Driver.LOGGER.info("Taken " + repairMaterialToTake.toString() +" Materials from warehouse.");
-			Driver.LOGGER.info("Current Status of: " + materialInWarehouse.toString());
+			Driver.LOGGER.fine("Current Status of: " + materialInWarehouse.toString());
+			Driver.LOGGER.fine("Taken " + repairMaterialToTake.toString() +" Materials from warehouse.");
+			Driver.LOGGER.fine("Current Status of: " + materialInWarehouse.toString());
 		}
 		
 		
@@ -149,6 +149,24 @@ public class Warehouse  {
 		ans = ans + this.warehouseToolstoString() + this.warehouseMaterialsstoString();
 		return ans;
 	}
+
+	public HashMap<String, RepairTool> getRepairTools() {
+		return repairTools;
+	}
+
+	public void setRepairTools(HashMap<String, RepairTool> repairTools) {
+		this.repairTools = repairTools;
+	}
+
+	public HashMap<String, RepairMaterial> getRepairMaterials() {
+		return repairMaterials;
+	}
+
+	public void setRepairMaterials(HashMap<String, RepairMaterial> repairMaterials) {
+		this.repairMaterials = repairMaterials;
+	}
+	
+	
 	
 }
 	

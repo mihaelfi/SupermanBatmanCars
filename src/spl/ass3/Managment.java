@@ -24,8 +24,10 @@ public class Managment {
 	private 	ArrayList<DamageReport> damageReportCollection;
 	private     CyclicBarrier clerksFinishedShift;
 	private     int NUMBER_OF_MAINTENANCE_PERSONS;
+	private		AtomicInteger totalNumberOfRentalRequests;
 	private 	BlockingQueue<Asset> assetsForRepair;
 	private     Object maintenceFinished;
+	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	
 	
 	
@@ -39,15 +41,111 @@ public class Managment {
 		this.customerGroupDetailsCollection = new ArrayList<CustomerGroupDetails>();
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		this.damageReportCollection = new ArrayList<DamageReport>();
+		this.assetsForRepair = new ArrayBlockingQueue<Asset>(10, true);
 //		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
 		
 		
 	}
+
+private boolean areAllAsetsFixed(){
+	boolean ans = true;
+	ArrayList<Asset> assetCollection = this.assets.getAssetCollection();
+	
+	for (int i = 0 ; i < assetCollection.size() && ans ; i++){
+		if (assetCollection.get(i).isBroken() == true){
+			ans = false;
+		}
+	}
+	
+	
+	return ans;
+}
+
+private void waitForMaintenceToFinish(){
+		synchronized (this.repairMaterialInformationCollection) {
+			try {
+				while(!areAllAsetsFixed()){
+					Driver.LOGGER.info("All assets are not yet fixed ... waiting for maintence to finish");
+					wait();
+				}
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+}
+
+	
+public void startSimulation(){
+	
+
+	this.startClerks();
+	this.startGroupManager();
+	this.startMaintencesWorkers();
+
+	while( this.totalNumberOfRentalRequests.get() > 0){
+		
+		
+	//
+		this.waitForClerksToFinishShift();
+		
+		
+		Driver.LOGGER.info("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		
+		
+		
+		this.putDamagedAssetsInRepairQueue();
+		
+		
+		
+		this.waitForMaintenceToFinish();
+		Driver.LOGGER.info("Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
+				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
+				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
+				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
+				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n");
+		
+		this.newShiftForClerks();
+
+		
+	}
+	
+	// Kill maintains people
+	try {
+		this.assetsForRepair.put(POISON_PILL);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+		
+	
+}
+
+
+	
+public void startMaintencesWorkers(){
+	
+	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(this.NUMBER_OF_MAINTENANCE_PERSONS);
+	
+	for (int i = 0 ; i < this.NUMBER_OF_MAINTENANCE_PERSONS ; i ++){
+		
+		maintenceExecutor.submit(new RunnableMaintenanceRequest(this.repairToolInformationCollection, this.repairMaterialInformationCollection, null, this.warehouse, this.assetsForRepair, "**RepairMan "+ i+"*"));
+		
+	}
+	
+	
+	maintenceExecutor.shutdown();
+	
+}
 	
 public void putDamagedAssetsInRepairQueue(){
 	for (int i = 0 ; i < this.damageReportCollection.size() ; i++){
 		if (100.0 - this.damageReportCollection.get(i).getDamagePrecentage() < 65.0 ){
+				Driver.LOGGER.info("The Asset " + this.damageReportCollection.get(i).getAsset().getName() + " is Damaged and need to be repaired. sending maintence people in ...");
 			try {
+				this.damageReportCollection.get(i).getAsset().setBroken();
 				this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
 				this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
 			} catch (InterruptedException e) {
@@ -56,10 +154,16 @@ public void putDamagedAssetsInRepairQueue(){
 			}
 		}
 	}
+	
+	this.damageReportCollection.clear();
 }
 	
 public void setNumberOfMaintencePersons(int numOfMaintencePersons){
 	this.NUMBER_OF_MAINTENANCE_PERSONS = numOfMaintencePersons;
+}
+
+public void setTotalNumberOfRentalRequestsInt(int totalNumberOfRentalRequestsInt){
+	this.totalNumberOfRentalRequests = new AtomicInteger(totalNumberOfRentalRequestsInt);
 }
 
 public int getNumberOfMaintencePerons(){
@@ -68,27 +172,27 @@ public int getNumberOfMaintencePerons(){
 
 
 	
-private AtomicInteger totalNumberOfRentalRequests(){
-		
-		int numberOfRentalRequests = 0;
-		
-		for ( int i = 0 ; i < customerGroupDetailsCollection.size() ; i++){
-			
-			for ( int j = 0 ; j < this.customerGroupDetailsCollection.get(i).getRentalRequestCollection().size(); j++){
-				numberOfRentalRequests++;
-			}
-		}
-		
-		AtomicInteger ans = new AtomicInteger(numberOfRentalRequests);
-		
-		return ans;
-}
+//private AtomicInteger totalNumberOfRentalRequests(){
+//		
+//		int numberOfRentalRequests = 0;
+//		
+//		for ( int i = 0 ; i < customerGroupDetailsCollection.size() ; i++){
+//			
+//			for ( int j = 0 ; j < this.customerGroupDetailsCollection.get(i).getRentalRequestCollection().size(); j++){
+//				numberOfRentalRequests++;
+//			}
+//		}
+//		
+//		AtomicInteger ans = new AtomicInteger(numberOfRentalRequests);
+//		
+//		return ans;
+//}
 
 	
 	public void startClerks(){
-		Driver.LOGGER.info("Totall Number of rental requests = " + totalNumberOfRentalRequests());
+		Driver.LOGGER.info("Totall Number of rental requests = " + this.totalNumberOfRentalRequests);
 		
-		AtomicInteger numberOfRentalRequests = totalNumberOfRentalRequests();
+//		AtomicInteger numberOfRentalRequests = totalNumberOfRentalRequests();
 		
 //		this.rentalRequestCollection.add(this.customerGroupDetailsCollection.get(0).getRentalRequestCollection().get(0));
 		
@@ -96,7 +200,7 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i ++){
 			
-			clerkExecutor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, numberOfRentalRequests, assets , this.clerksFinishedShift));
+			clerkExecutor.submit(new RunnableClerk(this.clerkDetailsCollection.get(i), rentalRequestCollection, this.totalNumberOfRentalRequests, assets , this.clerksFinishedShift));
 			
 		}
 		
@@ -124,7 +228,7 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 	}
 	
-	public void newShiftForClearks(){
+	public void newShiftForClerks(){
 		
 		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i++){
 			synchronized (clerkDetailsCollection.get(i)) {
