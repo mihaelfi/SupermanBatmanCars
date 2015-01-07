@@ -110,7 +110,8 @@ public class RunnableClerk implements Runnable {
 						this.totalSleepTime = 0;
 						Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
 						this.clerksFinishedShift.await();
-//						this.clerkDetails.wait();
+						Driver.LOGGER.info(this.clerkDetails.getName() + "is Notifying managment that all clerks has finnished and waiting for new shift");
+						this.clerkDetails.wait();
 						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Waking up for new shift! \n*************************************************************\n*******************************************************" );
 						
 					} catch (InterruptedException e) {
@@ -122,7 +123,7 @@ public class RunnableClerk implements Runnable {
 					}
 				}
 			}
-			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* shift isn't over..."+"His total sleep time is :" + this.totalSleepTime +" Starting New shift" );
+			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* shift isn't over..."+" His total sleep time is :" + this.totalSleepTime +" Starting New shift" );
 			
 		}
 		

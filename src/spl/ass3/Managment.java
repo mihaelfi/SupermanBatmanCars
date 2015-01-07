@@ -25,6 +25,7 @@ public class Managment {
 	private     CyclicBarrier clerksFinishedShift;
 	private     int NUMBER_OF_MAINTENANCE_PERSONS;
 	private 	BlockingQueue<Asset> assetsForRepair;
+	private     Object maintenceFinished;
 	
 	
 	
@@ -105,17 +106,12 @@ private AtomicInteger totalNumberOfRentalRequests(){
 		
 //		executor.awaitTermination(200, TimeUnit)
 		
-		
-		
-		
 	}
 	
-	public void newShiftForClearks(){
+	public void waitForClerksToFinishShift(){
+		Driver.LOGGER.warning("Managment is waiting for clerks to finish thier shift!");
 		try {
-			Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
-			Driver.LOGGER.info("Waiting for clerks to finish their shift");
 			this.clerksFinishedShift.await();
-			Driver.LOGGER.info("Clerks shift finished");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -123,11 +119,19 @@ private AtomicInteger totalNumberOfRentalRequests(){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		Driver.LOGGER.warning("Managment now knows that all clerks finished their shift, proceeding to maintance.");
 		this.clerksFinishedShift.reset();
-//		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i++){
-//			this.clerkDetailsCollection.get(i).notify();
-//		}
+		
+	}
+	
+	public void newShiftForClearks(){
+		
+		for (int i = 0 ; i < this.clerkDetailsCollection.size() ; i++){
+			synchronized (clerkDetailsCollection.get(i)) {
+				this.clerkDetailsCollection.get(i).notifyAll();
+			}
+			Driver.LOGGER.info("Notifying Clerk *" + this.clerkDetailsCollection.get(i).getName() + "* To get up from his lazy ass and go back to work!");
+		}
 	}
 	
 	

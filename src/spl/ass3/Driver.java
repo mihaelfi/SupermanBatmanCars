@@ -96,8 +96,9 @@ public class Driver {
 			managment.startClerks();
 			managment.startGroupManager();
 			
-//			
-//			
+//	
+			managment.waitForClerksToFinishShift();
+			
 			managment.newShiftForClearks();
 //			
 			
