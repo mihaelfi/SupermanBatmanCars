@@ -54,7 +54,7 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		}
 		
 		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*2400;
-		Driver.LOGGER.fine("The customer " + this.stayingCustomer.getName() + " is starting to simulate his stay in the asset."
+		Driver.LOGGER.info("The customer " + this.stayingCustomer.getName() + " is starting to simulate his stay in the asset."
 				+"\n And is going to stay in the asset for " + this.currentlyHandeledRentalRequest.getDurationOfStay() + " days");
 		Thread.sleep(sleepTime);
 		return damageAmount;

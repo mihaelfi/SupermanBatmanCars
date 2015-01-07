@@ -37,7 +37,7 @@ public class Assets {
 	 * @param requestToFindAssetFor
 	 * @return an Asset that fits the size and type of the request.
 	 */
-	public Asset findAvailableAset(RentalRequest requestToFindAssetFor){
+	public synchronized Asset findAvailableAset(RentalRequest requestToFindAssetFor){
 		Asset ans = null;
 		String reqestedAssetType = requestToFindAssetFor.getAssetType();
 		int	   requstedAssetSize = requestToFindAssetFor.getAssetSize();
@@ -53,25 +53,32 @@ public class Assets {
 		while(!foundAsset){
 //			String assetTypeToTest = this.assetCollection.get(i).getType();
 //			int    assetSizeToTest = this.assetCollection.get(i).getSize();
+			if (i == this.assetCollection.size()){
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				i = 0;
+			}
 			Asset  assetToTest = this.assetCollection.get(i);
 			
-			synchronized (assetToTest) {
+//			synchronized (assetToTest) {
 				
-				if (i == this.assetCollection.size()){
-					i = 0;
-				}
+				
 				Driver.LOGGER.info("Value of i is : " + i);
 				if ( (reqestedAssetType.equals(assetToTest.getType())) && requstedAssetSize <= assetToTest.getSize() ){
 					
-					Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the request. Now will check if it's available..." );
+					Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the request id: *"+requestToFindAssetFor.getId()+"* . Now will check if it's available..." );
 					if ( assetToTest.getStatus().equals("AVAILABLE")){
-						Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the request. And Available!" );
+						Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the requestid: *"+requestToFindAssetFor.getId()+"* And Available!" );
 						foundAsset = true;
 						ans = assetToTest;
 						ans.setStatusBooked();
 					}else{
 						try {
-							Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the request. And **NOT** Available! waiting to seconds ..." );
+							Driver.LOGGER.info("The Asset :" + assetToTest.getName() + " of type: " + assetToTest.getType() +" is fitting the requestid: *"+requestToFindAssetFor.getId()+"* And **NOT** Available! waiting to seconds ..." );
 							wait(2000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
@@ -80,13 +87,16 @@ public class Assets {
 					}
 					
 					
+				}else{
+					Driver.LOGGER.info("The Asset :" + assetToTest.getName() + "of type: " + assetToTest.getType() + "is **NOT** fitting the request id: *"+requestToFindAssetFor.getId()+"*");
 				}
+			i++;
 			}
 			
 			
-			i++;
 			
-		}
+			
+//		}
 		
 		
 		return ans;

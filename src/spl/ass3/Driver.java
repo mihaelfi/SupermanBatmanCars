@@ -37,7 +37,7 @@ public class Driver {
 		System.out.println("Report Date: " + reportDate);
 		
 		LOGGER.setLevel(Level.INFO);
-		fileTxt = new FileHandler("Logging "+reportDate+".txt");
+		fileTxt = new FileHandler("Logging.txt");
 		
 		 formatterTxt = new SimpleFormatter();
 		 fileTxt.setFormatter(formatterTxt);
@@ -98,7 +98,7 @@ public class Driver {
 			
 //			
 //			
-			managment.newShiftForClearks();
+//			managment.newShiftForClearks();
 //			
 			
 //			System.out.println(managment.getNumberOfMaintencePerons());

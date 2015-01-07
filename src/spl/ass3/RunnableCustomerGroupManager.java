@@ -93,6 +93,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
+			
 			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getAssetType()+ " Asset ID: " + this.currentlyHandeledRentalRequest.getId() + " and marking it as available.");
 			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
 			

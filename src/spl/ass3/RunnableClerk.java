@@ -94,7 +94,7 @@ public class RunnableClerk implements Runnable {
 				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* set request status to fulfilled.");
 				// This will notify the Customer Manager that the request has been found.
 				Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* is notifying all the Managers waiting on request Id: " + this.currentlyHandeledRequest.getId());
-//				this.currentlyHandeledRequest.notifyAll();
+				this.currentlyHandeledRequest.notifyAll();
 				
 			}
 			
@@ -108,9 +108,9 @@ public class RunnableClerk implements Runnable {
 					try {
 						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );
 						this.totalSleepTime = 0;
-						Driver.LOGGER.info("Number of clerks how ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
+						Driver.LOGGER.info("Number of clerks who ended their shift is: " + this.clerksFinishedShift.getNumberWaiting());
 						this.clerksFinishedShift.await();
-//						this.clerkDetails.wait();
+						this.clerkDetails.wait();
 						Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* Waking up for new shift! \n*************************************************************\n*******************************************************" );
 						
 					} catch (InterruptedException e) {

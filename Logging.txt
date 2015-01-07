@@ -1,634 +1,1023 @@
-2015-01-06 23:24:36 INFO spl.ass3.Driver main 
+2015-01-07 02:38:32 INFO spl.ass3.Driver main 
 Printing command line arguments:
 InitialData.xml
 AssetContentsRepairDetails.xml
 Assets.xml
 CustomersGroups.xml
 
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData 
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData 
 
 Strting to Parse InitialData.xml
 
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData Parsing the tools ...
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData Finished parsing tools.
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData Parsing the Materials ...
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData Finished parsing materials.
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseIntialData Starting to parse clerks:
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseAssetContentsRepairDetails 
 
 Parsing AssetContentsRepairDetails.xml
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseAssets 
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseAssetContentsRepairDetails Finished parsing AssetContentsRepairDetails.xml
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseAssets 
 
 Parsing Assets.xml
-2015-01-06 23:24:36 INFO spl.ass3.Parser parseCustomerGroups 
+2015-01-07 02:38:32 INFO spl.ass3.Parser parseCustomerGroups 
 
 Parsing CustomersGroups.xml
-2015-01-06 23:24:36 INFO spl.ass3.Driver main Finish Parsing All Files! 
+2015-01-07 02:38:32 INFO spl.ass3.Driver main Finish Parsing All Files! 
 
 
 
 
-2015-01-06 23:24:36 INFO spl.ass3.Managment startClerks Totall Number of rental requests = 7
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has started his shift.
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has started his shift.
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has started his shift.
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has started his shift.
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Totall sleep time is: 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Meni
- Submitted the Rental RequestRentalRequest id is =5
-assetType=Hut
-assetSize=4
-durationOfStay=5
+2015-01-07 02:38:32 INFO spl.ass3.Managment startClerks Totall Number of rental requests = 15
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has started his shift.
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Has started his shift.
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has started his shift.
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Totall sleep time is: 0
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has started his shift.
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has started his shift.
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Totall sleep time is: 0
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has succesfully pulled a request form the queue
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has succesfully pulled a request form the queue
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Totall sleep time is: 0
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 5
+ Submitted the Rental RequestRentalRequest id is =14
+assetType=House
+assetSize=5
+durationOfStay=1
 requestStatus=INCOMPLETE
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 4
+ Submitted the Rental RequestRentalRequest id is =12
+assetType=Apartment
+assetSize=2
+durationOfStay=4
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 3
+ Submitted the Rental RequestRentalRequest id is =10
+assetType=House
+assetSize=4
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 1
  Submitted the Rental RequestRentalRequest id is =1
 assetType=Apartment
-assetSize=4
+assetSize=3
 durationOfStay=5
 requestStatus=INCOMPLETE
-2015-01-06 23:24:36 INFO spl.ass3.Managment newShiftForClearks Number of clerks how ended their shift is: 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Totall sleep time is: 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Meni is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has succesfully pulled a request form the queue
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Totall sleep time is: 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Totall sleep time is: 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Took the rental request RentalRequest id is =1
-assetType=Apartment
-assetSize=4
-durationOfStay=5
-requestStatus=INCOMPLETE
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:36 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 1 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has succesfully pulled a request form the queue
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 1 Asset Type: Apartment
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Took the rental request RentalRequest id is =5
-assetType=Hut
-assetSize=4
-durationOfStay=5
-requestStatus=INCOMPLETE
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 5 Asset Type: Hut
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. Now will check if it's available...
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. And Available!
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* found available asset: 
-The Asset: Asset 1
-Is of type: Apartment.
-Located in the location 4.0,2.0.
-It's Status is: BOOKED
-It's cost Per night is: 100.0
-it's size is : 4
-It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 50.0
-, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 40.0
-, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 15.0
-, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 20.0
-]
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is going to the asset...walking time is: 2828
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: Hut is fitting the request. Now will check if it's available...
-2015-01-06 23:24:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: Hut is fitting the request. And Available!
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* found available asset: 
-The Asset: Asset 4
-Is of type: Hut.
-Located in the location 0.0,5.0.
-It's Status is: BOOKED
-It's cost Per night is: 50.0
-it's size is : 4
-It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
-, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
-, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
-, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
-]
-2015-01-06 23:24:36 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is going to the asset...walking time is: 7211
-2015-01-06 23:24:37 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:37 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 1 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:24:38 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:38 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 1 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* stores the assetAsset 1 Of the Type Apartment in the rental request.
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* set request status to fulfilled.
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is notifying all the Managers waiting on request Id: 1
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has 6 much unhandeld requests.
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* checks if the shift should be over.
-
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* shift isn't over...His total sleep time is :2828 Starting New shift
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has started his shift.
-2015-01-06 23:24:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Totall sleep time is: 2828
-2015-01-06 23:24:39 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:39 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 1 for Andrei is FUFULIED!!!, we can continue !!
-2015-01-06 23:24:39 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andreigot wakeup call on request t 1
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 1
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 1
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 1
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 1
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 0.3606936044313427and damge type is: ARBITRARY
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.421695949270016and damge type is: ARBITRARY
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 0.3606936044313427%
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 2.421695949270016%
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:39 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:40 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:41 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:42 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:43 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* stores the assetAsset 4 Of the Type Hut in the rental request.
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* set request status to fulfilled.
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is notifying all the Managers waiting on request Id: 5
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has 5 much unhandeld requests.
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* checks if the shift should be over.
-
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* shift isn't over...His total sleep time is :7211 Starting New shift
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has started his shift.
-2015-01-06 23:24:43 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Totall sleep time is: 7211
-2015-01-06 23:24:44 INFO spl.ass3.RunnableCustomerGroupManager run The request Hut ID: 5 for Meni is FUFULIED!!!, we can continue !!
-2015-01-06 23:24:44 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Menigot wakeup call on request t 5
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 0.20003165930950795and damge type is: ARBITRARY
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AdielIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MatanIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer TalIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MeniIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 4
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.033525775332914and damge type is: ARBITRARY
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.0and damge type is: Fixed
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 5.0and damge type is: Fixed
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Matan* acumulated damage is: 0.5%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 0.4372175476577528and damge type is: ARBITRARY
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 0.20003165930950795%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Adiel* acumulated damage is: 0.4372175476577528%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Matan is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Tal* acumulated damage is: 5.0%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Meni* acumulated damage is: 2.0%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 1.033525775332914%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Tal is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Adiel is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:24:44 INFO spl.ass3.CallableSimulateStayInAsset call The customer Meni is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:26:39 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Andrei* is realeasing the asset Apartment Asset ID: 1 and marking it as available.
-2015-01-06 23:26:39 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:26:39 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
- Submitted the Rental RequestRentalRequest id is =2
-assetType=Loft
-assetSize=4
-durationOfStay=3
-requestStatus=INCOMPLETE
-2015-01-06 23:26:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has succesfully pulled a request form the queue
-2015-01-06 23:26:39 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:26:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Took the rental request RentalRequest id is =2
-assetType=Loft
-assetSize=4
-durationOfStay=3
-requestStatus=INCOMPLETE
-2015-01-06 23:26:39 INFO spl.ass3.RunnableCustomerGroupManager run The request Loft ID: 2 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 2 Asset Type: Loft
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2 of type: Loft is fitting the request. Now will check if it's available...
-2015-01-06 23:26:39 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2 of type: Loft is fitting the request. And Available!
-2015-01-06 23:26:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* found available asset: 
-The Asset: Asset 2
-Is of type: Loft.
-Located in the location 2.0,4.0.
-It's Status is: BOOKED
-It's cost Per night is: 30.0
-it's size is : 5
-It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
-, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 1.5
-, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 2.0
-]
-2015-01-06 23:26:39 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is going to the asset...walking time is: 2828
-2015-01-06 23:26:40 INFO spl.ass3.RunnableCustomerGroupManager run The request Loft ID: 2 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:26:41 INFO spl.ass3.RunnableCustomerGroupManager run The request Loft ID: 2 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* stores the assetAsset 2 Of the Type Loft in the rental request.
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* set request status to fulfilled.
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is notifying all the Managers waiting on request Id: 2
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has 4 much unhandeld requests.
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* checks if the shift should be over.
-
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* shift isn't over...His total sleep time is :2828 Starting New shift
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has started his shift.
-2015-01-06 23:26:42 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Totall sleep time is: 2828
-2015-01-06 23:26:42 INFO spl.ass3.RunnableCustomerGroupManager run The request Loft ID: 2 for Andrei is FUFULIED!!!, we can continue !!
-2015-01-06 23:26:42 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andreigot wakeup call on request t 2
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 2
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 2
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.465358018835336and damge type is: ARBITRARY
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 2
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 2
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.6631512745562635and damge type is: ARBITRARY
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 2.465358018835336%
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 1.6631512745562635%
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 3 days
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 3 days
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 3 days
-2015-01-06 23:26:42 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 3 days
-2015-01-06 23:26:44 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Meni* is realeasing the asset Hut Asset ID: 5 and marking it as available.
-2015-01-06 23:26:44 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:26:44 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Meni
- Submitted the Rental RequestRentalRequest id is =6
-assetType=Apartment
-assetSize=4
-durationOfStay=10
-requestStatus=INCOMPLETE
-2015-01-06 23:26:44 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has succesfully pulled a request form the queue
-2015-01-06 23:26:44 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Meni is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:26:44 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Took the rental request RentalRequest id is =6
-assetType=Apartment
-assetSize=4
-durationOfStay=10
-requestStatus=INCOMPLETE
-2015-01-06 23:26:44 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 6 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:26:44 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 6 Asset Type: Apartment
-2015-01-06 23:26:44 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:26:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:26:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. Now will check if it's available...
-2015-01-06 23:26:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. And Available!
-2015-01-06 23:26:44 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* found available asset: 
-The Asset: Asset 1
-Is of type: Apartment.
-Located in the location 4.0,2.0.
-It's Status is: BOOKED
-It's cost Per night is: 100.0
-it's size is : 4
-It's asset contents are :[Asset Content TV is at Health: 93.71761044629864. Repair cost multiplier is: 50.0
-, Asset Content Bed is at Health: 93.71761044629864. Repair cost multiplier is: 40.0
-, Asset Content Desk is at Health: 93.71761044629864. Repair cost multiplier is: 15.0
-, Asset Content Stove is at Health: 93.71761044629864. Repair cost multiplier is: 3.5
-, Asset Content Fridge is at Health: 93.71761044629864. Repair cost multiplier is: 20.0
-]
-2015-01-06 23:26:44 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* is going to the asset...walking time is: 2828
-2015-01-06 23:26:45 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 6 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:26:46 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 6 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* stores the assetAsset 1 Of the Type Apartment in the rental request.
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* set request status to fulfilled.
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* is notifying all the Managers waiting on request Id: 6
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has 3 much unhandeld requests.
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* checks if the shift should be over.
-
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* shift isn't over...His total sleep time is :2828 Starting New shift
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has started his shift.
-2015-01-06 23:26:47 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Totall sleep time is: 2828
-2015-01-06 23:26:47 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 6 for Meni is FUFULIED!!!, we can continue !!
-2015-01-06 23:26:47 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Menigot wakeup call on request t 6
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.7723714804656032and damge type is: ARBITRARY
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AdielIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.0088417472753624and damge type is: ARBITRARY
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MatanIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MeniIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer TalIs starting it's say in:Asset 1
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.0and damge type is: Fixed
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Matan* acumulated damage is: 0.5%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 2.0088417472753624%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Matan is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.5009448464354898and damge type is: ARBITRARY
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 1.7723714804656032%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Adiel* acumulated damage is: 3.5009448464354898%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Meni* acumulated damage is: 2.0%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 5.0and damge type is: Fixed
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Adiel is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Tal* acumulated damage is: 5.0%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Meni is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Tal is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:26:47 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 10 days
-2015-01-06 23:27:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Andrei* is realeasing the asset Loft Asset ID: 2 and marking it as available.
-2015-01-06 23:27:54 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:27:54 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 2
  Submitted the Rental RequestRentalRequest id is =3
 assetType=Cottage
-assetSize=4
-durationOfStay=5
+assetSize=5
+durationOfStay=2
 requestStatus=INCOMPLETE
-2015-01-06 23:27:54 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has succesfully pulled a request form the queue
-2015-01-06 23:27:54 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:27:54 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Took the rental request RentalRequest id is =3
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Totall sleep time is: 0
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 2 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 1 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 3 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 4 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 5 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Has succesfully pulled a request form the queue
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Took the rental request RentalRequest id is =3
 assetType=Cottage
-assetSize=4
+assetSize=5
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Took the rental request RentalRequest id is =1
+assetType=Apartment
+assetSize=3
 durationOfStay=5
 requestStatus=INCOMPLETE
-2015-01-06 23:27:54 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 3 Asset Type: Cottage
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5 of type: Cottage is fitting the request. Now will check if it's available...
-2015-01-06 23:27:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5 of type: Cottage is fitting the request. And Available!
-2015-01-06 23:27:54 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* found available asset: 
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Totall sleep time is: 0
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 3 Asset Type: Cottage
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Took the rental request RentalRequest id is =10
+assetType=House
+assetSize=4
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has succesfully pulled a request form the queue
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 5
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has succesfully pulled a request form the queue
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Took the rental request RentalRequest id is =12
+assetType=Apartment
+assetSize=2
+durationOfStay=4
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *3*
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Took the rental request RentalRequest id is =14
+assetType=House
+assetSize=5
+durationOfStay=1
+requestStatus=INCOMPLETE
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *3*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *3*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *3*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5 of type: Cottage is fitting the request id: *3* . Now will check if it's available...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5 of type: Cottage is fitting the requestid: *3* And Available!
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 14 Asset Type: House
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* found available asset: 
 The Asset: Asset 5
 Is of type: Cottage.
-Located in the location 2.0,6.0.
+Located in the location 12.0,16.0.
 It's Status is: BOOKED
 It's cost Per night is: 120.0
-it's size is : 10
+it's size is : 5
 It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 2.5
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.65
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 5.5
 , Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 4.75
 , Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.25
 ]
-2015-01-06 23:27:54 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is going to the asset...walking time is: 6324
-2015-01-06 23:27:55 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:27:56 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:27:57 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:27:58 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:27:59 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:28:00 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* stores the assetAsset 5 Of the Type Cottage in the rental request.
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* set request status to fulfilled.
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is notifying all the Managers waiting on request Id: 3
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has 2 much unhandeld requests.
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* checks if the shift should be over.
-
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has ended his shift. waiting for next shift 
-*************************************************************
-*******************************************************
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run Number of clerks how ended their shift is: 0
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Waking up for new shift! 
-*************************************************************
-*******************************************************
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* shift isn't over...His total sleep time is :0 Starting New shift
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has started his shift.
-2015-01-06 23:28:00 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Totall sleep time is: 0
-2015-01-06 23:28:01 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Andrei is FUFULIED!!!, we can continue !!
-2015-01-06 23:28:01 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andreigot wakeup call on request t 3
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 5
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 5
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.113537500988045and damge type is: ARBITRARY
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 5
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 5
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 0.13419148825528526and damge type is: ARBITRARY
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 2.113537500988045%
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 0.13419148825528526%
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:28:01 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Andrei* is realeasing the asset Cottage Asset ID: 3 and marking it as available.
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Andrei
- Submitted the Rental RequestRentalRequest id is =4
-assetType=Villa
-assetSize=4
-durationOfStay=5
-requestStatus=INCOMPLETE
-2015-01-06 23:30:01 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has succesfully pulled a request form the queue
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run 
-Number of Rentel Request for this group Has reached 0 , the Customer Group managerAndreiShould exit now.
-2015-01-06 23:30:01 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Took the rental request RentalRequest id is =4
-assetType=Villa
-assetSize=4
-durationOfStay=5
-requestStatus=INCOMPLETE
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andrei is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 4 Asset Type: Villa
-2015-01-06 23:30:01 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset Value of i is : 5
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 6 of type: Villa is fitting the request. Now will check if it's available...
-2015-01-06 23:30:01 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 6 of type: Villa is fitting the request. And Available!
-2015-01-06 23:30:01 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* found available asset: 
-The Asset: Asset 6
-Is of type: Villa.
-Located in the location 0.0,1.0.
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 5
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is going to the asset...walking time is: 31622
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *14*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *14*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *14*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *14* . Now will check if it's available...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *14* And Available!
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 12 Asset Type: Apartment
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* found available asset: 
+The Asset: Asset 4
+Is of type: House.
+Located in the location 20.0,15.0.
 It's Status is: BOOKED
-It's cost Per night is: 110.0
-it's size is : 10
-It's asset contents are :[Asset Content Computer is at Health: 100.0. Repair cost multiplier is: 2.25
-, Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+It's cost Per night is: 50.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
 , Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 1.0
 , Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.75
 , Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 1.5
 ]
-2015-01-06 23:30:01 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is going to the asset...walking time is: 7211
-2015-01-06 23:30:02 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:03 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:04 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:05 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:06 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:07 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:08 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is not yet fufulied ... waiting ...
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* stores the assetAsset 6 Of the Type Villa in the rental request.
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* set request status to fulfilled.
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is notifying all the Managers waiting on request Id: 4
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has 1 much unhandeld requests.
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* checks if the shift should be over.
-
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has ended his shift. waiting for next shift 
-*************************************************************
-*******************************************************
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run Number of clerks how ended their shift is: 0
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Waking up for new shift! 
-*************************************************************
-*******************************************************
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* shift isn't over...His total sleep time is :0 Starting New shift
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has started his shift.
-2015-01-06 23:30:08 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Totall sleep time is: 0
-2015-01-06 23:30:09 INFO spl.ass3.RunnableCustomerGroupManager run The request Villa ID: 4 for Andrei is FUFULIED!!!, we can continue !!
-2015-01-06 23:30:09 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Andreigot wakeup call on request t 4
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 6
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 6
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 6
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 6
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.7923780968660683and damge type is: ARBITRARY
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.9512978774524878and damge type is: ARBITRARY
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 1.7923780968660683%
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 1.9512978774524878%
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:30:09 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 5 days
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Meni* is realeasing the asset Apartment Asset ID: 6 and marking it as available.
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Meni
- Submitted the Rental RequestRentalRequest id is =7
-assetType=Apartment
-assetSize=4
-durationOfStay=6
-requestStatus=INCOMPLETE
-2015-01-06 23:30:47 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has succesfully pulled a request form the queue
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run 
-Number of Rentel Request for this group Has reached 0 , the Customer Group managerMeniShould exit now.
-2015-01-06 23:30:47 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Took the rental request RentalRequest id is =7
-assetType=Apartment
-assetSize=4
-durationOfStay=6
-requestStatus=INCOMPLETE
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Meni is now waiting for someone to find an asset for his RentalRequest 
-2015-01-06 23:30:47 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 7 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:30:47 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 7 Asset Type: Apartment
-2015-01-06 23:30:47 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 6
-2015-01-06 23:30:47 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
-2015-01-06 23:30:47 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. Now will check if it's available...
-2015-01-06 23:30:47 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request. And Available!
-2015-01-06 23:30:47 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* found available asset: 
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 5
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is going to the asset...walking time is: 41617
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *12* . Now will check if it's available...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *12* And Available!
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 10 Asset Type: House
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* found available asset: 
 The Asset: Asset 1
 Is of type: Apartment.
-Located in the location 4.0,2.0.
+Located in the location 20.0,20.0.
 It's Status is: BOOKED
 It's cost Per night is: 100.0
-it's size is : 4
-It's asset contents are :[Asset Content TV is at Health: 75.43545237212217. Repair cost multiplier is: 50.0
-, Asset Content Bed is at Health: 75.43545237212217. Repair cost multiplier is: 40.0
-, Asset Content Desk is at Health: 75.43545237212217. Repair cost multiplier is: 15.0
-, Asset Content Stove is at Health: 75.43545237212217. Repair cost multiplier is: 3.5
-, Asset Content Fridge is at Health: 75.43545237212217. Repair cost multiplier is: 20.0
+it's size is : 3
+It's asset contents are :[Asset Content TV is at Health: 100.0. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 100.0. Repair cost multiplier is: 8.0
+, Asset Content Desk is at Health: 100.0. Repair cost multiplier is: 4.0
+, Asset Content Stove is at Health: 100.0. Repair cost multiplier is: 3.5
+, Asset Content Fridge is at Health: 100.0. Repair cost multiplier is: 3.0
 ]
-2015-01-06 23:30:47 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is going to the asset...walking time is: 2828
-2015-01-06 23:30:48 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 7 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:30:49 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 7 for Meni is not yet fufulied ... waiting ...
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* stores the assetAsset 1 Of the Type Apartment in the rental request.
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* set request status to fulfilled.
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is notifying all the Managers waiting on request Id: 7
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has 0 much unhandeld requests.
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* checks if the shift should be over.
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 5
+2015-01-07 02:38:32 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is going to the asset...walking time is: 48083
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Trying to find an Asset that furfiles the request id: 1 Asset Type: Apartment
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The length of Asset is: 5
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:32 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:34 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:36 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:38 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:40 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:42 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:44 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:46 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:48 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:50 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:52 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:54 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:56 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:38:58 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:00 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:02 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* stores the assetAsset 5 Of the Type Cottage in the rental request.
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* set request status to fulfilled.
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* is notifying all the Managers waiting on request Id: 3
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has 14 much unhandeld requests.
+2015-01-07 02:39:04 INFO spl.ass3.RunnableCustomerGroupManager run The request Cottage ID: 3 for Group 2 is FUFULIED!!!, we can continue !!
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* checks if the shift should be over.
 
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* shift isn't over...His total sleep time is :5656 Starting New shift
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has started his shift.
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has succesfully pulled a request form the queue
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Totall sleep time is: 5656
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run Clerk *Wolfgang Eisenkott* Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has succesfully pulled a request form the queue
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run Clerk *Paula Die* Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has succesfully pulled a request form the queue
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run Clerk *Ken Harush* Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has succesfully pulled a request form the queue
-2015-01-06 23:30:50 INFO spl.ass3.RunnableClerk run Clerk *Paula Bitton* Has finished his work! Forever! and Ever! He will be missed !
-2015-01-06 23:30:50 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 7 for Meni is FUFULIED!!!, we can continue !!
-2015-01-06 23:30:50 INFO spl.ass3.RunnableCustomerGroupManager run 
-The Customer Group Manager Menigot wakeup call on request t 7
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AndreiIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 0.3772574235418067and damge type is: ARBITRARY
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer AdielIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 4.045633563026168and damge type is: ARBITRARY
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MatanIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer TalIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 5.0and damge type is: Fixed
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MeniIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer BoazIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer MajeedIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer RanIs starting it's say in:Asset 1
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Majeed* acumulated damage is: 0.5%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 1.3949024079212091and damge type is: ARBITRARY
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 2.0and damge type is: Fixed
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Tal* acumulated damage is: 5.0%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Meni* acumulated damage is: 2.0%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Tal is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Meni is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Matan* acumulated damage is: 0.5%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Matan is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Adiel* acumulated damage is: 4.045633563026168%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Adiel is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Andrei* acumulated damage is: 0.3772574235418067%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Boaz* acumulated damage is: 1.3949024079212091%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Majeed is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The damage amount is: 3.0and damge type is: Fixed
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Andrei is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Boaz is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The Customer *Ran* acumulated damage is: 3.0%
-2015-01-06 23:30:50 INFO spl.ass3.CallableSimulateStayInAsset call The customer Ran is starting to simulate his stay in the asset.
- And is going to stay in the asset for 6 days
-2015-01-06 23:32:09 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Andrei* is realeasing the asset Villa Asset ID: 4 and marking it as available.
-2015-01-06 23:32:09 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:32:09 INFO spl.ass3.RunnableCustomerGroupManager run The Runabble Custom Group Manager *Andrei* has exited ...
-2015-01-06 23:33:14 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Meni* is realeasing the asset Apartment Asset ID: 7 and marking it as available.
-2015-01-06 23:33:14 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
-2015-01-06 23:33:14 INFO spl.ass3.RunnableCustomerGroupManager run The Runabble Custom Group Manager *Meni* has exited ...
+2015-01-07 02:39:04 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 2got wakeup call on request t 3
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run The clerk *Paula Die* Has ended his shift. waiting for next shift 
+*************************************************************
+*******************************************************
+2015-01-07 02:39:04 INFO spl.ass3.RunnableClerk run Number of clerks who ended their shift is: 0
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 5 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:04 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:06 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:08 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:08 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Group 2* is realeasing the asset Cottage Asset ID: 3 and marking it as available.
+2015-01-07 02:39:08 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-07 02:39:08 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 2
+ Submitted the Rental RequestRentalRequest id is =4
+assetType=Cottage
+assetSize=5
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:39:08 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 2 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:10 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:12 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* stores the assetAsset 4 Of the Type House in the rental request.
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* set request status to fulfilled.
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* is notifying all the Managers waiting on request Id: 14
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has 13 much unhandeld requests.
+2015-01-07 02:39:14 INFO spl.ass3.RunnableCustomerGroupManager run The request House ID: 14 for Group 5 is FUFULIED!!!, we can continue !!
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* checks if the shift should be over.
+
+2015-01-07 02:39:14 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 5got wakeup call on request t 14
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run The clerk *Ken Harush* Has ended his shift. waiting for next shift 
+*************************************************************
+*******************************************************
+2015-01-07 02:39:14 INFO spl.ass3.RunnableClerk run Number of clerks who ended their shift is: 0
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 5 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 5 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 1 days
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:14 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:16 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Group 5* is realeasing the asset House Asset ID: 14 and marking it as available.
+2015-01-07 02:39:16 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-07 02:39:16 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 5
+ Submitted the Rental RequestRentalRequest id is =15
+assetType=Loft
+assetSize=5
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-07 02:39:16 INFO spl.ass3.RunnableCustomerGroupManager run 
+Number of Rentel Request for this group Has reached 0 , the Customer Group managerGroup 5Should exit now.
+2015-01-07 02:39:16 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 5 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *10*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1of type: Apartmentis **NOT** fitting the request id: *10*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *10*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *10*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the request id: *10* . Now will check if it's available...
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4 of type: House is fitting the requestid: *10* And Available!
+2015-01-07 02:39:16 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* found available asset: 
+The Asset: Asset 4
+Is of type: House.
+Located in the location 20.0,15.0.
+It's Status is: BOOKED
+It's cost Per night is: 50.0
+it's size is : 5
+It's asset contents are :[Asset Content TV is at Health: 35.39218529775304. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 35.39218529775304. Repair cost multiplier is: 1.0
+, Asset Content Desk is at Health: 35.39218529775304. Repair cost multiplier is: 2.5
+, Asset Content Stove is at Health: 35.39218529775304. Repair cost multiplier is: 3.75
+, Asset Content Fridge is at Health: 35.39218529775304. Repair cost multiplier is: 1.5
+]
+2015-01-07 02:39:16 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* is going to the asset...walking time is: 41617
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:16 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:18 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* stores the assetAsset 1 Of the Type Apartment in the rental request.
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* set request status to fulfilled.
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* is notifying all the Managers waiting on request Id: 12
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has 12 much unhandeld requests.
+2015-01-07 02:39:20 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 12 for Group 4 is FUFULIED!!!, we can continue !!
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* checks if the shift should be over.
+
+2015-01-07 02:39:20 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 4got wakeup call on request t 12
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run The clerk *Paula Bitton* Has ended his shift. waiting for next shift 
+*************************************************************
+*******************************************************
+2015-01-07 02:39:20 INFO spl.ass3.RunnableClerk run Number of clerks who ended their shift is: 0
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 5 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 4 days
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:20 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:22 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:24 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:26 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:28 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And **NOT** Available! waiting to seconds ...
+2015-01-07 02:39:30 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Group 4* is realeasing the asset Apartment Asset ID: 12 and marking it as available.
+2015-01-07 02:39:30 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-07 02:39:30 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 4
+ Submitted the Rental RequestRentalRequest id is =13
+assetType=Apartment
+assetSize=2
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:39:30 INFO spl.ass3.RunnableCustomerGroupManager run 
+Number of Rentel Request for this group Has reached 0 , the Customer Group managerGroup 4Should exit now.
+2015-01-07 02:39:30 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 4 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset Value of i is : 1
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 2of type: Loftis **NOT** fitting the request id: *1*
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset Value of i is : 2
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 3of type: Hutis **NOT** fitting the request id: *1*
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset Value of i is : 3
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 4of type: Houseis **NOT** fitting the request id: *1*
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset Value of i is : 4
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 5of type: Cottageis **NOT** fitting the request id: *1*
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset Value of i is : 0
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the request id: *1* . Now will check if it's available...
+2015-01-07 02:39:30 INFO spl.ass3.Assets findAvailableAset The Asset :Asset 1 of type: Apartment is fitting the requestid: *1* And Available!
+2015-01-07 02:39:30 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* found available asset: 
+The Asset: Asset 1
+Is of type: Apartment.
+Located in the location 20.0,20.0.
+It's Status is: BOOKED
+It's cost Per night is: 100.0
+it's size is : 3
+It's asset contents are :[Asset Content TV is at Health: 52.64506047673596. Repair cost multiplier is: 5.0
+, Asset Content Bed is at Health: 52.64506047673596. Repair cost multiplier is: 8.0
+, Asset Content Desk is at Health: 52.64506047673596. Repair cost multiplier is: 4.0
+, Asset Content Stove is at Health: 52.64506047673596. Repair cost multiplier is: 3.5
+, Asset Content Fridge is at Health: 52.64506047673596. Repair cost multiplier is: 3.0
+]
+2015-01-07 02:39:30 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* is going to the asset...walking time is: 48083
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* stores the assetAsset 4 Of the Type House in the rental request.
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* set request status to fulfilled.
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* is notifying all the Managers waiting on request Id: 10
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Has 11 much unhandeld requests.
+2015-01-07 02:39:58 INFO spl.ass3.RunnableCustomerGroupManager run The request House ID: 10 for Group 3 is FUFULIED!!!, we can continue !!
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* checks if the shift should be over.
+
+2015-01-07 02:39:58 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 3got wakeup call on request t 10
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run The clerk *Leonidas I* Has ended his shift. waiting for next shift 
+*************************************************************
+*******************************************************
+2015-01-07 02:39:58 INFO spl.ass3.RunnableClerk run Number of clerks who ended their shift is: 0
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 5 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 4 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:39:58 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 2 days
+2015-01-07 02:40:03 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Group 3* is realeasing the asset House Asset ID: 10 and marking it as available.
+2015-01-07 02:40:03 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-07 02:40:03 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 3
+ Submitted the Rental RequestRentalRequest id is =11
+assetType=Loft
+assetSize=4
+durationOfStay=2
+requestStatus=INCOMPLETE
+2015-01-07 02:40:03 INFO spl.ass3.RunnableCustomerGroupManager run 
+Number of Rentel Request for this group Has reached 0 , the Customer Group managerGroup 3Should exit now.
+2015-01-07 02:40:03 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 3 is now waiting for someone to find an asset for his RentalRequest 
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* stores the assetAsset 1 Of the Type Apartment in the rental request.
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* set request status to fulfilled.
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* is notifying all the Managers waiting on request Id: 1
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has 10 much unhandeld requests.
+2015-01-07 02:40:18 INFO spl.ass3.RunnableCustomerGroupManager run The request Apartment ID: 1 for Group 1 is FUFULIED!!!, we can continue !!
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* checks if the shift should be over.
+
+2015-01-07 02:40:18 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 1got wakeup call on request t 1
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run The clerk *Wolfgang Eisenkott* Has ended his shift. waiting for next shift 
+*************************************************************
+*******************************************************
+2015-01-07 02:40:18 INFO spl.ass3.RunnableClerk run Number of clerks who ended their shift is: 0
+2015-01-07 02:40:18 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 1 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-07 02:40:18 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 3 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-07 02:40:18 INFO spl.ass3.CallableSimulateStayInAsset call The customer Customer 2 is starting to simulate his stay in the asset.
+ And is going to stay in the asset for 5 days
+2015-01-07 02:40:30 INFO spl.ass3.RunnableCustomerGroupManager run The group manager *Group 1* is realeasing the asset Apartment Asset ID: 1 and marking it as available.
+2015-01-07 02:40:30 INFO spl.ass3.RunnableCustomerGroupManager run The group manager is sending the damage report to managment
+2015-01-07 02:40:30 INFO spl.ass3.RunnableCustomerGroupManager run The Customer Group Manager Group 1
+ Submitted the Rental RequestRentalRequest id is =2
+assetType=Hut
+assetSize=3
+durationOfStay=3
+requestStatus=INCOMPLETE
+2015-01-07 02:40:30 INFO spl.ass3.RunnableCustomerGroupManager run 
+Number of Rentel Request for this group Has reached 0 , the Customer Group managerGroup 1Should exit now.
+2015-01-07 02:40:30 INFO spl.ass3.RunnableCustomerGroupManager run 
+The Customer Group Manager Group 1 is now waiting for someone to find an asset for his RentalRequest 
