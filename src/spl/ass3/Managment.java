@@ -66,7 +66,7 @@ private void waitForMaintenceToFinish(){
 			try {
 				while(!areAllAsetsFixed()){
 					Driver.LOGGER.info("All assets are not yet fixed ... waiting for maintence to finish");
-					wait();
+					this.repairMaterialInformationCollection.wait();
 				}
 				
 			} catch (InterruptedException e) {
@@ -86,7 +86,7 @@ public void startSimulation(){
 
 	while( this.totalNumberOfRentalRequests.get() > 0){
 		
-		
+		Driver.LOGGER.warning("Total number of rental requests is: " + this.totalNumberOfRentalRequests);
 	//
 		this.waitForClerksToFinishShift();
 		
@@ -129,6 +129,8 @@ public void startMaintencesWorkers(){
 	
 	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(this.NUMBER_OF_MAINTENANCE_PERSONS);
 	
+//	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(1);
+	
 	for (int i = 0 ; i < this.NUMBER_OF_MAINTENANCE_PERSONS ; i ++){
 		
 		maintenceExecutor.submit(new RunnableMaintenanceRequest(this.repairToolInformationCollection, this.repairMaterialInformationCollection, null, this.warehouse, this.assetsForRepair, "**RepairMan "+ i+"*"));
@@ -154,7 +156,7 @@ public void putDamagedAssetsInRepairQueue(){
 			}
 		}
 	}
-	
+	Driver.LOGGER.info("The number of broken Assets is: "  + this.damageReportCollection.size());
 	this.damageReportCollection.clear();
 }
 	

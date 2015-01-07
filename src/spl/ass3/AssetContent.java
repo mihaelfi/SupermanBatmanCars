@@ -17,7 +17,7 @@ public class AssetContent implements Comparable<AssetContent> {
 	}
 	
 	public String toString(){
-		String ans = "Asset Content " + name + " is at Health: " + health + ". Repair cost multiplier is: " + repairCostMultiplier + "\n";
+		String ans = "Asset Content " + name + " is at Health: " + health + ". Repair cost multiplier is: " + repairCostMultiplier ;
 		
 		return ans;
 	}

@@ -101,6 +101,8 @@ public class RunnableMaintenanceRequest implements Runnable  {
 							
 					ArrayList<RepairTool> repairToolsTaken = new ArrayList<RepairTool>();
 					boolean canTakeAllTools = true;
+					
+					Driver.LOGGER.info(this.repairPersonName + " is trying to fix Asset content : " + assetContents.get(i).toString()  + " in Asset " + this.asset.getName() );
 							
 					for (int j = 0 ; j < repairToolsNeeded.size() && canTakeAllTools; j++){
 						int didSuccsesfullyTakenTools = 0;  // -1 = fail 1 = success.
@@ -108,45 +110,51 @@ public class RunnableMaintenanceRequest implements Runnable  {
 								
 						if (didSuccsesfullyTakenTools == 1){
 							Driver.LOGGER.info(this.repairPersonName + " Has succesully taken " + repairToolsNeeded.get(j).toString());
-							repairToolsTaken.add(repairToolsNeeded.get(i));
+							repairToolsTaken.add(repairToolsNeeded.get(j));
 						}else{
 							canTakeAllTools = false;
-							returnTools(repairToolsTaken);
 							Driver.LOGGER.info("The warhouse does not have enough tools, returning everything I took");
+							returnTools(repairToolsTaken);
+							
 						}
 								
-						if (canTakeAllTools){
-									
-							// Taking materials after we are sure that we have taken all the tools
-							for (int m = 0 ; m < repairMaterialNeeded.size() ; m++){
-							warehouse.takeRepairMaterial(repairMaterialNeeded.get(m));
 										
-							}
-							
-							// Fixing AssetContent
-							assetContents.get(i).calculateRepairCostTime();
-										
-							long sleepTime = (long)assetContents.get(i).getRepairCostTime();
-										
-							Driver.LOGGER.info(this.repairPersonName + "Calculated the Repair cost time of " + assetContents.get(i).toString() + " is: " + sleepTime);
-							try {
-								Thread.sleep(sleepTime);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							
-							// Returnting Tools
-							returnTools(repairToolsTaken);
-							Driver.LOGGER.info(this.repairPersonName + "is returning all tools");
-							// Set assetContent  as fixed
-							assetContents.get(i).setHealth(100.0);
-							Driver.LOGGER.info(this.repairPersonName + "Has set " + assetContents.get(i).toString() +"Health to: 100.0"  );
-							
-							numberOfFixedAssetContents++;
+					}
+					
+					if (canTakeAllTools){
 						
+						Driver.LOGGER.info(this.repairPersonName + " Succesully gather all tools needed to repair" + assetContents.get(i).toString());
+						
+						// Taking materials after we are sure that we have taken all the tools
+						for (int m = 0 ; m < repairMaterialNeeded.size() ; m++){
+						warehouse.takeRepairMaterial(repairMaterialNeeded.get(m));
+						Driver.LOGGER.info(this.repairPersonName + " Has succesully taken " + repairMaterialNeeded.get(m).toString());
 									
-						}				
+						}
+						
+						// Fixing AssetContent
+						assetContents.get(i).calculateRepairCostTime();
+									
+						long sleepTime = (long)assetContents.get(i).getRepairCostTime();
+									
+						Driver.LOGGER.info(this.repairPersonName + " Calculated the Repair cost time of " + assetContents.get(i).toString() + " is: " + sleepTime);
+						try {
+							Thread.sleep(sleepTime);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						// Returnting Tools
+						returnTools(repairToolsTaken);
+						Driver.LOGGER.info(this.repairPersonName + "is returning all tools");
+						// Set assetContent  as fixed
+						assetContents.get(i).setHealth(100.0);
+						Driver.LOGGER.info(this.repairPersonName + "Has set " + assetContents.get(i).toString() +"Health to: 100.0"  );
+						
+						numberOfFixedAssetContents++;
+					
+								
 					}
 						
 				}
@@ -154,11 +162,13 @@ public class RunnableMaintenanceRequest implements Runnable  {
 		  }
 		  // Repaired all assetContens
 		synchronized (this.asset) {
+			
+			Driver.LOGGER.info("Setting asset"+ this.asset.getName() + " to Available");
 			this.asset.setStatusAvailable();
 			this.asset.setRepaired();
 		}
 		synchronized (this.repairMaterialInformationCollection) {
-			notifyAll();
+			this.repairMaterialInformationCollection.notifyAll();
 		}
 		Driver.LOGGER.info(this.repairPersonName + " has finished reparing Asset " + this.asset.getName());
 		}

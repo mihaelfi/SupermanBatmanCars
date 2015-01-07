@@ -52,13 +52,17 @@ public class Warehouse  {
 		int ans = 0;
 		String toolName = toolToGet.getToolName();
 		RepairTool toolInWarehouse = this.repairTools.get(toolName); 
+		Driver.LOGGER.info("Taking tools " + toolName +" from Warehouse");
+		Driver.LOGGER.info("Current Number of " + toolName + "in Warehouse is: " + this.repairTools.get(toolName).getNumberOfTools() );
 		synchronized (toolInWarehouse) {
 				
 			if (toolInWarehouse.getNumberOfTools() - toolToGet.getNumberOfTools() >= 0){
 				toolInWarehouse.takeTools(toolToGet);
+				Driver.LOGGER.info("Number of " + toolName + "in Warehouse after taking is: " + this.repairTools.get(toolName).getNumberOfTools() );
 				ans = 1;
 			}else{
 				ans = -1;
+				
 			}
 			
 			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
@@ -77,14 +81,13 @@ public class Warehouse  {
 	public void returnRepairTool(RepairTool repairToolToReturn) {
 		String toolName = repairToolToReturn.getToolName();
 		RepairTool toolInWarehouse = this.repairTools.get(toolName);
+		Driver.LOGGER.info("Returning tools " + toolName +" to Warehouse");
+		Driver.LOGGER.info("Current Number of " + toolName + "in Warehouse is: " + this.repairTools.get(toolName).getNumberOfTools() );
 		synchronized (toolInWarehouse) {
 			toolInWarehouse.returnTools(repairToolToReturn);
-			
-			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
-			Driver.LOGGER.fine("Returned " + repairToolToReturn.toString() +" Materials from warehouse.");
-			Driver.LOGGER.fine("Current Status of: " + toolInWarehouse.toString());
-			
+				
 		}
+		Driver.LOGGER.info("Number of " + toolName + "in Warehouse after returing is: " + this.repairTools.get(toolName).getNumberOfTools() );
 		
 	}
 	
