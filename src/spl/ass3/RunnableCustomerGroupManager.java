@@ -19,21 +19,24 @@ public class RunnableCustomerGroupManager implements Runnable{
 	private Double damagePrecetnage = (double) 0;
 	private Assets assets;
 	private Double profit;
+	private ArrayList<RentalRequest> handeledrentalRequestCollection;
 	
 
 
-	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Double profit) {
+	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Double profit , ArrayList<RentalRequest> handeledrentalRequestCollection) {
 		this.customerGroupDetails = customerGroupDetails;
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
 		this.managment = managment;
 		this.assets = assets;
 		this.profit = profit;
+		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
 	}
 	
 	private void applyDamageToAssetContents(){
 		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i++){
 			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
 				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).applyDamage(this.damagePrecetnage);
+				
 			}
 			
 		}
@@ -49,10 +52,12 @@ public class RunnableCustomerGroupManager implements Runnable{
 	public void run() {
 		
 		Driver.LOGGER.warning("Customer manager *"+ this.customerGroupDetails.getGroupManagerName() + "* Has started working.");
+		
 		while (this.rentalRequestCollection.size() > 0){
 			Driver.LOGGER.fine("The rental request collection size is: " +  this.rentalRequestCollection.size());
 			synchronized (this.rentalRequestCollection.get(0)) {
 				this.currentlyHandeledRentalRequest = this.rentalRequestCollection.get(0);
+				this.handeledrentalRequestCollection.add(this.rentalRequestCollection.get(0));
 				this.managment.addRentalRequestToBlockingQueue(this.currentlyHandeledRentalRequest);
 				Driver.LOGGER.info("The Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() +
 						"\n Submitted the Rental Request" + this.currentlyHandeledRentalRequest.toString());

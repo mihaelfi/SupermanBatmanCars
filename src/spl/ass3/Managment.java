@@ -146,6 +146,11 @@ public void startSimulation(){
 	
 		
 	Driver.LOGGER.severe("Simulation should shut down...");
+	this.statistics.setRepairMaterialUsedCollection(this.warehouse.getRepairMaterialsUsed());
+	this.statistics.setRepairToolUsedCollection(this.warehouse.getRepairToolsUsed());
+	
+	Driver.LOGGER.severe(this.statistics.toString());
+	
 }
 
 
@@ -332,7 +337,7 @@ public int getNumberOfMaintencePerons(){
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit,statistics.getRentalRequestCollection()));
 			
 		}
 		

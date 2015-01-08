@@ -21,10 +21,21 @@ public class Warehouse  {
 	/** The repair materials. */
 	HashMap<String, RepairMaterial> 	repairMaterials;
 	
+	/** The repair tools. */
+	HashMap<String, RepairTool> 		repairToolsUsed;
+	
+	/** The repair materials. */
+	HashMap<String, RepairMaterial> 	repairMaterialsUsed;
+	
+	
+	
+	
 	
 	Warehouse(){
 		this.repairTools = new HashMap<String, RepairTool>();
 		this.repairMaterials = new HashMap<String, RepairMaterial>();
+		this.repairToolsUsed = new HashMap<String, RepairTool>();
+		this.repairMaterialsUsed = new HashMap<String, RepairMaterial>();
 	}
 	
 	/* (non-Javadoc)
@@ -44,6 +55,28 @@ public class Warehouse  {
 		
 	}
 	
+	private void addToolTorepairToolsUsed (RepairTool toolToAdd){
+		if(this.repairToolsUsed.get(toolToAdd.getToolName()) == null){
+			this.repairToolsUsed.put(toolToAdd.getToolName(), toolToAdd);
+		}else{
+			int oldNumberOfToolsUsed = this.repairToolsUsed.get(toolToAdd).getNumberOfTools();
+			this.repairToolsUsed.get(toolToAdd).setNumberOfTools(oldNumberOfToolsUsed + toolToAdd.getNumberOfTools());;
+			
+		}
+	}
+	
+	
+	private void addMaterialTorepairMaterialUsed (RepairMaterial materialToAdd){
+		if(this.repairMaterialsUsed.get(materialToAdd.getMaterialName()) == null){
+			this.repairMaterialsUsed.put(materialToAdd.getMaterialName(), materialToAdd);
+		}else{
+			int oldNumberOfToolsUsed = this.repairToolsUsed.get(materialToAdd).getNumberOfTools();
+			this.repairToolsUsed.get(materialToAdd).setNumberOfTools(oldNumberOfToolsUsed + materialToAdd.getNumberOfMaterials());;
+			
+		}
+	}
+	
+	
 	/* (non-Javadoc)
 	 * @see spl.ass3.WarehouseInterface#getRepairTool(java.lang.String)
 	 */
@@ -59,6 +92,7 @@ public class Warehouse  {
 			if (toolInWarehouse.getNumberOfTools() - toolToGet.getNumberOfTools() >= 0){
 				toolInWarehouse.takeTools(toolToGet);
 				Driver.LOGGER.info("Number of " + toolName + "in Warehouse after taking is: " + this.repairTools.get(toolName).getNumberOfTools() );
+				this.addToolTorepairToolsUsed(toolToGet);
 				ans = 1;
 			}else{
 				ans = -1;
@@ -99,7 +133,12 @@ public class Warehouse  {
 		String materialName = repairMaterialToTake.getMaterialName();
 		RepairMaterial materialInWarehouse = this.repairMaterials.get(materialName);
 		synchronized (materialInWarehouse) {
+			
+			
 			materialInWarehouse.takeMaterial(repairMaterialToTake);
+			
+			this.addMaterialTorepairMaterialUsed(repairMaterialToTake);
+			
 			Driver.LOGGER.fine("Current Status of: " + materialInWarehouse.toString());
 			Driver.LOGGER.fine("Taken " + repairMaterialToTake.toString() +" Materials from warehouse.");
 			Driver.LOGGER.fine("Current Status of: " + materialInWarehouse.toString());
@@ -137,6 +176,8 @@ public class Warehouse  {
 		return ans;
 	}
 	
+	
+	
 	public String warehouseMaterialsstoString(){
 		String ans = "Printing warehouse material content: \n";
 		Iterator it =this.repairMaterials.entrySet().iterator();
@@ -168,6 +209,25 @@ public class Warehouse  {
 	public void setRepairMaterials(HashMap<String, RepairMaterial> repairMaterials) {
 		this.repairMaterials = repairMaterials;
 	}
+
+	public HashMap<String, RepairTool> getRepairToolsUsed() {
+		return repairToolsUsed;
+	}
+
+	public void setRepairToolsUsed(HashMap<String, RepairTool> repairToolsUsed) {
+		this.repairToolsUsed = repairToolsUsed;
+	}
+
+	public HashMap<String, RepairMaterial> getRepairMaterialsUsed() {
+		return repairMaterialsUsed;
+	}
+
+	public void setRepairMaterialsUsed(
+			HashMap<String, RepairMaterial> repairMaterialsUsed) {
+		this.repairMaterialsUsed = repairMaterialsUsed;
+	}
+	
+	
 	
 	
 	
