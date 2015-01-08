@@ -14,16 +14,33 @@ public class Statistics {
 	private StringBuilder stringbuilder = new StringBuilder();
 	
 	
-	public Statistics(Double moneyGained) {
+	
+	
+	
+	
+	
+	public Statistics(Double moneyGained,
+			ArrayList<RentalRequest> handeledrentalRequestCollection,
+			HashMap<String, RepairTool> repairToolUsedCollection,
+			HashMap<String, RepairMaterial> repairMaterialUsedCollection) {
 		
-		
-		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
-		this.repairToolUsedCollection = new HashMap<String,RepairTool>();
-		this.repairMaterialUsedCollection = new HashMap<String,RepairMaterial>();
 		this.moneyGained = moneyGained;
-		
-		
+		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
+		this.repairToolUsedCollection = repairToolUsedCollection;
+		this.repairMaterialUsedCollection = repairMaterialUsedCollection;
 	}
+
+
+//	public Statistics(Double moneyGained,) {
+//		
+//		
+//		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
+//		this.repairToolUsedCollection = new HashMap<String,RepairTool>();
+//		this.repairMaterialUsedCollection = new HashMap<String,RepairMaterial>();
+//		this.moneyGained = moneyGained;
+//		
+//		
+//	}
 
 
 	public HashMap<String, RepairTool> getRepairToolUsedCollection() {
@@ -76,6 +93,10 @@ public class Statistics {
 			ans = ans + "\n Material: " + pairs.getKey() + " Quantity: " + ((RepairTool)pairs.getValue()).getNumberOfTools();
 		}
 		return ans;
+	}
+	
+	public void addMoney(Double moneyToAdd){
+		this.moneyGained = this.moneyGained + moneyToAdd;
 	}
 	
 	

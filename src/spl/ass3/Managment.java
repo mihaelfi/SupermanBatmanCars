@@ -1,16 +1,13 @@
 package spl.ass3;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Managment {
@@ -31,7 +28,8 @@ public class Managment {
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
 	private 	Double profit = new Double(0.0);
-	private     Statistics statistics = new Statistics(this.profit);
+	private     Statistics statistics ;
+	private 	ArrayList<RentalRequest> handeledrentalRequestCollection;
 	
 	
 	
@@ -46,6 +44,7 @@ public class Managment {
 		this.damageReportCollection = new ArrayList<DamageReport>();
 		this.assetsForRepair = new ArrayBlockingQueue<Asset>(10, true);
 //		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
+		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
 		
 		
 	}
@@ -146,6 +145,7 @@ public void startSimulation(){
 	
 		
 	Driver.LOGGER.severe("Simulation should shut down...");
+	this.statistics = new Statistics(this.profit, this.handeledrentalRequestCollection, this.warehouse.repairToolsUsed, this.warehouse.repairMaterialsUsed);
 	this.statistics.setRepairMaterialUsedCollection(this.warehouse.getRepairMaterialsUsed());
 	this.statistics.setRepairToolUsedCollection(this.warehouse.getRepairToolsUsed());
 	
@@ -337,7 +337,7 @@ public int getNumberOfMaintencePerons(){
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit,statistics.getRentalRequestCollection()));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit,this.handeledrentalRequestCollection));
 			
 		}
 		

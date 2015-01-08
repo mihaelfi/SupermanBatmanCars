@@ -70,8 +70,8 @@ public class Warehouse  {
 		if(this.repairMaterialsUsed.get(materialToAdd.getMaterialName()) == null){
 			this.repairMaterialsUsed.put(materialToAdd.getMaterialName(), materialToAdd);
 		}else{
-			int oldNumberOfToolsUsed = this.repairToolsUsed.get(materialToAdd).getNumberOfTools();
-			this.repairToolsUsed.get(materialToAdd).setNumberOfTools(oldNumberOfToolsUsed + materialToAdd.getNumberOfMaterials());;
+			int oldNumberOfMaterialsUsed = this.repairToolsUsed.get(materialToAdd).getNumberOfTools();
+			this.repairToolsUsed.get(materialToAdd).setNumberOfTools(oldNumberOfMaterialsUsed + materialToAdd.getNumberOfMaterials());;
 			
 		}
 	}

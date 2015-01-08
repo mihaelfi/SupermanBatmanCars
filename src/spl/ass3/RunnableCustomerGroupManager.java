@@ -130,8 +130,9 @@ public class RunnableCustomerGroupManager implements Runnable{
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
 			
 			synchronized (this.profit) {
-				this.profit = this.profit + calculateCostOfStay();
-				Driver.LOGGER.severe("\nThe profit is now " + this.profit+ "\n");
+				double costOfStay = this.calculateCostOfStay();
+				this.profit = this.profit + costOfStay;
+				Driver.LOGGER.severe("\nThread is: " + Thread.currentThread().getName()+ "\nThe profit is now " + this.profit+ "\n");
 			}
 			
 			synchronized (this.assets) {
