@@ -31,7 +31,7 @@ public class Managment {
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
 	private 	Double profit = 0.0;
-	private     Statistics statistics = new Sta
+	private     Statistics statistics = new Statistics(this.profit);
 	
 	
 	
