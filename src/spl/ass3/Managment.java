@@ -148,8 +148,8 @@ public void startSimulation(){
 	
 	
 	try {
-		this.groupManagerExecutor.awaitTermination(30, TimeUnit.SECONDS);
-		this.maintenceExecutor.awaitTermination(30,	TimeUnit.SECONDS);
+		this.groupManagerExecutor.awaitTermination(300, TimeUnit.SECONDS);
+		this.maintenceExecutor.awaitTermination(300,TimeUnit.SECONDS);
 	
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
