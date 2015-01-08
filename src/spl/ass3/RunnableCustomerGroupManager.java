@@ -12,20 +12,22 @@ import java.util.concurrent.Executors;
 
 public class RunnableCustomerGroupManager implements Runnable{
 	
-	protected CustomerGroupDetails customerGroupDetails;
-	protected ArrayList<RentalRequest> rentalRequestCollection;
-	protected Managment managment;
-	protected RentalRequest currentlyHandeledRentalRequest;
-	protected Double damagePrecetnage = (double) 0;
+	private CustomerGroupDetails customerGroupDetails;
+	private ArrayList<RentalRequest> rentalRequestCollection;
+	private Managment managment;
+	private RentalRequest currentlyHandeledRentalRequest;
+	private Double damagePrecetnage = (double) 0;
 	private Assets assets;
+	private Double profit;
 	
 
 
-	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets) {
+	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Double profit) {
 		this.customerGroupDetails = customerGroupDetails;
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
 		this.managment = managment;
 		this.assets = assets;
+		this.profit = profit;
 	}
 	
 	private void applyDamageToAssetContents(){
@@ -35,6 +37,10 @@ public class RunnableCustomerGroupManager implements Runnable{
 			}
 			
 		}
+	}
+	
+	private double calculateCostOfStay(){
+		return (this.currentlyHandeledRentalRequest.getAsset().getCostPerNight())*(this.currentlyHandeledRentalRequest.getDurationOfStay())*(this.customerGroupDetails.getCustomerCollection().size());
 	}
 	
 	
@@ -117,6 +123,10 @@ public class RunnableCustomerGroupManager implements Runnable{
 //			this.applyDamageToAssetContents();
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
+			
+			synchronized (this.profit) {
+				this.profit = this.profit + calculateCostOfStay();
+			}
 			
 			synchronized (this.assets) {
 				Driver.LOGGER.warning("Customer group *" + this.customerGroupDetails.getGroupManagerName()+ "* has finished it's stay in Asset:" + this.currentlyHandeledRentalRequest.getAsset().getName());

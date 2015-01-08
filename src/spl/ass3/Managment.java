@@ -30,6 +30,8 @@ public class Managment {
 	private     Object maintenceFinished;
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
+	private 	Double profit = 0.0;
+	private     Statistics statistics = new Sta
 	
 	
 	
@@ -330,7 +332,7 @@ public int getNumberOfMaintencePerons(){
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit));
 			
 		}
 		
