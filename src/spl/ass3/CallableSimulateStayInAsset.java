@@ -45,22 +45,22 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		Driver.LOGGER.fine("The Customer *"+ this.stayingCustomer.getName() +  "* acumulated damage is: " + damageAmount+"%");
 		
 		
-		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i ++){
-			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
-				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
-				double newHealth = currentHealth - damageAmount;
-				if (newHealth < 0){
-					newHealth = 0.0;
-				}
-				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
-				Driver.LOGGER.info("Thread id is " +Thread.currentThread().getName()+" In Asset *"+this.asset.getName()+"* The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
-			}
-			
-		}
+//		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i ++){
+//			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
+//				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
+//				double newHealth = currentHealth - damageAmount;
+//				if (newHealth < 0){
+//					newHealth = 0.0;
+//				}
+//				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
+//				Driver.LOGGER.info("Thread id is " +Thread.currentThread().getName()+" In Asset *"+this.asset.getName()+"* The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
+//			}
+//			
+//		}
 		
 		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*2400;
-		Driver.LOGGER.info("The customer " + this.stayingCustomer.getName() + " is starting to simulate his stay in the asset."
-				+"\n And is going to stay in the asset for " + this.currentlyHandeledRentalRequest.getDurationOfStay() + " days");
+		Driver.LOGGER.warning("\n\t\t The customer *" + this.stayingCustomer.getName() + "* is starting to simulate his stay in the asset:" +
+		this.asset.getName() +"\n And is going to stay in the asset for " + this.currentlyHandeledRentalRequest.getDurationOfStay() + " days" + "\n and will cause "+  damageAmount + " of damage.\n");
 		Thread.sleep(sleepTime);
 		return damageAmount;
 		

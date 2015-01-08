@@ -28,6 +28,15 @@ public class RunnableCustomerGroupManager implements Runnable{
 		this.assets = assets;
 	}
 	
+	private void applyDamageToAssetContents(){
+		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i++){
+			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
+				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).applyDamage(this.damagePrecetnage);
+			}
+			
+		}
+	}
+	
 	
 
 	@Override
@@ -71,10 +80,14 @@ public class RunnableCustomerGroupManager implements Runnable{
 				
 			}
 			
-			ExecutorService executor = Executors.newCachedThreadPool();
-			CompletionService<Double> completionService = new ExecutorCompletionService<Double>(executor);
+			ExecutorService executorForCustomers = Executors.newCachedThreadPool();
+			CompletionService<Double> completionService = new ExecutorCompletionService<Double>(executorForCustomers);
+			
+			Driver.LOGGER.severe("The number of customer treads in group " + this.customerGroupDetails.getGroupManagerName() + " that is: " + this.customerGroupDetails.getCustomerCollection().size());
 			
 			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); i++){
+				
+				
 				Callable<Double> simulateStayInAsset = new CallableSimulateStayInAsset(currentlyHandeledRentalRequest, this.customerGroupDetails.getCustomerCollection().get(i),this.currentlyHandeledRentalRequest.getAsset());
 				completionService.submit(simulateStayInAsset);
 				
@@ -95,22 +108,26 @@ public class RunnableCustomerGroupManager implements Runnable{
 				}
 			}
 			
+			executorForCustomers.shutdown();
+			
 			if (this.damagePrecetnage > 100.0){
 				this.damagePrecetnage = 100.0;
 			}
 			
+//			this.applyDamageToAssetContents();
+			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
 			
 			synchronized (this.assets) {
-				Driver.LOGGER.warning("Notifying clerks that there has been a change in Assets status");
+				Driver.LOGGER.warning("Customer group *" + this.customerGroupDetails.getGroupManagerName()+ "* has finished it's stay in Asset:" + this.currentlyHandeledRentalRequest.getAsset().getName());
 				this.assets.notifyAll();
 			}
 			
 			Driver.LOGGER.info("The group manager *" + this.customerGroupDetails.getGroupManagerName() +"* is realeasing the asset " + this.currentlyHandeledRentalRequest.getAssetType()+ " Asset ID: " + this.currentlyHandeledRentalRequest.getId() + " and marking it as available.");
-			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage);
+			DamageReport damageReport = new DamageReport(this.currentlyHandeledRentalRequest.getAsset(), this.damagePrecetnage, this.customerGroupDetails.getGroupManagerName());
 			
 			this.managment.addDamageReport(damageReport);
-			Driver.LOGGER.info("The group manager is sending the damage report to managment");
+			Driver.LOGGER.severe("The group manager of group: " + this.customerGroupDetails.getGroupManagerName() +" is sending the damage report to managment About Asset" + this.currentlyHandeledRentalRequest.getAsset().getName());
 		}
 		
 		Driver.LOGGER.warning("The Runabble Custom Group Manager *" + this.customerGroupDetails.getGroupManagerName() +"* has exited ...");

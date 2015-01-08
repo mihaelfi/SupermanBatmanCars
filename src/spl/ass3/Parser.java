@@ -381,6 +381,7 @@ public static void parseCustomerGroups (String CUSTOMER_GROUPS_FILENAME, Managme
 				
 				CustomerGroupDetails customerGroupDetailsToManagment = new CustomerGroupDetails(new ArrayList<RentalRequest>(rentalRequestCollection),new ArrayList<Customer> (customerCollection), customerGroupDetailGroupManagerNameString);
 				rentalRequestCollection.clear();
+				customerCollection.clear();
 				Driver.LOGGER.fine("\nThe Customer Group Details are: " + customerGroupDetailsToManagment.toString());
 				managment.addCustomerGroupDetailsToCollection(customerGroupDetailsToManagment);
 			}

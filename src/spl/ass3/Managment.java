@@ -1,5 +1,6 @@
 package spl.ass3;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -46,6 +47,7 @@ public class Managment {
 		
 		
 	}
+	
 
 private boolean areAllAsetsFixed(){
 	boolean ans = true;
@@ -164,42 +166,80 @@ public void startMaintencesWorkers(){
 }
 	
 public void putDamagedAssetsInRepairQueue(){
-	int numOfAssetsSentToRepair = 0;
-	ArrayList<DamageReport> tempDamageReportCollection = new ArrayList<DamageReport>();
-	this.assetsAwaitingRepair.clear();
+	Driver.LOGGER.severe("Damage report before appliyg damage " + this.damageReportCollection.toString());
+	int numberOfAssetsPutForRepair = 0;
 	
-	for (int i = 0 ; i < this.damageReportCollection.size() ; i++){
-		synchronized (this.damageReportCollection.get(i).getAsset()) {
-			if (100.0 - this.damageReportCollection.get(i).getDamagePrecentage() < 65.0 ){
-				if (this.damageReportCollection.get(i).getAsset().getStatus().equals("AVAILABLE")){
-					Driver.LOGGER.info("The Asset " + this.damageReportCollection.get(i).getAsset().getName() + " is Damaged and need to be repaired. sending maintence people in ...");
-					try {
-						this.damageReportCollection.get(i).getAsset().setBroken();
-						this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
-						Driver.LOGGER.warning("Managment has put the asset for repair " + this.damageReportCollection.get(i).getAsset().toString());
-						assetsAwaitingRepair.add(this.damageReportCollection.get(i).getAsset());
-						numOfAssetsSentToRepair++;
-						this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
-					} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}else{
-					tempDamageReportCollection.add(this.damageReportCollection.get(i));
+	for (int i = 0 ; i < this.damageReportCollection.size() ; i ++){
+		this.damageReportCollection.get(i).applyDamage();
+	}
+	
+	Driver.LOGGER.severe("Damage report after appliyg damage " + this.damageReportCollection.toString());
+	
+	for (int i = 0 ; i < this.assets.getAssetCollection().size() ; i++){
+		synchronized (this.assets.getAssetCollection().get(i)) {
+			if (this.assets.getAssetCollection().get(i).getAssetContents().get(0).getHealth() < 65.0 && this.assets.getAssetCollection().get(i).getStatus().equals("AVAILABLE")){
+				try {
+					this.assetsForRepair.put(this.assets.getAssetCollection().get(i));
+					numberOfAssetsPutForRepair++;
+				} catch (InterruptedException e) {
+					System.out.println("Got Excepition!");
+					Driver.LOGGER.severe("Got Exception !");
+					e.printStackTrace();
 				}
-				
-				
 			}
-			
 		}
-		
-	}
-	this.damageReportCollection.clear();
-	for (int k = 0 ; k < tempDamageReportCollection.size(); k ++){
-		this.damageReportCollection.add(tempDamageReportCollection.get(k));
 	}
 	
-	Driver.LOGGER.warning("The number of broken Assets is: "  + numOfAssetsSentToRepair);
+	Driver.LOGGER.severe("Number of assets put for repair is : " + numberOfAssetsPutForRepair);
+	
+	this.damageReportCollection.clear();
+	
+	
+//	int numOfAssetsSentToRepair = 0;
+//	ArrayList<DamageReport> tempDamageReportCollection = new ArrayList<DamageReport>();
+//	this.assetsAwaitingRepair.clear();
+//	
+//	for (int i = 0 ; i < this.damageReportCollection.size() ; i++){
+//		synchronized (this.damageReportCollection.get(i).getAsset()) {
+//			if (this.damageReportCollection.get(i).getAsset().getAssetContents().get(0).getHealth() < 65.0 ){
+//				if (this.damageReportCollection.get(i).getAsset().getStatus().equals("AVAILABLE")){
+//					
+//					
+//					Driver.LOGGER.severe("Found enough damaged damage report: \n" + this.damageReportCollection.get(i).toString() );
+//					Driver.LOGGER.severe("Asset contents health is supposed to be: " + (100.0 - this.damageReportCollection.get(i).getDamagePrecentage()));
+//					Driver.LOGGER.severe("Found damaged asset: the damaged asset is: \n" + this.damageReportCollection.get(i).getAsset().toString() );
+//					
+//					
+//					Driver.LOGGER.info("The Asset " + this.damageReportCollection.get(i).getAsset().getName() + " is Damaged and need to be repaired. sending maintence people in ...");
+//					try {
+//						this.damageReportCollection.get(i).getAsset().setBroken();
+//						this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
+//						Driver.LOGGER.warning("Managment has put the asset for repair " + this.damageReportCollection.get(i).getAsset().toString());
+//						assetsAwaitingRepair.add(this.damageReportCollection.get(i).getAsset());
+//						numOfAssetsSentToRepair++;
+//						this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
+//					} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}else{
+//					tempDamageReportCollection.add(this.damageReportCollection.get(i));
+//				}
+//				
+//				
+//			}
+//			
+//		}
+//		
+//	}
+//	Driver.LOGGER.severe("The number of Damage reports is: " + this.damageReportCollection.size());
+//	Driver.LOGGER.severe("number of ingored reportss is: " + tempDamageReportCollection.size());
+//	this.damageReportCollection.clear();
+//	for (int k = 0 ; k < tempDamageReportCollection.size(); k ++){
+//		this.damageReportCollection.add(tempDamageReportCollection.get(k));
+//	}
+//	
+//	Driver.LOGGER.warning("The number of broken Assets is: "  + numOfAssetsSentToRepair);
 }
 	
 public void setNumberOfMaintencePersons(int numOfMaintencePersons){
@@ -290,7 +330,7 @@ public int getNumberOfMaintencePerons(){
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this,assets));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets));
 			
 		}
 		
@@ -362,7 +402,21 @@ public int getNumberOfMaintencePerons(){
 	}
 	
 	public void addDamageReport(DamageReport damageReportToAdd){
-		this.damageReportCollection.add(damageReportToAdd);
+//		boolean damageReportIsNotAlreadyInCollection = true;
+		synchronized (this.damageReportCollection) {
+//			for (int i = 0 ; i < this.damageReportCollection.size() && damageReportIsNotAlreadyInCollection; i++){
+//				if (this.damageReportCollection.get(i).getAsset().getName().equals(damageReportToAdd.getAsset().getName())){
+//					double tempDamage = this.damageReportCollection.get(i).getDamagePrecentage();
+//					this.damageReportCollection.get(i).setDamagePrecentage(tempDamage - damageReportToAdd.getDamagePrecentage());
+//					damageReportIsNotAlreadyInCollection = false;
+//				}
+//			}
+//			if (damageReportIsNotAlreadyInCollection){
+				this.damageReportCollection.add(damageReportToAdd);
+//			}
+			
+		}
+		
 	}
 
 	public ArrayList<ClerkDetails> getClerkDetailsCollection() {

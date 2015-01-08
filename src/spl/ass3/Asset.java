@@ -41,7 +41,7 @@ public class Asset implements Comparable<Asset> {
 	
 	public String toString(){
 		
-		return "The Asset: " + this.name + "\nIs of type: " + this.type+".\nLocated in the location " + this.location+ 
+		return "\nThe Asset: " + this.name + "\nIs of type: " + this.type+".\nLocated in the location " + this.location+ 
 				".\nIt's Status is: " + this.status + "\nIt's cost Per night is: " + this.costPerNight + "\nit's size is : " + this.size + 
 				"\nIt's asset contents are :" + this.assetContents.toString();
 	}

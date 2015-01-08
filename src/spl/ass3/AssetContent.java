@@ -17,7 +17,7 @@ public class AssetContent implements Comparable<AssetContent> {
 	}
 	
 	public String toString(){
-		String ans = "Asset Content " + name + " is at Health: " + health + ". Repair cost multiplier is: " + repairCostMultiplier ;
+		String ans = "\nAsset Content " + name + " is at Health: " + health + ". Repair cost multiplier is: " + repairCostMultiplier ;
 		
 		return ans;
 	}
@@ -52,6 +52,10 @@ public class AssetContent implements Comparable<AssetContent> {
 	
 	public double getRepairCostTime(){
 		return this.repairCostTime;
+	}
+	
+	public void applyDamage(double damageToApply){
+		this.health = this.health - damageToApply;
 	}
 
 	@Override

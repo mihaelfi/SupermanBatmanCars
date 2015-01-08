@@ -64,17 +64,17 @@ public class RunnableClerk implements Runnable {
 			Asset avaliableAsset  = this.assets.findAvailableAset(this.currentlyHandeledRequest);
 			
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* found available asset: \n" + avaliableAsset.toString());
-//			synchronized (avaliableAsset) {
-//				avaliableAsset.setStatusBooked();
-//				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
-//			}
+			synchronized (avaliableAsset) {
+				avaliableAsset.setStatusBooked();
+				Driver.LOGGER.info("The clerk " + this.clerkDetails.getName() + "marked asset as booked: \n" + avaliableAsset.toString());
+			}
 			
 			//This simulates the walking to the asset process
 			
 			double distanceToAsset = this.clerkDetails.location.calculateDistance(avaliableAsset.getLocation());
-			long sleepTime = (long) (distanceToAsset*2000);
+			long sleepTime = (long) (distanceToAsset*200);
 			totalSleepTime = totalSleepTime + sleepTime;
-			Driver.LOGGER.warning("The clerk *" + this.clerkDetails.getName() + "* is going to the asset..." + "walking time is: " + sleepTime);
+			Driver.LOGGER.warning("The clerk *" + this.clerkDetails.getName() + "* is going to the asset *"+ avaliableAsset.getName() + "* walking time is: " + sleepTime);
 			
 			try {
 				Thread.sleep(sleepTime);
@@ -104,7 +104,7 @@ public class RunnableClerk implements Runnable {
 			
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* checks if the shift should be over.\n" );
 			
-			if (this.totalSleepTime > 8000){
+			if (this.totalSleepTime > 800){
 				synchronized (this.clerkDetails) {
 					try {
 						Driver.LOGGER.warning("The clerk *" + this.clerkDetails.getName() + "* Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );

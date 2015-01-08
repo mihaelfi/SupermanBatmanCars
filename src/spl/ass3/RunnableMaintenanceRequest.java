@@ -61,7 +61,7 @@ public class RunnableMaintenanceRequest implements Runnable  {
 			if (this.asset.getName().equals("POISON_PILL")){
 				try {
 					this.assetsForRepairQueue.put(this.asset);
-					Driver.LOGGER.info("There will be no more maintence Requests !!! " + this.repairPersonName + " commits suicide !");
+					Driver.LOGGER.warning("There will be no more maintence Requests !!! " + this.repairPersonName + " commits suicide !");
 					break;
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -72,22 +72,13 @@ public class RunnableMaintenanceRequest implements Runnable  {
 			ArrayList<AssetContent> assetContents = this.asset.getAssetContents();
 				
 			while(numberOfFixedAssetContents < assetContents.size()){
-				Driver.LOGGER.warning(" The thread id is :  "+Thread.currentThread().getId() + "\t NEED FIX ::" + asset.getName() + "   FIX:  " + numberOfFixedAssetContents + "    FROM: " + assetContents.size());
-//				boolean triedAllAtLeastOnce = false;
 				
-//				if(triedAllAtLeastOnce){
-//					synchronized (this.warehouse.getRepairTools()) {
-//						try {
-//							Driver.LOGGER.info("Tried to fixed all asset contents at least once");
-//							wait();
-//						} catch (InterruptedException e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						}
-//					}
-//				}
+				
 				
 				for (int i = 0 ; i < assetContents.size() ; i++){
+					
+					Driver.LOGGER.severe(" repairman " + this.repairPersonName + " \t NEED FIX ::" + asset.getName() + "   FIX:  " + (numberOfFixedAssetContents + 1) + "    FROM: " + assetContents.size());
+					Driver.LOGGER.severe("Heath of asset we are trying to repair is: " + this.asset.getAssetContents().get(0).getHealth());
 						
 					if (assetContents.get(i).getHealth() < UNHEALTHY_ASSET_HEALTH){
 							
@@ -109,11 +100,11 @@ public class RunnableMaintenanceRequest implements Runnable  {
 						didSuccsesfullyTakenTools =  warehouse.takeRepairTool(repairToolsNeeded.get(j));
 								
 						if (didSuccsesfullyTakenTools == 1){
-							Driver.LOGGER.warning(this.repairPersonName + " Has succesully taken " + repairToolsNeeded.get(j).toString());
+							Driver.LOGGER.info(this.repairPersonName + " Has succesully taken " + repairToolsNeeded.get(j).toString());
 							repairToolsTaken.add(repairToolsNeeded.get(j));
 						}else{
 							canTakeAllTools = false;
-							Driver.LOGGER.warning(this.repairPersonName + " Has failed to take " + repairToolsNeeded.get(j).toString() + " from warehouse, because there are only" + warehouse.getRepairTools().get(repairToolsNeeded.get(j).getToolName()).toString() + "tools in the warehouse ");
+							Driver.LOGGER.info(this.repairPersonName + " Has failed to take " + repairToolsNeeded.get(j).toString() + " from warehouse, because there are only" + warehouse.getRepairTools().get(repairToolsNeeded.get(j).getToolName()).toString() + "tools in the warehouse ");
 							returnTools(repairToolsTaken);
 							
 						}
@@ -170,7 +161,7 @@ public class RunnableMaintenanceRequest implements Runnable  {
 		synchronized (this.repairMaterialInformationCollection) {
 			this.repairMaterialInformationCollection.notifyAll();
 		}
-		Driver.LOGGER.warning(this.repairPersonName + " has finished reparing Asset " + this.asset.getName());
+		Driver.LOGGER.severe(this.repairPersonName + " has finished reparing Asset " + this.asset.getName());
 		Driver.LOGGER.info("Asset printout after fixing" + this.asset.toString());
 		}
 	}

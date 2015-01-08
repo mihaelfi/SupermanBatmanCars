@@ -2,14 +2,16 @@ package spl.ass3;
 
 public class DamageReport {
 	
-	protected Asset asset;
-	protected double damagePrecentage;
+	private Asset asset;
+	private double damagePrecentage;
+	private String customerGroupDoneDamage;
 	
 	
 	
-	public DamageReport(Asset asset, double damagePrecentage) {
+	public DamageReport(Asset asset, double damagePrecentage , String customerGroupDoneDamage) {
 		this.asset = asset;
 		this.damagePrecentage = damagePrecentage;
+		this.customerGroupDoneDamage = customerGroupDoneDamage;
 	}
 
 
@@ -40,9 +42,17 @@ public class DamageReport {
 
 	@Override
 	public String toString() {
-		return "DamageReport [asset=" + asset.getName() + ", damagePrecentage="
-				+ damagePrecentage + "]";
+		return "DamageReport asset= " + asset.getName() + "\n Damage Percentage: "+ damagePrecentage + "\n Done By Customer Group: " + this.customerGroupDoneDamage;
 	}
+	
+	public void applyDamage(){
+		synchronized (this.asset) {
+			for (int i = 0 ; i < this.asset.getAssetContents().size() ; i++){
+				this.asset.getAssetContents().get(i).applyDamage(this.damagePrecentage);
+			}
+		}
+	}
+
 	
 	
 	
