@@ -131,6 +131,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			synchronized (this.profit) {
 				this.profit = this.profit + calculateCostOfStay();
+				Driver.LOGGER.severe("\nThe profit is now " + this.profit+ "\n");
 			}
 			
 			synchronized (this.assets) {

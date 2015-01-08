@@ -20,6 +20,7 @@ public class Statistics {
 		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
 		this.repairToolUsedCollection = new HashMap<String,RepairTool>();
 		this.repairMaterialUsedCollection = new HashMap<String,RepairMaterial>();
+		this.moneyGained = moneyGained;
 		
 		
 	}

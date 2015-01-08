@@ -30,7 +30,7 @@ public class Managment {
 	private     Object maintenceFinished;
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
-	private 	Double profit = 0.0;
+	private 	Double profit = new Double(0.0);
 	private     Statistics statistics = new Statistics(this.profit);
 	
 	
@@ -173,14 +173,14 @@ public void startMaintencesWorkers(){
 }
 	
 public void putDamagedAssetsInRepairQueue(){
-	Driver.LOGGER.severe("Damage report before appliyg damage " + this.damageReportCollection.toString());
+	Driver.LOGGER.warning("Damage report before appliyg damage " + this.damageReportCollection.toString());
 	int numberOfAssetsPutForRepair = 0;
 	
 	for (int i = 0 ; i < this.damageReportCollection.size() ; i ++){
 		this.damageReportCollection.get(i).applyDamage();
 	}
 	
-	Driver.LOGGER.severe("Damage report after appliyg damage " + this.damageReportCollection.toString());
+	Driver.LOGGER.warning("Damage report after appliyg damage " + this.damageReportCollection.toString());
 	
 	for (int i = 0 ; i < this.assets.getAssetCollection().size() ; i++){
 		synchronized (this.assets.getAssetCollection().get(i)) {
@@ -197,7 +197,7 @@ public void putDamagedAssetsInRepairQueue(){
 		}
 	}
 	
-	Driver.LOGGER.severe("Number of assets put for repair is : " + numberOfAssetsPutForRepair);
+	Driver.LOGGER.warning("Number of assets put for repair is : " + numberOfAssetsPutForRepair);
 	
 	this.damageReportCollection.clear();
 	
