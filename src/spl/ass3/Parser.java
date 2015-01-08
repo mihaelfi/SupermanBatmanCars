@@ -58,7 +58,7 @@ public class Parser {
 			int numOfMaintencePersons = Integer.parseInt(numberOfMaintenancePersons.item(0).getTextContent());
 			
 			NodeList totalNumberOfRentalRequests = DocElements.getElementsByTagName("TotalNumberOfRentalRequests");
-			int totalNumberOfRentalRequestsInt = Integer.parseInt(numberOfMaintenancePersons.item(0).getTextContent());
+			int totalNumberOfRentalRequestsInt = Integer.parseInt(totalNumberOfRentalRequests.item(0).getTextContent());
 			
 //			Element numberOfMaintenencePersons = (Element) numberOfMaintenancePersons.item(0);
 			managment.setNumberOfMaintencePersons(numOfMaintencePersons);

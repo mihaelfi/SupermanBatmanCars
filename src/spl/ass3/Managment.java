@@ -28,7 +28,7 @@ public class Managment {
 	private 	BlockingQueue<Asset> assetsForRepair;
 	private     Object maintenceFinished;
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
-	
+	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
 	
 	
 	
@@ -49,10 +49,11 @@ public class Managment {
 
 private boolean areAllAsetsFixed(){
 	boolean ans = true;
-	ArrayList<Asset> assetCollection = this.assets.getAssetCollection();
+//	ArrayList<Asset> assetCollection = this.assets.getAssetCollection();
 	
-	for (int i = 0 ; i < assetCollection.size() && ans ; i++){
-		if (assetCollection.get(i).isBroken() == true){
+	
+	for (int i = 0 ; i < this.assetsAwaitingRepair.size() && ans ; i++){
+		if (assetsAwaitingRepair.get(i).isBroken() == true){
 			ans = false;
 		}
 	}
@@ -70,7 +71,7 @@ private void waitForMaintenceToFinish(){
 				}
 				
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Fucking Exception !!");
 				e.printStackTrace();
 			}
 		}
@@ -87,25 +88,45 @@ public void startSimulation(){
 	while( this.totalNumberOfRentalRequests.get() > 0){
 		
 		Driver.LOGGER.warning("Total number of rental requests is: " + this.totalNumberOfRentalRequests);
-	//
+		Driver.LOGGER.warning("************************************************************************");
 		this.waitForClerksToFinishShift();
 		
+		Driver.LOGGER.warning("Clerks Finished Shift.");
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("\n\n\n\n\n\n\n\n\n");
 		
-		Driver.LOGGER.info("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
-		
-		
+		Driver.LOGGER.warning("Printing Assets before maintences : \n" + this.assets.toString());
+		Driver.LOGGER.warning("************************************************************************");
+
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("Printing Damage Report"  + this.damageReportCollection.toString());
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("Pushing damaged Assets into queue");
+		Driver.LOGGER.warning("************************************************************************");
 		this.putDamagedAssetsInRepairQueue();
 		
 		
 		
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("Waiting For maintence to finish!");
+		Driver.LOGGER.warning("************************************************************************");
 		this.waitForMaintenceToFinish();
-		Driver.LOGGER.info("Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
+		
+		Driver.LOGGER.warning("Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
 				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
 				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
 				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n"
 				+ "Maintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\nMaintence Finished, Clerks should resume !\n");
 		
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("Printing Assets *After* maintences : \n" + this.assets.toString());
+		Driver.LOGGER.warning("************************************************************************");
+		
+		
+		Driver.LOGGER.warning("************************************************************************");
+		Driver.LOGGER.warning("Clerks Starting New Shift");
+		Driver.LOGGER.warning("************************************************************************");
 		this.newShiftForClerks();
 
 		
@@ -120,7 +141,7 @@ public void startSimulation(){
 	}
 	
 		
-	
+	Driver.LOGGER.severe("Simulation should shut down...");
 }
 
 
@@ -143,21 +164,42 @@ public void startMaintencesWorkers(){
 }
 	
 public void putDamagedAssetsInRepairQueue(){
+	int numOfAssetsSentToRepair = 0;
+	ArrayList<DamageReport> tempDamageReportCollection = new ArrayList<DamageReport>();
+	this.assetsAwaitingRepair.clear();
+	
 	for (int i = 0 ; i < this.damageReportCollection.size() ; i++){
-		if (100.0 - this.damageReportCollection.get(i).getDamagePrecentage() < 65.0 ){
-				Driver.LOGGER.info("The Asset " + this.damageReportCollection.get(i).getAsset().getName() + " is Damaged and need to be repaired. sending maintence people in ...");
-			try {
-				this.damageReportCollection.get(i).getAsset().setBroken();
-				this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
-				this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		synchronized (this.damageReportCollection.get(i).getAsset()) {
+			if (100.0 - this.damageReportCollection.get(i).getDamagePrecentage() < 65.0 ){
+				if (this.damageReportCollection.get(i).getAsset().getStatus().equals("AVAILABLE")){
+					Driver.LOGGER.info("The Asset " + this.damageReportCollection.get(i).getAsset().getName() + " is Damaged and need to be repaired. sending maintence people in ...");
+					try {
+						this.damageReportCollection.get(i).getAsset().setBroken();
+						this.assetsForRepair.put(this.damageReportCollection.get(i).getAsset());
+						Driver.LOGGER.warning("Managment has put the asset for repair " + this.damageReportCollection.get(i).getAsset().toString());
+						assetsAwaitingRepair.add(this.damageReportCollection.get(i).getAsset());
+						numOfAssetsSentToRepair++;
+						this.damageReportCollection.get(i).getAsset().setStatusUnavailable();
+					} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else{
+					tempDamageReportCollection.add(this.damageReportCollection.get(i));
+				}
+				
+				
 			}
+			
 		}
+		
 	}
-	Driver.LOGGER.info("The number of broken Assets is: "  + this.damageReportCollection.size());
 	this.damageReportCollection.clear();
+	for (int k = 0 ; k < tempDamageReportCollection.size(); k ++){
+		this.damageReportCollection.add(tempDamageReportCollection.get(k));
+	}
+	
+	Driver.LOGGER.warning("The number of broken Assets is: "  + numOfAssetsSentToRepair);
 }
 	
 public void setNumberOfMaintencePersons(int numOfMaintencePersons){

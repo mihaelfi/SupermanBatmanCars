@@ -33,6 +33,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 	@Override
 	public void run() {
 		
+		Driver.LOGGER.warning("Customer manager *"+ this.customerGroupDetails.getGroupManagerName() + "* Has started working.");
 		while (this.rentalRequestCollection.size() > 0){
 			Driver.LOGGER.fine("The rental request collection size is: " +  this.rentalRequestCollection.size());
 			synchronized (this.rentalRequestCollection.get(0)) {
@@ -57,7 +58,8 @@ public class RunnableCustomerGroupManager implements Runnable{
 					// guraded block
 					while (!(this.currentlyHandeledRentalRequest.getRequestStatus().equals("FUFULIED"))){
 						
-						this.currentlyHandeledRentalRequest.wait(1000);
+						this.currentlyHandeledRentalRequest.wait();
+						Driver.LOGGER.warning("Group manager *"+ this.customerGroupDetails.getGroupManagerName() +"* got notification from a clerk that his request was fufulied, we can stay in the asset now.");
 					}
 					Driver.LOGGER.info("The request "+ this.currentlyHandeledRentalRequest.getAssetType() + " ID: " + this.currentlyHandeledRentalRequest.getId() + " for "+ this.customerGroupDetails.getGroupManagerName() + " is FUFULIED!!!, we can continue !!");
 					
@@ -73,10 +75,11 @@ public class RunnableCustomerGroupManager implements Runnable{
 			CompletionService<Double> completionService = new ExecutorCompletionService<Double>(executor);
 			
 			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); i++){
-				Callable<Double> simulateStayInAsset = new CallableSimulateStayInAsset(currentlyHandeledRentalRequest, this.customerGroupDetails.getCustomerCollection().get(i));
+				Callable<Double> simulateStayInAsset = new CallableSimulateStayInAsset(currentlyHandeledRentalRequest, this.customerGroupDetails.getCustomerCollection().get(i),this.currentlyHandeledRentalRequest.getAsset());
 				completionService.submit(simulateStayInAsset);
 				
 			}
+			
 			this.damagePrecetnage = 0.0;
 			
 			for (int i = 0 ; i < this.customerGroupDetails.getCustomerCollection().size(); ++i){
@@ -92,7 +95,9 @@ public class RunnableCustomerGroupManager implements Runnable{
 				}
 			}
 			
-			
+			if (this.damagePrecetnage > 100.0){
+				this.damagePrecetnage = 100.0;
+			}
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
 			
@@ -108,7 +113,7 @@ public class RunnableCustomerGroupManager implements Runnable{
 			Driver.LOGGER.info("The group manager is sending the damage report to managment");
 		}
 		
-		Driver.LOGGER.info("The Runabble Custom Group Manager *" + this.customerGroupDetails.getGroupManagerName() +"* has exited ...");
+		Driver.LOGGER.warning("The Runabble Custom Group Manager *" + this.customerGroupDetails.getGroupManagerName() +"* has exited ...");
 		
 	}
 	

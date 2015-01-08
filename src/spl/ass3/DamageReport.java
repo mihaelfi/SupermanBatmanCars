@@ -35,6 +35,16 @@ public class DamageReport {
 	public void setDamagePrecentage(double damagePrecentage) {
 		this.damagePrecentage = damagePrecentage;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "DamageReport [asset=" + asset.getName() + ", damagePrecentage="
+				+ damagePrecentage + "]";
+	}
+	
+	
 	
 	
 	

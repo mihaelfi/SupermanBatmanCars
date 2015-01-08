@@ -72,7 +72,7 @@ public class RunnableMaintenanceRequest implements Runnable  {
 			ArrayList<AssetContent> assetContents = this.asset.getAssetContents();
 				
 			while(numberOfFixedAssetContents < assetContents.size()){
-				Driver.LOGGER.warning("\t NEED FIX ::" + asset.getName() + "   FIX:  " + numberOfFixedAssetContents + "    FROM: " + assetContents.size());
+				Driver.LOGGER.warning(" The thread id is :  "+Thread.currentThread().getId() + "\t NEED FIX ::" + asset.getName() + "   FIX:  " + numberOfFixedAssetContents + "    FROM: " + assetContents.size());
 //				boolean triedAllAtLeastOnce = false;
 				
 //				if(triedAllAtLeastOnce){
@@ -109,11 +109,11 @@ public class RunnableMaintenanceRequest implements Runnable  {
 						didSuccsesfullyTakenTools =  warehouse.takeRepairTool(repairToolsNeeded.get(j));
 								
 						if (didSuccsesfullyTakenTools == 1){
-							Driver.LOGGER.info(this.repairPersonName + " Has succesully taken " + repairToolsNeeded.get(j).toString());
+							Driver.LOGGER.warning(this.repairPersonName + " Has succesully taken " + repairToolsNeeded.get(j).toString());
 							repairToolsTaken.add(repairToolsNeeded.get(j));
 						}else{
 							canTakeAllTools = false;
-							Driver.LOGGER.info("The warhouse does not have enough tools, returning everything I took");
+							Driver.LOGGER.warning(this.repairPersonName + " Has failed to take " + repairToolsNeeded.get(j).toString() + " from warehouse, because there are only" + warehouse.getRepairTools().get(repairToolsNeeded.get(j).getToolName()).toString() + "tools in the warehouse ");
 							returnTools(repairToolsTaken);
 							
 						}
@@ -170,7 +170,8 @@ public class RunnableMaintenanceRequest implements Runnable  {
 		synchronized (this.repairMaterialInformationCollection) {
 			this.repairMaterialInformationCollection.notifyAll();
 		}
-		Driver.LOGGER.info(this.repairPersonName + " has finished reparing Asset " + this.asset.getName());
+		Driver.LOGGER.warning(this.repairPersonName + " has finished reparing Asset " + this.asset.getName());
+		Driver.LOGGER.info("Asset printout after fixing" + this.asset.toString());
 		}
 	}
 }

@@ -6,15 +6,17 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 	
 	private RentalRequest currentlyHandeledRentalRequest;
 	private Customer stayingCustomer;
+	private Asset asset;
 	private final double DEFUALT_DAMAGE = 0.5;
 	
 	
 	
 	
 	
-	public CallableSimulateStayInAsset(RentalRequest currentlyHandeledRentalRequest,Customer stayingCustomer) {
+	public CallableSimulateStayInAsset(RentalRequest currentlyHandeledRentalRequest,Customer stayingCustomer,Asset asset) {
 		this.currentlyHandeledRentalRequest = currentlyHandeledRentalRequest;
 		this.stayingCustomer = stayingCustomer;
+		this.asset = asset;
 	}
 
 
@@ -47,8 +49,11 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
 				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
 				double newHealth = currentHealth - damageAmount;
+				if (newHealth < 0){
+					newHealth = 0.0;
+				}
 				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
-				Driver.LOGGER.fine("The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
+				Driver.LOGGER.info("Thread id is " +Thread.currentThread().getName()+" In Asset *"+this.asset.getName()+"* The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
 			}
 			
 		}
