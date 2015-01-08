@@ -7,11 +7,11 @@ import java.util.Map;
 
 public class Statistics {
 	
-	private Double moneyGained = new Double(0);
+	private Double moneyGained ;
 	private ArrayList<RentalRequest> handeledrentalRequestCollection;
 	private HashMap  <String,RepairTool> repairToolUsedCollection;
 	private HashMap  <String,RepairMaterial> repairMaterialUsedCollection;
-	private StringBuilder stringbuilder = new StringBuilder();
+	private StringBuilder stringbuilder;
 	
 	
 	
@@ -19,16 +19,27 @@ public class Statistics {
 	
 	
 	
-	public Statistics(Double moneyGained,
-			ArrayList<RentalRequest> handeledrentalRequestCollection,
-			HashMap<String, RepairTool> repairToolUsedCollection,
-			HashMap<String, RepairMaterial> repairMaterialUsedCollection) {
+	
+	public Statistics() {
 		
-		this.moneyGained = moneyGained;
-		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
-		this.repairToolUsedCollection = repairToolUsedCollection;
-		this.repairMaterialUsedCollection = repairMaterialUsedCollection;
+		this.moneyGained = new Double(0);
+		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
+		this.repairToolUsedCollection = new HashMap  <String,RepairTool>();
+		this.repairMaterialUsedCollection =  new HashMap  <String,RepairMaterial>();
+		this.stringbuilder = new StringBuilder();;
 	}
+
+
+//	public Statistics(Double moneyGained,
+//			ArrayList<RentalRequest> handeledrentalRequestCollection,
+//			HashMap<String, RepairTool> repairToolUsedCollection,
+//			HashMap<String, RepairMaterial> repairMaterialUsedCollection) {
+//		
+//		this.moneyGained = moneyGained;
+//		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
+//		this.repairToolUsedCollection = repairToolUsedCollection;
+//		this.repairMaterialUsedCollection = repairMaterialUsedCollection;
+//	}
 
 
 //	public Statistics(Double moneyGained,) {
@@ -85,18 +96,69 @@ public class Statistics {
 		return ans;
 	}
 	
+	
+	
+	public Double getMoneyGained() {
+		return moneyGained;
+	}
+
+
+	public void setMoneyGained(Double moneyGained) {
+		this.moneyGained = moneyGained;
+	}
+
+
+	public ArrayList<RentalRequest> getHandeledrentalRequestCollection() {
+		return handeledrentalRequestCollection;
+	}
+
+
+	public void setHandeledrentalRequestCollection(
+			ArrayList<RentalRequest> handeledrentalRequestCollection) {
+		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
+	}
+
+
 	private String repairMaterialUsedCollectionToString(){
 		String ans = "";
 		Iterator it =this.repairMaterialUsedCollection.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry pairs = (Map.Entry)it.next();
-			ans = ans + "\n Material: " + pairs.getKey() + " Quantity: " + ((RepairTool)pairs.getValue()).getNumberOfTools();
+			ans = ans + "\n Material: " + pairs.getKey() + " Quantity: " + ((RepairMaterial)pairs.getValue()).getNumberOfMaterials();
 		}
 		return ans;
 	}
 	
 	public void addMoney(Double moneyToAdd){
 		this.moneyGained = this.moneyGained + moneyToAdd;
+	}
+	
+	public void addRentalRequest(RentalRequest rentalRequestToAdd){
+		this.handeledrentalRequestCollection.add(rentalRequestToAdd);
+	}
+	
+	
+	public void addToolTorepairToolsUsedCollection (RepairTool toolToAdd){
+		if(this.repairToolUsedCollection.get(toolToAdd.getToolName()) == null){
+			this.repairToolUsedCollection.put(toolToAdd.getToolName(), toolToAdd);
+		}else{
+			int oldNumberOfToolsUsed = this.repairToolUsedCollection.get(toolToAdd.getToolName()).getNumberOfTools();
+			int newNumberOfToolsUsed = oldNumberOfToolsUsed + toolToAdd.getNumberOfTools();
+			this.repairToolUsedCollection.get(toolToAdd.getToolName()).setNumberOfTools(newNumberOfToolsUsed);
+			Driver.LOGGER.info("New Number Of Tools is: " + newNumberOfToolsUsed);
+		}
+	}
+	
+	
+	public void addMaterialTorepairMaterialUsedCollection (RepairMaterial materialToAdd){
+		if(this.repairMaterialUsedCollection.get(materialToAdd.getMaterialName()) == null){
+			this.repairMaterialUsedCollection.put(materialToAdd.getMaterialName(), materialToAdd);
+		}else{
+			int oldNumberOfMaterialsUsed = this.repairMaterialUsedCollection.get(materialToAdd.getMaterialName()).getNumberOfMaterials();
+			int newNumberOfMaterialsUsed = oldNumberOfMaterialsUsed + materialToAdd.getNumberOfMaterials();
+			this.repairMaterialUsedCollection.get(materialToAdd.getMaterialName()).setNumberOfMaterials(newNumberOfMaterialsUsed);
+			
+		}
 	}
 	
 	
@@ -109,7 +171,7 @@ public class Statistics {
 		stringbuilder.append("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+\n");
 		stringbuilder.append("Tools used in the Simulation are :\n" + this.repairToolUsedCollectionToString() + "\n");
 		stringbuilder.append("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+\n");
-		stringbuilder.append("Materials used in the Simulation are :\n" + this.repairToolUsedCollectionToString() + "\n");
+		stringbuilder.append("Materials used in the Simulation are :\n" + this.repairMaterialUsedCollectionToString() + "\n");
 		stringbuilder.append("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+\n");
 		stringbuilder.append("All Handeled Requests Are :\n" + this.handeledrentalRequestCollection.toString() + "\n");
 		

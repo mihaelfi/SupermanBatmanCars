@@ -27,15 +27,17 @@ public class Warehouse  {
 	/** The repair materials. */
 	HashMap<String, RepairMaterial> 	repairMaterialsUsed;
 	
+	Statistics statistics;
 	
 	
 	
 	
-	Warehouse(){
+	Warehouse(Statistics statistics){
 		this.repairTools = new HashMap<String, RepairTool>();
 		this.repairMaterials = new HashMap<String, RepairMaterial>();
-		this.repairToolsUsed = new HashMap<String, RepairTool>();
-		this.repairMaterialsUsed = new HashMap<String, RepairMaterial>();
+//		this.repairToolsUsed = new HashMap<String, RepairTool>();
+//		this.repairMaterialsUsed = new HashMap<String, RepairMaterial>();
+		this.statistics = statistics;
 	}
 	
 	/* (non-Javadoc)
@@ -55,26 +57,7 @@ public class Warehouse  {
 		
 	}
 	
-	private void addToolTorepairToolsUsed (RepairTool toolToAdd){
-		if(this.repairToolsUsed.get(toolToAdd.getToolName()) == null){
-			this.repairToolsUsed.put(toolToAdd.getToolName(), toolToAdd);
-		}else{
-			int oldNumberOfToolsUsed = this.repairToolsUsed.get(toolToAdd).getNumberOfTools();
-			this.repairToolsUsed.get(toolToAdd).setNumberOfTools(oldNumberOfToolsUsed + toolToAdd.getNumberOfTools());;
-			
-		}
-	}
 	
-	
-	private void addMaterialTorepairMaterialUsed (RepairMaterial materialToAdd){
-		if(this.repairMaterialsUsed.get(materialToAdd.getMaterialName()) == null){
-			this.repairMaterialsUsed.put(materialToAdd.getMaterialName(), materialToAdd);
-		}else{
-			int oldNumberOfMaterialsUsed = this.repairToolsUsed.get(materialToAdd).getNumberOfTools();
-			this.repairToolsUsed.get(materialToAdd).setNumberOfTools(oldNumberOfMaterialsUsed + materialToAdd.getNumberOfMaterials());;
-			
-		}
-	}
 	
 	
 	/* (non-Javadoc)
@@ -92,7 +75,9 @@ public class Warehouse  {
 			if (toolInWarehouse.getNumberOfTools() - toolToGet.getNumberOfTools() >= 0){
 				toolInWarehouse.takeTools(toolToGet);
 				Driver.LOGGER.info("Number of " + toolName + "in Warehouse after taking is: " + this.repairTools.get(toolName).getNumberOfTools() );
-				this.addToolTorepairToolsUsed(toolToGet);
+				synchronized (this.statistics) {
+					this.statistics.addToolTorepairToolsUsedCollection(toolToGet);
+				}
 				ans = 1;
 			}else{
 				ans = -1;
@@ -136,8 +121,9 @@ public class Warehouse  {
 			
 			
 			materialInWarehouse.takeMaterial(repairMaterialToTake);
-			
-			this.addMaterialTorepairMaterialUsed(repairMaterialToTake);
+			synchronized (this.statistics) {
+				this.statistics.addMaterialTorepairMaterialUsedCollection(repairMaterialToTake);
+			}
 			
 			Driver.LOGGER.fine("Current Status of: " + materialInWarehouse.toString());
 			Driver.LOGGER.fine("Taken " + repairMaterialToTake.toString() +" Materials from warehouse.");

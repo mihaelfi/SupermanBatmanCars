@@ -8,6 +8,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Managment {
@@ -27,15 +28,15 @@ public class Managment {
 	private     Object maintenceFinished;
 	private final Asset POISON_PILL = new Asset("POISON_PILL", "poison", null, null, "poison", 66.6, 666);
 	private 	ArrayList<Asset> assetsAwaitingRepair = new ArrayList<Asset>();
-	private 	Double profit = new Double(0.0);
 	private     Statistics statistics ;
-	private 	ArrayList<RentalRequest> handeledrentalRequestCollection;
+	private		ExecutorService maintenceExecutor;
+	private		ExecutorService groupManagerExecutor;
 	
 	
 	
 	
 	Managment(){
-		this.warehouse = new Warehouse();
+		
 		this.clerkDetailsCollection = new ArrayList<ClerkDetails>();
 		this.repairMaterialInformationCollection = new HashMap  <String, RepairMaterialInformation>();
 		this.repairToolInformationCollection = new HashMap  <String, RepairToolInformation>();
@@ -43,8 +44,9 @@ public class Managment {
 		this.rentalRequestCollection = new ArrayBlockingQueue<RentalRequest>(10, true);
 		this.damageReportCollection = new ArrayList<DamageReport>();
 		this.assetsForRepair = new ArrayBlockingQueue<Asset>(10, true);
+		this.statistics = new Statistics();
+		this.warehouse = new Warehouse(this.statistics);
 //		this.clerksFinishedShift = new CyclicBarrier(this.clerkDetailsCollection.size() + 1);
-		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
 		
 		
 	}
@@ -143,11 +145,20 @@ public void startSimulation(){
 		e.printStackTrace();
 	}
 	
+	
+	
+	try {
+		this.groupManagerExecutor.awaitTermination(30, TimeUnit.SECONDS);
+		this.maintenceExecutor.awaitTermination(30,	TimeUnit.SECONDS);
+	
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 		
 	Driver.LOGGER.severe("Simulation should shut down...");
-	this.statistics = new Statistics(this.profit, this.handeledrentalRequestCollection, this.warehouse.repairToolsUsed, this.warehouse.repairMaterialsUsed);
-	this.statistics.setRepairMaterialUsedCollection(this.warehouse.getRepairMaterialsUsed());
-	this.statistics.setRepairToolUsedCollection(this.warehouse.getRepairToolsUsed());
+//	this.statistics.setRepairMaterialUsedCollection(this.warehouse.getRepairMaterialsUsed());
+//	this.statistics.setRepairToolUsedCollection(this.warehouse.getRepairToolsUsed());
 	
 	Driver.LOGGER.severe(this.statistics.toString());
 	
@@ -157,7 +168,8 @@ public void startSimulation(){
 	
 public void startMaintencesWorkers(){
 	
-	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(this.NUMBER_OF_MAINTENANCE_PERSONS);
+	this.maintenceExecutor = Executors.newFixedThreadPool(this.NUMBER_OF_MAINTENANCE_PERSONS);
+//	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(this.NUMBER_OF_MAINTENANCE_PERSONS);
 	
 //	ExecutorService maintenceExecutor = Executors.newFixedThreadPool(1);
 	
@@ -333,11 +345,11 @@ public int getNumberOfMaintencePerons(){
 	
 	public void startGroupManager(){
 		
-		ExecutorService groupManagerExecutor = Executors.newFixedThreadPool(this.customerGroupDetailsCollection.size());
+		this.groupManagerExecutor = Executors.newFixedThreadPool(this.customerGroupDetailsCollection.size());
 		
 		for (int i = 0 ; i < this.customerGroupDetailsCollection.size() ; i ++){
 			
-			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets , this.profit,this.handeledrentalRequestCollection));
+			groupManagerExecutor.submit(new RunnableCustomerGroupManager(this.customerGroupDetailsCollection.get(i), this, assets ,this.statistics));
 			
 		}
 		

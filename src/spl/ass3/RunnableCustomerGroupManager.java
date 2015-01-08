@@ -19,17 +19,16 @@ public class RunnableCustomerGroupManager implements Runnable{
 	private Double damagePrecetnage = (double) 0;
 	private Assets assets;
 	private Double profit;
-	private ArrayList<RentalRequest> handeledrentalRequestCollection;
+	private Statistics statistics;
 	
 
 
-	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Double profit , ArrayList<RentalRequest> handeledrentalRequestCollection) {
+	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Statistics statistics) {
 		this.customerGroupDetails = customerGroupDetails;
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
 		this.managment = managment;
 		this.assets = assets;
-		this.profit = profit;
-		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
+		this.statistics = statistics;
 	}
 	
 	private void applyDamageToAssetContents(){
@@ -57,7 +56,8 @@ public class RunnableCustomerGroupManager implements Runnable{
 			Driver.LOGGER.fine("The rental request collection size is: " +  this.rentalRequestCollection.size());
 			synchronized (this.rentalRequestCollection.get(0)) {
 				this.currentlyHandeledRentalRequest = this.rentalRequestCollection.get(0);
-				this.handeledrentalRequestCollection.add(this.rentalRequestCollection.get(0));
+				// maybe this should be synced on statistics
+				this.statistics.addRentalRequest(this.rentalRequestCollection.get(0));
 				this.managment.addRentalRequestToBlockingQueue(this.currentlyHandeledRentalRequest);
 				Driver.LOGGER.info("The Customer Group Manager " + this.customerGroupDetails.getGroupManagerName() +
 						"\n Submitted the Rental Request" + this.currentlyHandeledRentalRequest.toString());
@@ -129,10 +129,11 @@ public class RunnableCustomerGroupManager implements Runnable{
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
 			
-			synchronized (this.profit) {
+			synchronized (this.statistics) {
 				double costOfStay = this.calculateCostOfStay();
-				this.profit = this.profit + costOfStay;
-				Driver.LOGGER.severe("\nThread is: " + Thread.currentThread().getName()+ "\nThe profit is now " + this.profit+ "\n");
+				Double oldProfit = this.statistics.getMoneyGained(); 
+				this.statistics.setMoneyGained(oldProfit + costOfStay); 
+				Driver.LOGGER.severe("\nThread is: " + Thread.currentThread().getName()+ "\nThe profit is now " + this.statistics.getMoneyGained()+ "\n");
 			}
 			
 			synchronized (this.assets) {

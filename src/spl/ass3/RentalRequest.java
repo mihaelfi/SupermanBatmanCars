@@ -35,7 +35,7 @@ public class RentalRequest {
 
 	@Override
 	public String toString() {
-		return "RentalRequest id is =" + id + "\nassetType=" + assetType
+		return "\nRentalRequest id is =" + id + "\nassetType=" + assetType
 				+ "\nassetSize=" + assetSize + "\ndurationOfStay="
 				+ durationOfStay + "\nrequestStatus="
 				+ requestStatus;
