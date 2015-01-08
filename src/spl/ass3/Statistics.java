@@ -13,12 +13,7 @@ public class Statistics {
 	private HashMap  <String,RepairMaterial> repairMaterialUsedCollection;
 	private StringBuilder stringbuilder;
 	
-	
-	
-	
-	
-	
-	
+
 	
 	public Statistics() {
 		
@@ -28,30 +23,6 @@ public class Statistics {
 		this.repairMaterialUsedCollection =  new HashMap  <String,RepairMaterial>();
 		this.stringbuilder = new StringBuilder();;
 	}
-
-
-//	public Statistics(Double moneyGained,
-//			ArrayList<RentalRequest> handeledrentalRequestCollection,
-//			HashMap<String, RepairTool> repairToolUsedCollection,
-//			HashMap<String, RepairMaterial> repairMaterialUsedCollection) {
-//		
-//		this.moneyGained = moneyGained;
-//		this.handeledrentalRequestCollection = handeledrentalRequestCollection;
-//		this.repairToolUsedCollection = repairToolUsedCollection;
-//		this.repairMaterialUsedCollection = repairMaterialUsedCollection;
-//	}
-
-
-//	public Statistics(Double moneyGained,) {
-//		
-//		
-//		this.handeledrentalRequestCollection = new ArrayList<RentalRequest>();
-//		this.repairToolUsedCollection = new HashMap<String,RepairTool>();
-//		this.repairMaterialUsedCollection = new HashMap<String,RepairMaterial>();
-//		this.moneyGained = moneyGained;
-//		
-//		
-//	}
 
 
 	public HashMap<String, RepairTool> getRepairToolUsedCollection() {
