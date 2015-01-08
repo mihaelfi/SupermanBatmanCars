@@ -1,3 +1,8 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 
 import java.util.concurrent.BlockingQueue;
@@ -5,18 +10,51 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicInteger;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RunnableClerk.
+ */
 public class RunnableClerk implements Runnable {
 	
+	/** The clerk details. */
 	private ClerkDetails clerkDetails;
+	
+	/** The rental request collection. */
 	private BlockingQueue<RentalRequest> rentalRequestCollection;
+	
+	/** The currently handeled request. */
 	private RentalRequest currentlyHandeledRequest = null;
+	
+	/** The assets. */
 	private Assets assets;
+	
+	/** The total sleep time. */
 	private long totalSleepTime;
+	
+	/** The number of rental requests yet handeled. */
 	private AtomicInteger numberOfRentalRequestsYetHandeled;
+	
+	/** The poison pill. */
 	private final RentalRequest POISON_PILL = new RentalRequest(-666, "POISON_PILL", 666, 666, "INCOMPLETE");
+	
+	/** The clerks finished shift. */
 	private CyclicBarrier clerksFinishedShift;
 	
 	
+	/**
+	 * Instantiates a new runnable clerk.
+	 *
+	 * @param clerkDetails
+	 *            the clerk details
+	 * @param rentalRequestCollection
+	 *            the rental request collection
+	 * @param numberOfRentalRequestsYetHandeled
+	 *            the number of rental requests yet handeled
+	 * @param assets
+	 *            the assets
+	 * @param clerksFinishedShift
+	 *            the clerks finished shift
+	 */
 	public RunnableClerk(ClerkDetails clerkDetails , BlockingQueue<RentalRequest> rentalRequestCollection ,
 			AtomicInteger numberOfRentalRequestsYetHandeled , Assets assets, CyclicBarrier clerksFinishedShift) {
 		this.clerkDetails = clerkDetails;
@@ -27,10 +65,16 @@ public class RunnableClerk implements Runnable {
 		this.clerksFinishedShift = clerksFinishedShift;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString(){
 		return this.clerkDetails.toString() + " Number Of rental requests is : " + this.numberOfRentalRequestsYetHandeled;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run() {
 		
@@ -72,7 +116,7 @@ public class RunnableClerk implements Runnable {
 			//This simulates the walking to the asset process
 			
 			double distanceToAsset = this.clerkDetails.location.calculateDistance(avaliableAsset.getLocation());
-			long sleepTime = (long) (distanceToAsset*200);
+			long sleepTime = (long) (distanceToAsset*2000);
 			totalSleepTime = totalSleepTime + sleepTime;
 			Driver.LOGGER.warning("The clerk *" + this.clerkDetails.getName() + "* is going to the asset *"+ avaliableAsset.getName() + "* walking time is: " + sleepTime);
 			
@@ -104,7 +148,7 @@ public class RunnableClerk implements Runnable {
 			
 			Driver.LOGGER.info("The clerk *" + this.clerkDetails.getName() + "* checks if the shift should be over.\n" );
 			
-			if (this.totalSleepTime > 800){
+			if (this.totalSleepTime > 8000){
 				synchronized (this.clerkDetails) {
 					try {
 						Driver.LOGGER.warning("The clerk *" + this.clerkDetails.getName() + "* Has ended his shift. waiting for next shift \n*************************************************************\n*******************************************************" );

@@ -1,3 +1,8 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 
 import java.util.ArrayList;

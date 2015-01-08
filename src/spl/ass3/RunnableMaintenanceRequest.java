@@ -1,3 +1,8 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 
 import java.util.ArrayList;
@@ -15,6 +20,22 @@ public class RunnableMaintenanceRequest implements Runnable  {
 	private String repairPersonName; 
 	
 	
+	/**
+	 * Instantiates a new runnable maintenance request.
+	 *
+	 * @param repairToolInformationCollection
+	 *            the repair tool information collection
+	 * @param repairMaterialInformationCollection
+	 *            the repair material information collection
+	 * @param asset
+	 *            the asset
+	 * @param warehouse
+	 *            the warehouse
+	 * @param assetsForRepair
+	 *            the assets for repair
+	 * @param repairPersonName
+	 *            the repair person name
+	 */
 	public RunnableMaintenanceRequest(
 			HashMap<String, RepairToolInformation> repairToolInformationCollection,
 			HashMap<String, RepairMaterialInformation> repairMaterialInformationCollection,

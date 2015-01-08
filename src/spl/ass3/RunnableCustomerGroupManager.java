@@ -1,3 +1,8 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 
 import java.util.ArrayList;
@@ -10,19 +15,50 @@ import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RunnableCustomerGroupManager.
+ */
 public class RunnableCustomerGroupManager implements Runnable{
 	
+	/** The customer group details. */
 	private CustomerGroupDetails customerGroupDetails;
+	
+	/** The rental request collection. */
 	private ArrayList<RentalRequest> rentalRequestCollection;
+	
+	/** The managment. */
 	private Managment managment;
+	
+	/** The currently handeled rental request. */
 	private RentalRequest currentlyHandeledRentalRequest;
+	
+	/** The damage precetnage. */
 	private Double damagePrecetnage = (double) 0;
+	
+	/** The assets. */
 	private Assets assets;
+	
+	/** The profit. */
 	private Double profit;
+	
+	/** The statistics. */
 	private Statistics statistics;
 	
 
 
+	/**
+	 * Instantiates a new runnable customer group manager.
+	 *
+	 * @param customerGroupDetails
+	 *            the customer group details
+	 * @param managment
+	 *            the managment
+	 * @param assets
+	 *            the assets
+	 * @param statistics
+	 *            the statistics
+	 */
 	public RunnableCustomerGroupManager(CustomerGroupDetails customerGroupDetails, Managment managment , Assets assets , Statistics statistics) {
 		this.customerGroupDetails = customerGroupDetails;
 		this.rentalRequestCollection = customerGroupDetails.getRentalRequestCollection();
@@ -31,6 +67,9 @@ public class RunnableCustomerGroupManager implements Runnable{
 		this.statistics = statistics;
 	}
 	
+	/**
+	 * Apply damage to asset contents.
+	 */
 	private void applyDamageToAssetContents(){
 		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i++){
 			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
@@ -41,12 +80,20 @@ public class RunnableCustomerGroupManager implements Runnable{
 		}
 	}
 	
+	/**
+	 * Calculate cost of stay.
+	 *
+	 * @return the double
+	 */
 	private double calculateCostOfStay(){
 		return (this.currentlyHandeledRentalRequest.getAsset().getCostPerNight())*(this.currentlyHandeledRentalRequest.getDurationOfStay())*(this.customerGroupDetails.getCustomerCollection().size());
 	}
 	
 	
 
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run() {
 		
@@ -111,10 +158,8 @@ public class RunnableCustomerGroupManager implements Runnable{
 					this.damagePrecetnage = this.damagePrecetnage + completionService.take().get();
 					Driver.LOGGER.fine("Generated Damage By Staying in Asset is now: " + this.damagePrecetnage);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (ExecutionException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -125,7 +170,6 @@ public class RunnableCustomerGroupManager implements Runnable{
 				this.damagePrecetnage = 100.0;
 			}
 			
-//			this.applyDamageToAssetContents();
 			
 			this.currentlyHandeledRentalRequest.getAsset().setStatusAvailable();
 			

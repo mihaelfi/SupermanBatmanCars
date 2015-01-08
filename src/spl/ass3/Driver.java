@@ -36,7 +36,7 @@ public class Driver {
 		// Print what date is today!
 		System.out.println("Report Date: " + reportDate);
 		
-		LOGGER.setLevel(Level.SEVERE);
+		LOGGER.setLevel(Level.INFO);
 		fileTxt = new FileHandler("Logging.txt");
 		
 		 formatterTxt = new SimpleFormatter();

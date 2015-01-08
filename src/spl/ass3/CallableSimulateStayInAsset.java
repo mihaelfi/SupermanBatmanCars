@@ -1,18 +1,44 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 
 import java.util.concurrent.Callable;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CallableSimulateStayInAsset.
+ */
 public class CallableSimulateStayInAsset implements Callable<Double>{
 	
+	/** The currently handeled rental request. */
 	private RentalRequest currentlyHandeledRentalRequest;
+	
+	/** The staying customer. */
 	private Customer stayingCustomer;
+	
+	/** The asset. */
 	private Asset asset;
+	
+	/** The defualt damage. */
 	private final double DEFUALT_DAMAGE = 0.5;
 	
 	
 	
 	
 	
+	/**
+	 * Instantiates a new callable simulate stay in asset.
+	 *
+	 * @param currentlyHandeledRentalRequest
+	 *            the currently handeled rental request
+	 * @param stayingCustomer
+	 *            the staying customer
+	 * @param asset
+	 *            the asset
+	 */
 	public CallableSimulateStayInAsset(RentalRequest currentlyHandeledRentalRequest,Customer stayingCustomer,Asset asset) {
 		this.currentlyHandeledRentalRequest = currentlyHandeledRentalRequest;
 		this.stayingCustomer = stayingCustomer;
@@ -22,6 +48,9 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 
 
 
+	/* (non-Javadoc)
+	 * @see java.util.concurrent.Callable#call()
+	 */
 	@Override
 	public Double call() throws Exception {
 		
@@ -45,20 +74,7 @@ public class CallableSimulateStayInAsset implements Callable<Double>{
 		Driver.LOGGER.fine("The Customer *"+ this.stayingCustomer.getName() +  "* acumulated damage is: " + damageAmount+"%");
 		
 		
-//		for (int i = 0 ; i < this.currentlyHandeledRentalRequest.getAsset().getAssetContents().size() ; i ++){
-//			synchronized (this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i)) {
-//				double currentHealth = this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth();
-//				double newHealth = currentHealth - damageAmount;
-//				if (newHealth < 0){
-//					newHealth = 0.0;
-//				}
-//				this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).setHealth(newHealth);
-//				Driver.LOGGER.info("Thread id is " +Thread.currentThread().getName()+" In Asset *"+this.asset.getName()+"* The " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getName() + " Health was " +currentHealth + " And now its " + this.currentlyHandeledRentalRequest.getAsset().getAssetContents().get(i).getHealth());
-//			}
-//			
-//		}
-		
-		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*2400;
+		long sleepTime = this.currentlyHandeledRentalRequest.getDurationOfStay()*24000;
 		Driver.LOGGER.warning("\n\t\t The customer *" + this.stayingCustomer.getName() + "* is starting to simulate his stay in the asset:" +
 		this.asset.getName() +"\n And is going to stay in the asset for " + this.currentlyHandeledRentalRequest.getDurationOfStay() + " days" + "\n and will cause "+  damageAmount + " of damage.\n");
 		Thread.sleep(sleepTime);

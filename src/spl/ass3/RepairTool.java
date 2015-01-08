@@ -1,3 +1,8 @@
+/*
+ * Spl Assingment 3 
+ * Michael Fildstien Id: 309161594 
+ * Maxim Rusinksi Id: 316803931
+ */
 package spl.ass3;
 // TODO: Auto-generated Javadoc
 
@@ -59,20 +64,38 @@ public class RepairTool implements Comparable<RepairTool> {
 		return toolName;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString(){
 		return "Tool Name = " + this.toolName + ", Tool Quantity is: " + this.numberOfTools+"\n";
 	}
 	
+	/**
+	 * Take tools.
+	 *
+	 * @param toolToTake
+	 *            the tool to take
+	 */
 	public void takeTools(RepairTool toolToTake){
 		this.numberOfTools = this.numberOfTools - toolToTake.getNumberOfTools();
 	}
 	
+	/**
+	 * Return tools.
+	 *
+	 * @param toolToReturn
+	 *            the tool to return
+	 */
 	public void returnTools(RepairTool toolToReturn){
 		this.numberOfTools = this.numberOfTools + toolToReturn.getNumberOfTools();
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 */
 	@Override
 	public int compareTo(RepairTool o) {
 		int ans = 0;
