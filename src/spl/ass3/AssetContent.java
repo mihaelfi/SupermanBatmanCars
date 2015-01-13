@@ -15,7 +15,7 @@ public class AssetContent implements Comparable<AssetContent> {
 	/** The name. */
 	private String name;
 	
-	/** The health. */
+	/** The health.  change */
 	private double health;
 	
 	/** The repair cost multiplier. */
